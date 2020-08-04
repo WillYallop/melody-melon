@@ -22,8 +22,9 @@
     <sectionBackgroundLeft
     :heading="sectionData.faq.heading"
     :subHeading="sectionData.faq.subHeading"/>
-    <!-- faq -->
-    <faq :style="{ 'margin-top' : '-120px' }"/>
+    <!-- Accordion -->
+    <accordion :style="{ 'margin-top' : '-120px' }"
+    :accordionData="accordionData"/>
 
   </div>  
 </template>
@@ -35,7 +36,7 @@ import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroun
 import playlistCards from '@/components/PageComponents/PlaylistCards'
 import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
 import playlistFinder from '@/components/PageComponents/PlaylistFinder'
-import faq from '@/components/PageComponents/Faq'
+import accordion from '@/components/PageComponents/Accordion'
 
 export default {
   data() {
@@ -58,6 +59,12 @@ export default {
           subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         },
       },
+      accordionData: [
+        { id: 1, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
+        { id: 2, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
+        { id: 3, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
+        { id: 4, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."}
+      ]
 
     }
   },
@@ -67,7 +74,7 @@ export default {
     playlistCards,
     sectionBackgroundLeft,
     playlistFinder,
-    faq
+    accordion
   },
   mounted() {
 

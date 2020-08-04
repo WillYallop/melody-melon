@@ -26,6 +26,7 @@ export default {
 .sectionContainer {
     width: 100%;
     position: relative;
+    z-index: 10;
 }
 /* padding right is equal to the width - of background shape */
 .sectionWrapper {
