@@ -1,35 +1,40 @@
 <template>
   <div>
-    <div class="siteWrapper">
       
-      <!-- Banner -->
-      <banner 
-      :heading="heading"
-      :subHeading="subHeading"
-      :imageName="imageName"
-      :button="button"/>
+    <!-- Banner -->
+    <banner 
+    :heading="bannerData.heading"
+    :subHeading="bannerData.subHeading"
+    :imageName="bannerData.imageName"
+    :button="bannerData.button"/>
 
-    </div> 
+    <sectionBackgroundRight/>
+
   </div>  
 </template>
 
 <script>
 // components
 import banner from '@/components/PageComponents/Banner'
+import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
 
 export default {
   data() {
     return {
       // banner data
-      heading: 'Contact Us',
-      subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
-      imageName: 'contactBannerImage.svg',
-      button: ['submit', 'submit song']
+      bannerData: {
+        heading: 'Contact Us',
+        subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
+        imageName: 'contactBannerImage.svg',
+        button: ['submit', 'submit song']
+      },
 
     }
   },
   components: {
-    banner
+    banner,
+    sectionBackgroundRight
+
   },
   mounted() {
 

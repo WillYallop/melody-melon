@@ -1,7 +1,7 @@
 <template>
   <div>
     <siteHeader/>
-    <Nuxt class="pageContainer sitePadding" :class="{ 'pageSliderOpen' : sliderOpen, 'pageLock' : sliderLock }"/>
+    <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen, 'pageLock' : sliderLock }"/>
     <playlistSlider/>
   </div>
 </template>
@@ -104,7 +104,7 @@ img{text-indent:-9999px}
   top: 80px;
   left: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);
@@ -115,7 +115,8 @@ img{text-indent:-9999px}
 /* global */
 .siteWrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 /* padding */
 .sitePadding {

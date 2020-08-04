@@ -1,5 +1,5 @@
 <template>
-    <div class="bannerCon">
+    <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
             <h1>{{heading}}</h1>
             <h4>{{subHeading}}</h4>
@@ -54,7 +54,8 @@ export default {
 .bannerCon {
     display: flex;
     justify-content: space-between;
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 .textarea {
     width: 60%;

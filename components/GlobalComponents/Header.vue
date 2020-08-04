@@ -1,11 +1,11 @@
 <template>
     <header class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerLock' : sliderLock, 'headerScrolled' : headerScrolled }">   
-        <div class="headerWrapper siteWrapper">
+        <div class="headerWrapper">
             <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="navigate('home')">
             <nav class="siteNavigation">
                 <ul>
-                    <li v-on:click="showToggleBtn = true"><nuxt-link to="/contact">CONTACT</nuxt-link></li>
-                    <li v-on:click="showToggleBtn = true"><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>
+                    <li v-on:click="$store.commit('showToggleDesktopBtn', true)"><nuxt-link to="/contact">CONTACT</nuxt-link></li>
+                    <li v-on:click="$store.commit('showToggleDesktopBtn', true)"><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>
                 </ul>
                 <button v-if="showToggleBtn" class="toggleSliderBtn" v-on:click="$store.commit('toggleSlider')">></button>
             </nav>
@@ -89,6 +89,8 @@ export default {
 
 .headerWrapper {
     height: 100%;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
