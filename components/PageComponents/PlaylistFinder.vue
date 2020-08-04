@@ -46,7 +46,7 @@ export default {
 }
 .finderWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 900px;
 }    
 
@@ -54,7 +54,7 @@ export default {
 .finderImgContainer { 
     display: flex;
     flex-wrap: wrap;
-    padding-right: 40px;
+    padding-right: 80px;
 }
 .imgContainerMobile {
     padding: 20px 10px 10px;
@@ -114,6 +114,9 @@ export default {
     transform: scale(1.1);
 }
 
+@media screen and (max-width: 1310px) {
+    .finderImgContainer {padding-right: 40px;}
+}
 
 @media screen and (max-width: 580px) {
     .imgContainerMobile {display: none;}

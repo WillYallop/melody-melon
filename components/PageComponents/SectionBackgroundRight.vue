@@ -1,8 +1,8 @@
 <template>
     <div class="sectionContainer">
         <div class="sectionWrapper siteWrapper">
-            <h2>{{heading}}</h2>
-            <p>{{subHeading}}</p>
+            <h2 v-if="heading">{{heading}}</h2>
+            <p v-if="subHeading">{{subHeading}}</p>
         </div>
         <div class="backgroundShapeRight"></div>
     </div>

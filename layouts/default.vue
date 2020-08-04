@@ -63,7 +63,7 @@ body {
 .siteBackground {
   position: fixed;
   top: 0;
-  bottom: 0;
+  bottom: -56px;
   left: 0;
   right: 0;
   background: linear-gradient(-45deg, #EE7752, #E72B51);
@@ -103,6 +103,7 @@ img{text-indent:-9999px}
   display: flex;
   flex-direction: column;
   z-index: 10;
+  overflow: hidden;
 }
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);

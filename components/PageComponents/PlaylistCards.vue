@@ -1,33 +1,34 @@
 <template>
     <div class="playlistCardComponent siteWrapper">
+        
         <div v-if="showSlider" class="cardContainer">
-        <div class="playlistCardContainer" v-swiper:mySwiper="swiperOptions">
-            <div class="swiper-wrapper">
-                <!-- Slide V-For -->
-                <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
-                    <div class="playlistPreviewColInner" v-on:click="navigateToPlaylist(playlist.playlistUrl)">
-                        <div class="colHeader"> 
-                            <img class="playlistIcon" :src="getImageUrl(playlist.icon)" alt="" data-not-lazy>
-                            <div class="colHeaderBackgroundImageOverlay"></div>
-                            <div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>
-                        </div>
-                        <div class="playlistIframeContainer">
-                            <!-- Song 1 -->
-                            <div class="songRow" :key="song.number" v-for="song in playlist.songs">
-                                <div class="rowTextareHeader">
-                                    <p class="songNumberP">{{song.number}}</p>
-                                    <p class="songTimeP">{{song.songDuration}}</p>
-                                </div>
-                                <div class="rowTextArea">
-                                    <p class="songTitleP">{{song.songName}}</p>
-                                    <p class="songArtistP">{{song.songArtist}}</p>
+            <div class="playlistCardContainer" v-swiper:mySwiper="swiperOptions">
+                <div class="swiper-wrapper">
+                    <!-- Slide V-For -->
+                    <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
+                        <div class="playlistPreviewColInner" v-on:click="navigateToPlaylist(playlist.playlistUrl)">
+                            <div class="colHeader"> 
+                                <img class="playlistIcon" :src="getImageUrl(playlist.icon)" alt="" data-not-lazy>
+                                <div class="colHeaderBackgroundImageOverlay"></div>
+                                <div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>
+                            </div>
+                            <div class="playlistIframeContainer">
+                                <!-- Song 1 -->
+                                <div class="songRow" :key="song.number" v-for="song in playlist.songs">
+                                    <div class="rowTextareHeader">
+                                        <p class="songNumberP">{{song.number}}</p>
+                                        <p class="songTimeP">{{song.songDuration}}</p>
+                                    </div>
+                                    <div class="rowTextArea">
+                                        <p class="songTitleP">{{song.songName}}</p>
+                                        <p class="songArtistP">{{song.songArtist}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         
         <div v-if="!showSlider" class="slideLoading">
@@ -41,6 +42,7 @@
 export default {
     data() {
         return {
+            siteHeight: 0,
             showSlider: true,
             //Swiper options
             swiperOptions: {
@@ -139,7 +141,7 @@ export default {
             window.addEventListener('resize', this.checkAndSetOptions);
         })
 
-        this.checkAndSetOptions()
+        this.setSwiperOptions()
 
     },
     computed: {
@@ -157,16 +159,51 @@ export default {
         },
         checkAndSetOptions() {
             if (process.client) {
-                if(window.innerWidth > 580) {
-                    this.swiperOptions = {
-                        slidesPerView: 'auto',
-                        loop: true,
-                        autoplay: {
-                            delay: 2500,
-                        },
+                // if new height matches old check width
+                if(this.siteHeight == window.innerHeight) {
+                    if(window.innerWidth >= 590) {
+                        this.swiperOptions = {
+                            slidesPerView: 'auto',
+                            loop: true,
+                            autoplay: {
+                                delay: 2500,
+                            },
+                        }
+                        this.reloadSlider()
+                    } else {
+                        this.swiperOptions = {
+                            effect: 'coverflow',
+                            slidesPerView: 'auto',
+                            centeredSlides: true,
+
+                            loop: true,
+                            autoplay: {
+                                delay: 2500,
+                            },
+                            coverflowEffect: { 
+                                rotate: 45,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows : false
+                            }
+                        }
+                        this.reloadSlider()
                     }
-                    this.reloadSlider()
-                } else {
+                }
+                // set new height
+                this.siteHeight = window.innerHeight
+            }
+        },
+        reloadSlider() {
+            this.showSlider = false
+            setTimeout(() => {
+                this.showSlider = true
+            }, 300)
+        },
+        setSwiperOptions() {
+            if (process.client) {
+                if(window.innerWidth <= 580) {
                     this.swiperOptions = {
                         effect: 'coverflow',
                         slidesPerView: 'auto',
@@ -185,14 +222,17 @@ export default {
                         }
                     }
                     this.reloadSlider()
+                } else {
+                    this.swiperOptions = {
+                        slidesPerView: 'auto',
+                        loop: true,
+                        autoplay: {
+                            delay: 2500,
+                        },
+                    }
+                    this.reloadSlider()
                 }
             }
-        },
-        reloadSlider() {
-            this.showSlider = false
-            setTimeout(() => {
-                this.showSlider = true
-            }, 300)
         }
     },
     watch: {
@@ -354,17 +394,18 @@ export default {
 
 
 @media screen and (max-width: 1250px) {
-    .playlistPreviewCol {width: 50%;}
+    .pageSliderOpen .playlistPreviewCol {width: 50%;}
 }
 @media screen and (max-width: 1024px) {
-    .playlistPreviewCol {width: 33.33%;}
+    .playlistPreviewCol {width: 33.33% !important;}
     .playlistCardComponent {padding: 10px;}
 }
 @media screen and (max-width: 767px) {
-    .playlistPreviewCol {width: 50%;}
+    .playlistPreviewCol {width: 50% !important;}
 }
 @media screen and (max-width: 590px) {
     .playlistCardComponent {padding: 0;}
-    .playlistPreviewCol {width: 80%;}
+    .playlistPreviewCol {width: 80% !important;}
+    .playlistCardContainer {border-radius: none; overflow: visible;}
 }
 </style>
