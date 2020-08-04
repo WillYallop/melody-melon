@@ -1,7 +1,7 @@
 <template>
     <div class="playlistCardComponent siteWrapper">
-
-        <div v-if="showSlider" class="playlistCardContainer" v-swiper:mySwiper="swiperOptions">
+        <div v-if="showSlider" class="cardContainer">
+        <div class="playlistCardContainer" v-swiper:mySwiper="swiperOptions">
             <div class="swiper-wrapper">
                 <!-- Slide V-For -->
                 <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
         
         <div v-if="!showSlider" class="slideLoading">
 
@@ -42,7 +42,7 @@ export default {
     data() {
         return {
             showSlider: true,
-            //For mobile
+            //Swiper options
             swiperOptions: {
                 slidesPerView: 'auto',
                 loop: true,
@@ -134,13 +134,18 @@ export default {
             ],
         }
     },
+    mounted() {
+        this.$nextTick(() => {
+            window.addEventListener('resize', this.checkAndSetOptions);
+        })
+
+        this.checkAndSetOptions()
+
+    },
     computed: {
         sliderOpen() {
             return this.$store.state.playlistSlider.status
         },
-        show() {
-            
-        }
     },
     methods: {
         getImageUrl(name) {
@@ -149,16 +154,55 @@ export default {
         },
         navigateToPlaylist(id) {
             this.$router.push('/playlist/' + id)
-        }
-    },
-    watch: {
-        sliderOpen: function (val) {
+        },
+        checkAndSetOptions() {
+            if (process.client) {
+                if(window.innerWidth > 580) {
+                    this.swiperOptions = {
+                        slidesPerView: 'auto',
+                        loop: true,
+                        autoplay: {
+                            delay: 2500,
+                        },
+                    }
+                    this.reloadSlider()
+                } else {
+                    this.swiperOptions = {
+                        effect: 'coverflow',
+                        slidesPerView: 'auto',
+                        centeredSlides: true,
+
+                        loop: true,
+                        autoplay: {
+                            delay: 2500,
+                        },
+                        coverflowEffect: { 
+                            rotate: 45,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows : false
+                        }
+                    }
+                    this.reloadSlider()
+                }
+            }
+        },
+        reloadSlider() {
             this.showSlider = false
             setTimeout(() => {
                 this.showSlider = true
             }, 300)
         }
-    }
+    },
+    watch: {
+        sliderOpen: function (val) {
+            this.reloadSlider()
+        }
+    },
+    beforeDestroy() { 
+        window.removeEventListener('resize', this.checkAndSetOptions); 
+    },
 }
 </script>
 
@@ -170,6 +214,9 @@ export default {
   justify-content: center;
   z-index: 600;
   padding: 0 30px;
+}
+.cardContainer {
+    width: 100%;
 }
 .playlistCardContainer {
     width: 100%;
@@ -307,7 +354,7 @@ export default {
 
 
 @media screen and (max-width: 1250px) {
-.playlistPreviewCol {width: 50%;}
+    .playlistPreviewCol {width: 50%;}
 }
 @media screen and (max-width: 1024px) {
     .playlistPreviewCol {width: 33.33%;}
@@ -317,6 +364,7 @@ export default {
     .playlistPreviewCol {width: 50%;}
 }
 @media screen and (max-width: 590px) {
-    .playlistPreviewCol {width: 100%;}
+    .playlistCardComponent {padding: 0;}
+    .playlistPreviewCol {width: 80%;}
 }
 </style>
