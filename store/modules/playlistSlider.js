@@ -8,6 +8,9 @@ const mutations = {
     toggleSlider(state) {
         state.status = !state.status;
     },
+    sliderSpecific(state, bool) {
+        state.status = bool
+    }
 
 
 }

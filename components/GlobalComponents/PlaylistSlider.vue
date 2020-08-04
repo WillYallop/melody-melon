@@ -1,6 +1,6 @@
 <template>
-  <div class="sliderContainer" :class="{ 'active' : sliderOpen, 'sliderLock' : sliderLock }">
-      <button v-on:click="$store.commit('toggleSlider')">Toggle</button>
+  <div class="sliderContainer"  :class="{ 'active' : sliderOpen, 'sliderLock' : sliderLock }">
+      
   </div>
 </template>
 
@@ -23,11 +23,19 @@ export default {
             return this.$store.state.playlistSlider.status
         },
         sliderLock() {
-            if(this.$router.currentRoute.path == '/') { 
-                return true
+            if(this.sliderOpen) { 
+                if(this.$router.currentRoute.path == '/') {
+                    return true
+                } else {
+                    return false
+                }
             } else {
-                return false
-            }
+                if(this.$router.currentRoute.path == '/') {
+                    return true
+                }   else {
+                    return false
+                }
+            } 
         }
 
     },
@@ -57,7 +65,8 @@ export default {
 }
 
 @media only screen and (max-width: 1024px) {
-    .sliderContainer {right: -100% !important; width: 100%;}
-    .sliderContainer.active {right: 0 !important;}
+    /* handle pos (slider open css is inverted for mobile) */
+    .sliderContainer {right: 0 !important; width: 100%;}
+    .sliderContainer.active {right: -100% !important;}
 }
 </style>

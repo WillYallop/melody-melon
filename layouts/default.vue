@@ -29,11 +29,19 @@ export default {
       return this.$store.state.playlistSlider.status
     },
     sliderLock() {
-      if(this.$router.currentRoute.path == '/') { 
-        return true
+      if(this.sliderOpen) { 
+        if(this.$router.currentRoute.path == '/') {
+          return true
+        } else {
+          return false
+        }
       } else {
-        return false
-      }
+        if(this.$router.currentRoute.path == '/') {
+          return true
+        }   else {
+          return false
+        }
+      } 
     }
   },
   methods: {
@@ -43,6 +51,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
 html {
   -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
   -webkit-tap-highlight-color: transparent !important;
@@ -86,13 +96,15 @@ img{text-indent:-9999px}
   margin: 0;
 }
 
-
+/* page container */
 .pageContainer {
   width: 100%;
   transition: 0.3s;
   position: absolute;
-  top: 60px;
+  top: 120px;
   left: 0;
+  display: flex;
+  justify-content: center;
 }
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);
@@ -100,7 +112,11 @@ img{text-indent:-9999px}
 .pageLock {
   width: calc(100% - 500px) !important;
 }
-
+/* global */
+.siteWrapper {
+  width: 100%;
+  max-width: 1400px;
+}
 /* padding */
 .sitePadding {
   padding: 0 40px;
@@ -108,8 +124,9 @@ img{text-indent:-9999px}
 
 
 @media only screen and (max-width: 1024px) {
-  /* page container */
-  .pageContainer.pageSliderOpen {width: 100%; left: -100%;}
+  /* page container (slider open css is inverted for mobile) */
+  .pageContainer {left: -100%;}
+  .pageContainer.pageSliderOpen {width: 100%; left: 0;}
   .pageLock {width: 100% !important;}
   /* padding */
   .sitePadding {padding: 0 20px;}
