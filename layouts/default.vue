@@ -3,6 +3,8 @@
     <siteHeader/>
     <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen, 'pageLock' : sliderLock }"/>
     <playlistSlider/>
+
+    <div class="siteBackground"></div>
   </div>
 </template>
 
@@ -65,14 +67,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #EE7752, #E72B51);
-  background-size: 300% 300%;
-	animation: gradient 5s ease infinite;
+
 }
 @keyframes gradient {
 	0% {	background-position: 0% 50%;}
 	50% {background-position: 100% 50%;}
 	100% {	background-position: 0% 50%;}
+}
+
+.siteBackground {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(-45deg, #EE7752, #E72B51);
+  background-size: 300% 300%;
+	animation: gradient 5s ease infinite;
+  z-index: 0;
 }
 
 #app {
@@ -105,6 +117,7 @@ img{text-indent:-9999px}
   left: 0;
   display: flex;
   flex-direction: column;
+  z-index: 10;
 }
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);
@@ -120,7 +133,8 @@ img{text-indent:-9999px}
 }
 /* padding */
 .sitePadding {
-  padding: 0 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 

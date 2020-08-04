@@ -56,6 +56,7 @@ export default {
     background-color: #1E1E1E;
     border-radius: 20px 0 0 20px;
     transition: 0.3s;
+    z-index: 1000;
 }
 .sliderContainer.active {
     right: 0;

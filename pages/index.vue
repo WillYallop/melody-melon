@@ -15,6 +15,10 @@
     <!-- playlist cards -->
     <playlistCards :style="{ 'margin-top' : '-120px' }"/>
 
+    <!-- Playlist finder link -->
+    <playlistFinder/>
+
+    <sectionBackgroundLeft/>
     
 
   </div>  
@@ -26,6 +30,7 @@ import banner from '@/components/PageComponents/Banner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
 import playlistCards from '@/components/PageComponents/PlaylistCards'
 import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
+import playlistFinder from '@/components/PageComponents/PlaylistFinder'
 
 export default {
   data() {
@@ -51,7 +56,8 @@ export default {
     banner,
     sectionBackgroundRight,
     playlistCards,
-    sectionBackgroundLeft
+    sectionBackgroundLeft,
+    playlistFinder
   },
   mounted() {
 

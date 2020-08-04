@@ -76,6 +76,7 @@ export default {
     padding: 40px 40px 0;
     display: flex;
     justify-content: center;
+    z-index: 1000;
 }
 .headerScrolled {
     background-color: rgba(30, 30, 30, 0.8);

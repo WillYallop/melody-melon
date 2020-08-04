@@ -45,12 +45,12 @@ export default {
 .backgroundShapeRight {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
     bottom: 0;
     width: calc(100% - 400px);
     background-color: #FFF;
     opacity: 0.3;
-    border-radius: 200px 0 0 200px;
+    border-radius: 200px 20px 20px 200px;
     z-index: 10;
 }
 
@@ -60,7 +60,7 @@ export default {
     .sectionWrapper {padding: 80px 40px 200px 160px;}
 }
 @media only screen and (max-width: 1024px) {
-    .backgroundShapeRight {width: calc(100% - 100px);}
+    .backgroundShapeRight {width: calc(100% - 100px); border-radius: 200px 0 0 200px; right: 0;}
     .sectionWrapper {padding: 80px 20px 200px 140px;}
 }
 @media only screen and (max-width: 700px) {
