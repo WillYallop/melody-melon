@@ -1,5 +1,5 @@
 <template>
-    <header class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerLock' : sliderLock, 'headerScrolled' : headerScrolled }">   
+    <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerLock' : sliderLock }">   
         <div class="headerWrapper">
             <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="navigate('home')">
             <nav class="siteNavigation">
@@ -17,7 +17,7 @@
 export default {
     data() {
         return {
-            headerScrolled: false,
+
         }
     },
     components: {
@@ -58,7 +58,26 @@ export default {
                 this.$store.commit('sliderSpecific', true)
                 this.$router.push('/')
             }
-        } 
+        },
+        headerScrolled() {
+            if (window.scrollY > 10) {
+                var element = document.getElementById("siteHeader");
+                element.classList.add("headerScrolled");
+            } else {
+                var element = document.getElementById("siteHeader");
+                element.classList.remove("headerScrolled");
+            }
+        },
+    },
+    created() {
+        if (process.client) { 
+            window.addEventListener('scroll', this.headerScrolled);
+        }
+    },
+    destroyed() {
+        if (process.client) { 
+            window.removeEventListener('scroll', this.headerScrolled);
+        }
     }
 }
 </script>
@@ -78,15 +97,16 @@ export default {
     justify-content: center;
     z-index: 1000;
 }
-.headerScrolled {
-    background-color: rgba(30, 30, 30, 0.8);
-}
+
 .headerContainer.headerSliderOpen {
   width: calc(100% - 510px);
 }
 .headerLock {
   width: calc(100% - 510px) !important;
 }
+
+/* Scroll down class */
+.headerScrolled {height: 60px;background-color: rgba(30, 30, 30, 0.9);align-items: center; padding: 0 40px;}
 
 .headerWrapper {
     height: 100%;
