@@ -6,7 +6,8 @@
       <banner 
       :heading="heading"
       :subHeading="subHeading"
-      :image="image"/>
+      :imageName="imageName"
+      :button="button"/>
 
     </div> 
   </div>  
@@ -21,8 +22,9 @@ export default {
     return {
       // banner data
       heading: 'Fruity Playlists To Fuel Your Day',
-      subHeading: '',
-      image: ''
+      subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.',
+      imageName: 'bannerImage.svg',
+      button: ['/contact', 'contact us']
 
     }
   },

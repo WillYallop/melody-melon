@@ -1,6 +1,6 @@
 const state = () => ({
     status: true,
-
+    toggleDeskBtn: false
 })
   
 const mutations = {
@@ -10,6 +10,9 @@ const mutations = {
     },
     sliderSpecific(state, bool) {
         state.status = bool
+    },
+    showToggleDesktopBtn(state, bool) {
+        state.toggleDeskBtn = bool
     }
 
 

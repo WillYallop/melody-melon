@@ -17,7 +17,6 @@
 export default {
     data() {
         return {
-            showToggleBtn: false,
             headerScrolled: false,
         }
     },
@@ -26,12 +25,15 @@ export default {
     },
     mounted() {
         if(this.$router.currentRoute.path != '/') {
-            this.showToggleBtn = true
+            this.$store.commit('showToggleDesktopBtn', true) 
         } 
     },
     computed: {
         sliderOpen() {
             return this.$store.state.playlistSlider.status
+        },
+        showToggleBtn() {
+            return this.$store.state.playlistSlider.toggleDeskBtn
         },
         sliderLock() {
             if(this.sliderOpen) { 
@@ -52,7 +54,7 @@ export default {
     methods: {
         navigate(dest) {
             if(dest == 'home') {
-                this.showToggleBtn = false
+                this.$store.commit('showToggleDesktopBtn', false) 
                 this.$store.commit('sliderSpecific', true)
                 this.$router.push('/')
             }
@@ -127,5 +129,9 @@ export default {
     .headerContainer {left: -100%; padding: 40px 20px 0;}
     .headerContainer.headerSliderOpen {width: 100%; left: 0;}
     .headerLock {width: 100% !important;}
+}
+
+@media only screen and (max-width: 700px) {
+    .siteNavigation ul {display: none;}
 }
 </style>

@@ -101,7 +101,7 @@ img{text-indent:-9999px}
   width: 100%;
   transition: 0.3s;
   position: absolute;
-  top: 120px;
+  top: 80px;
   left: 0;
   display: flex;
   justify-content: center;
@@ -115,7 +115,7 @@ img{text-indent:-9999px}
 /* global */
 .siteWrapper {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 /* padding */
 .sitePadding {

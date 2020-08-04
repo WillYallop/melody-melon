@@ -1,30 +1,45 @@
 <template>
   <div>
     <div class="siteWrapper">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at turpis eros. Quisque dapibus, tortor ut commodo volutpat, ante erat egestas urna, sit amet pretium lectus risus vitae ante. Suspendisse nec purus ultrices quam auctor faucibus. Integer placerat et diam a egestas. Proin quis luctus orci, ut vestibulum massa. Donec hendrerit nunc eu nulla lobortis convallis. Vivamus sit amet tellus eu nunc aliquet pharetra vel et purus. In sit amet est in sem auctor consectetur laoreet nec turpis. Donec eget purus leo. Aliquam cursus sed tortor efficitur commodo. Vivamus finibus commodo lorem, non gravida sem maximus id. Nulla quis ligula non nunc auctor elementum. Curabitur pellentesque sagittis ligula ut malesuada. Aliquam vitae placerat ante. Vivamus ultricies mauris nec feugiat interdum. Donec quis dignissim augue.</p>
+      
+      <!-- Banner -->
+      <banner 
+      :heading="heading"
+      :subHeading="subHeading"
+      :imageName="imageName"
+      :button="button"/>
+
     </div> 
-  </div>
+  </div>  
 </template>
 
 <script>
+// components
+import banner from '@/components/PageComponents/Banner'
+
 export default {
-    data() {
-        return {
-
-        }
-    },
-    components: {
-
-    },
-    mounted() {
-
-    },
-    computed: {
-
-    },
-    methods: {
+  data() {
+    return {
+      // banner data
+      heading: 'Contact Us',
+      subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
+      imageName: 'contactBannerImage.svg',
+      button: ['submit', 'submit song']
 
     }
+  },
+  components: {
+    banner
+  },
+  mounted() {
+
+  },
+  computed: {
+
+  },
+  methods: {
+
+  }
 }
 </script>
 
