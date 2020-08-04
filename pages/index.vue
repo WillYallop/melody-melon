@@ -13,7 +13,7 @@
     :heading="sectionData.playlistCards.heading"
     :subHeading="sectionData.playlistCards.subHeading"/>
     <!-- playlist cards -->
-    <playlistCards :style="{ 'margin-top' : '-160px' }"/>
+    <playlistCards :style="{ 'margin-top' : '-120px' }"/>
 
     
 

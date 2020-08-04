@@ -26,12 +26,11 @@ export default {
 .sectionContainer {
     width: 100%;
     position: relative;
-
 }
 /* padding right is equal to the width - of background shape */
 .sectionWrapper {
     width: 100%;
-    padding: 40px 460px 200px 40px;
+    padding: 80px 460px 200px 40px;
     position: relative;
     z-index: 20;
 }
@@ -57,14 +56,14 @@ export default {
 
 @media only screen and (max-width: 1700px) {
     .backgroundShapeRight {width: calc(100% - 100px);}
-    .sectionWrapper {padding: 40px 160px 200px 40px;}
+    .sectionWrapper {padding: 80px 160px 200px 40px;}
 }
 @media only screen and (max-width: 1024px) {
     .backgroundShapeRight {width: calc(100% - 100px);}
-    .sectionWrapper {padding: 40px 140px 200px 20px;}
+    .sectionWrapper {padding: 80px 140px 200px 20px;}
 }
 @media only screen and (max-width: 700px) {
     .backgroundShapeRight {width: calc(100% - 20px);}
-    .sectionWrapper {padding: 40px 60px 200px 20px;}
+    .sectionWrapper {padding: 80px 60px 200px 20px;}
 }
 </style>
