@@ -8,7 +8,7 @@
     :imageName="bannerData.imageName"
     :button="bannerData.button"/>
 
-    <!-- section backgroun - always make div bellow margin-top: - 160px -->
+    <!-- section background right - always make div bellow margin-top: - 160px -->
     <sectionBackgroundRight
     :heading="sectionData.playlistCards.heading"
     :subHeading="sectionData.playlistCards.subHeading"/>
@@ -18,8 +18,12 @@
     <!-- Playlist finder link -->
     <playlistFinder/>
 
-    <sectionBackgroundLeft/>
-    
+    <!-- section background left - always make div bellow margin-top: - 160px -->
+    <sectionBackgroundLeft
+    :heading="sectionData.faq.heading"
+    :subHeading="sectionData.faq.subHeading"/>
+    <!-- faq -->
+    <faq :style="{ 'margin-top' : '-120px' }"/>
 
   </div>  
 </template>
@@ -31,6 +35,7 @@ import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroun
 import playlistCards from '@/components/PageComponents/PlaylistCards'
 import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
 import playlistFinder from '@/components/PageComponents/PlaylistFinder'
+import faq from '@/components/PageComponents/Faq'
 
 export default {
   data() {
@@ -48,6 +53,10 @@ export default {
           heading: 'Our Top Playlists',
           subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         },
+        faq: {
+          heading: 'More about us',
+          subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
       },
 
     }
@@ -57,7 +66,8 @@ export default {
     sectionBackgroundRight,
     playlistCards,
     sectionBackgroundLeft,
-    playlistFinder
+    playlistFinder,
+    faq
   },
   mounted() {
 

@@ -1,5 +1,5 @@
 <template>
-    <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen }">   
+    <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerScrolled' : scrollPos > 10 }">   
         <div class="headerWrapper">
             <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')">
             <nav class="siteNavigation">
@@ -17,7 +17,7 @@
 export default {
     data() {
         return {
-
+            scrollPos: 0
         }
     },
     components: {
@@ -33,13 +33,7 @@ export default {
     },
     methods: {
         headerScrolled() {
-            if (window.scrollY > 10) {
-                var element = document.getElementById("siteHeader");
-                element.classList.add("headerScrolled");
-            } else {
-                var element = document.getElementById("siteHeader");
-                element.classList.remove("headerScrolled");
-            }
+            this.scrollPos = window.scrollY
         },
     },
     created() {
@@ -122,6 +116,7 @@ export default {
     /* header slider pos (slider open css is inverted for mobile) */
     .headerContainer {left: -100%; padding: 40px 20px 0;}
     .headerContainer.headerSliderOpen {width: 100%; left: 0;}
+    .headerScrolled {padding: 0 20px;}
 }
 
 @media only screen and (max-width: 700px) {
