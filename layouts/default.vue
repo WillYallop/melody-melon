@@ -1,7 +1,7 @@
 <template>
   <div>
     <siteHeader/>
-    <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen, 'pageLock' : sliderLock }"/>
+    <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen }"/>
     <playlistSlider/>
 
     <div class="siteBackground"></div>
@@ -29,21 +29,6 @@ export default {
   computed: {
     sliderOpen() {
       return this.$store.state.playlistSlider.status
-    },
-    sliderLock() {
-      if(this.sliderOpen) { 
-        if(this.$router.currentRoute.path == '/') {
-          return true
-        } else {
-          return false
-        }
-      } else {
-        if(this.$router.currentRoute.path == '/') {
-          return true
-        }   else {
-          return false
-        }
-      } 
     }
   },
   methods: {
@@ -122,9 +107,7 @@ img{text-indent:-9999px}
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);
 }
-.pageLock {
-  width: calc(100% - 500px) !important;
-}
+
 /* global */
 .siteWrapper {
   width: 100%;
@@ -142,7 +125,7 @@ img{text-indent:-9999px}
   /* page container (slider open css is inverted for mobile) */
   .pageContainer {left: -100%;}
   .pageContainer.pageSliderOpen {width: 100%; left: 0;}
-  .pageLock {width: 100% !important;}
+
   /* padding */
   .sitePadding {padding: 0 20px;}
 }

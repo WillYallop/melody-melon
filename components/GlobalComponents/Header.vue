@@ -1,13 +1,13 @@
 <template>
-    <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerLock' : sliderLock }">   
+    <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen }">   
         <div class="headerWrapper">
-            <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="navigate('home')">
+            <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')">
             <nav class="siteNavigation">
                 <ul>
-                    <li v-on:click="$store.commit('showToggleDesktopBtn', true)"><nuxt-link to="/contact">CONTACT</nuxt-link></li>
-                    <li v-on:click="$store.commit('showToggleDesktopBtn', true)"><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>
+                    <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
+                    <li><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>
                 </ul>
-                <button v-if="showToggleBtn" class="toggleSliderBtn" v-on:click="$store.commit('toggleSlider')">></button>
+                <button class="toggleSliderBtn" v-on:click="$store.commit('toggleSlider')">></button>
             </nav>
         </div>
     </header>
@@ -24,41 +24,14 @@ export default {
 
     },
     mounted() {
-        if(this.$router.currentRoute.path != '/') {
-            this.$store.commit('showToggleDesktopBtn', true) 
-        } 
+
     },
     computed: {
         sliderOpen() {
             return this.$store.state.playlistSlider.status
-        },
-        showToggleBtn() {
-            return this.$store.state.playlistSlider.toggleDeskBtn
-        },
-        sliderLock() {
-            if(this.sliderOpen) { 
-                if(this.$router.currentRoute.path == '/') {
-                    return true
-                } else {
-                    return false
-                }
-            } else {
-                if(this.$router.currentRoute.path == '/') {
-                    return true
-                }   else {
-                    return false
-                }
-            } 
         }
     },
     methods: {
-        navigate(dest) {
-            if(dest == 'home') {
-                this.$store.commit('showToggleDesktopBtn', false) 
-                this.$store.commit('sliderSpecific', true)
-                this.$router.push('/')
-            }
-        },
         headerScrolled() {
             if (window.scrollY > 10) {
                 var element = document.getElementById("siteHeader");
@@ -101,9 +74,7 @@ export default {
 .headerContainer.headerSliderOpen {
   width: calc(100% - 510px);
 }
-.headerLock {
-  width: calc(100% - 510px) !important;
-}
+
 
 /* Scroll down class */
 .headerScrolled {height: 60px;background-color: rgba(30, 30, 30, 0.9);align-items: center; padding: 0 40px;}
@@ -151,7 +122,6 @@ export default {
     /* header slider pos (slider open css is inverted for mobile) */
     .headerContainer {left: -100%; padding: 40px 20px 0;}
     .headerContainer.headerSliderOpen {width: 100%; left: 0;}
-    .headerLock {width: 100% !important;}
 }
 
 @media only screen and (max-width: 700px) {

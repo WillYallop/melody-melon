@@ -1,7 +1,7 @@
 <template>
-    <div class="playlistCardComponent">
+    <div class="playlistCardComponent siteWrapper">
 
-        <div class="playlistCardContainer" v-swiper:mySwiper="swiperOptionMobile">
+        <div v-if="showSlider" class="playlistCardContainer" v-swiper:mySwiper="swiperOptions">
             <div class="swiper-wrapper">
                 <!-- Slide V-For -->
                 <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
@@ -29,6 +29,11 @@
             </div>
         </div>
 
+        
+        <div v-if="!showSlider" class="slideLoading">
+
+        </div>
+
     </div>
 </template>
 
@@ -36,23 +41,14 @@
 export default {
     data() {
         return {
+            showSlider: true,
             //For mobile
-            swiperOptionMobile: {
-                effect: 'coverflow',
+            swiperOptions: {
                 slidesPerView: 'auto',
-                centeredSlides: true,
-
                 loop: true,
                 autoplay: {
                     delay: 2500,
                 },
-                coverflowEffect: { 
-                    rotate: 45,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows : false
-                }
             },
             //PLaylist Array
             playlists: [
@@ -138,6 +134,14 @@ export default {
             ],
         }
     },
+    computed: {
+        sliderOpen() {
+            return this.$store.state.playlistSlider.status
+        },
+        show() {
+            
+        }
+    },
     methods: {
         getImageUrl(name) {
             var images = require.context('../../assets/images/playlistIcons/', false)
@@ -145,6 +149,14 @@ export default {
         },
         navigateToPlaylist(id) {
             this.$router.push('/playlist/' + id)
+        }
+    },
+    watch: {
+        sliderOpen: function (val) {
+            this.showSlider = false
+            setTimeout(() => {
+                this.showSlider = true
+            }, 300)
         }
     }
 }
@@ -157,15 +169,17 @@ export default {
   display: flex;
   justify-content: center;
   z-index: 600;
+  padding: 0 30px;
 }
 .playlistCardContainer {
     width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
 }
 .playlistPreviewCol {
     padding: 0 10px;
     border-radius: 20px;
     width: 33.33%;
-    margin: 10px 0;
 }
 .playlistPreviewColInner {
     overflow: hidden;
@@ -223,7 +237,6 @@ export default {
 .songRow {
     display: flex;
     width: 100%;
-    
     position: relative;
     padding: 8px 0;
     transition: background 0.1s;
@@ -285,16 +298,25 @@ export default {
     overflow: hidden
 }
 
-
+.slideLoading {
+    height: 492px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
 
 
 @media screen and (max-width: 1250px) {
 .playlistPreviewCol {width: 50%;}
 }
 @media screen and (max-width: 1024px) {
-.playlistPreviewCol {width: 33.33%;}
+    .playlistPreviewCol {width: 33.33%;}
+    .playlistCardComponent {padding: 10px;}
 }
 @media screen and (max-width: 767px) {
-.playlistPreviewCol {width: 80%;}
+    .playlistPreviewCol {width: 50%;}
+}
+@media screen and (max-width: 590px) {
+    .playlistPreviewCol {width: 100%;}
 }
 </style>

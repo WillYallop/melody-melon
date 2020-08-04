@@ -1,5 +1,5 @@
 <template>
-  <div class="sliderContainer"  :class="{ 'active' : sliderOpen, 'sliderLock' : sliderLock }">
+  <div class="sliderContainer"  :class="{ 'active' : sliderOpen }">
       
   </div>
 </template>
@@ -21,21 +21,6 @@ export default {
     computed: {
         sliderOpen() {
             return this.$store.state.playlistSlider.status
-        },
-        sliderLock() {
-            if(this.sliderOpen) { 
-                if(this.$router.currentRoute.path == '/') {
-                    return true
-                } else {
-                    return false
-                }
-            } else {
-                if(this.$router.currentRoute.path == '/') {
-                    return true
-                }   else {
-                    return false
-                }
-            } 
         }
 
     },
@@ -60,9 +45,6 @@ export default {
 }
 .sliderContainer.active {
     right: 0;
-}
-.sliderLock {
-    right: 0 !important;
 }
 
 @media only screen and (max-width: 1024px) {

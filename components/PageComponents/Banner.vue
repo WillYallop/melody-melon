@@ -54,8 +54,8 @@ export default {
 .bannerCon {
     display: flex;
     justify-content: space-between;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 .textarea {
     width: 60%;

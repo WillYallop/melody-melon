@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .finderContainer {
   width: 100%;
-  padding: 100px 0;
+  padding: 80px 0;
   display: flex;
   justify-content: center;
   position: relative;
