@@ -1,62 +1,117 @@
 <template>
   <div>
-    <Nuxt />
+    <siteHeader/>
+    <Nuxt class="pageContainer sitePadding" :class="{ 'pageSliderOpen' : sliderOpen, 'pageLock' : sliderLock }"/>
+    <playlistSlider/>
   </div>
 </template>
 
+<script>
+//components
+import siteHeader from '@/components/GlobalComponents/Header'
+import playlistSlider from '@/components/GlobalComponents/PlaylistSlider'
+
+export default {
+  data() {
+    return {
+
+    }
+  },
+  components: {
+    siteHeader,
+    playlistSlider
+  },
+  mounted() {
+
+  },
+  computed: {
+    sliderOpen() {
+      return this.$store.state.playlistSlider.status
+    },
+    sliderLock() {
+      if(this.$router.currentRoute.path == '/') { 
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  methods: {
+
+  }
+}
+</script>
+
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+  -webkit-tap-highlight-color: transparent !important;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #EE7752, #E72B51);
+  background-size: 300% 300%;
+	animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+	0% {	background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {	background-position: 0% 50%;}
 }
 
+#app {
+  height: auto;
+  min-height: 100%;
+}
+button {font-family: 'Montserrat', sans-serif;}
+button:focus {outline: none;}
+input {font-family: 'Montserrat', sans-serif;}
+select {font-family: 'Montserrat', sans-serif;}
+textarea {font-family: 'Montserrat', sans-serif;}
+input:focus {outline: none;}
+textarea:focus {outline: none;}
+::selection {background-color: #43B497; color: #FFF;}
+img{text-indent:-9999px}
+
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+
+.pageContainer {
+  width: 100%;
+  transition: 0.3s;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+.pageContainer.pageSliderOpen {
+  width: calc(100% - 500px);
+}
+.pageLock {
+  width: calc(100% - 500px) !important;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+/* padding */
+.sitePadding {
+  padding: 0 40px;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@media only screen and (max-width: 1024px) {
+  /* page container */
+  .pageContainer.pageSliderOpen {width: 100%; left: -100%;}
+  .pageLock {width: 100% !important;}
+  /* padding */
+  .sitePadding {padding: 0 20px;}
 }
 </style>
