@@ -59,7 +59,7 @@ export default {
     .backgroundShapeRight {width: calc(100% - 100px);}
     .sectionWrapper {padding: 80px 200px 200px 40px;}
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1070px) {
     .backgroundShapeRight {width: calc(100% - 100px);}
     .sectionWrapper {padding: 80px 200px 200px 20px;}
 }

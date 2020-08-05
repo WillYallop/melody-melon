@@ -112,11 +112,12 @@ export default {
     margin-left: 20px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1070px) {
     /* header slider pos (slider open css is inverted for mobile) */
     .headerContainer {left: -100%; padding: 40px 20px 0; border-radius: 0 !important;}
     .headerContainer.headerSliderOpen {width: 100%; left: 0;}
     .headerScrolled {padding: 0 20px;}
+    .toggleSliderBtn {display: none;}
 }
 
 @media only screen and (max-width: 700px) {

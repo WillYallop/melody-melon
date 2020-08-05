@@ -100,20 +100,20 @@ export default {
 }
 
 @media only screen and (max-width: 1350px) {
-    .infoCardsContainer {flex-wrap: wrap; justify-content: center;}
-    .infoColOuter {width: 80%; margin-top: 20px;}
-    .infoColOuter:first-child {margin-top: 0;}
+    .pageSliderOpen .infoCardsContainer {flex-wrap: wrap; justify-content: center;}
+    .pageSliderOpen .infoColOuter {width: 80%; margin-top: 20px;}
+    .pageSliderOpen .infoColOuter:first-child {margin-top: 0;}
 }
-@media only screen and (max-width: 1024px) {
-    .infoCardsContainer {flex-wrap: wrap; justify-content: space-between;}
-    .infoColOuter {width: 32%; margin-top: 0;}
+@media only screen and (max-width: 1070px) {
+    .infoCardsContainer {flex-wrap: wrap !important; justify-content: space-between !important;}
+    .infoColOuter {width: 32% !important; margin-top: 0 !important;}
 }
 @media only screen and (max-width: 760px) {
-    .infoCardsContainer {flex-wrap: wrap; justify-content: center;}
-    .infoColOuter {width: 80%; margin-top: 20px;}
-    .infoColOuter:first-child {margin-top: 0;}
+    .infoCardsContainer {flex-wrap: wrap !important; justify-content: center !important;}
+    .infoColOuter {width: 80% !important; margin-top: 20px !important;}
+    .infoColOuter:first-child {margin-top: 0 !important;}
 }
 @media only screen and (max-width: 590px) {
-    .infoColOuter {width: 100%;}
+    .infoColOuter {width: 100% !important;}
 }
 </style>

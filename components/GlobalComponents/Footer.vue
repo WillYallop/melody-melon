@@ -114,7 +114,7 @@ export default {
 }
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1070px) {
     .pageSliderOpen .footerContainer {width: 100%; border-radius: 0;}
     .socialLinksContainer {width: 100%; margin-bottom: 20px;}
     .bottomRow {flex-wrap: wrap-reverse;}

@@ -60,10 +60,10 @@ export default {
     .backgroundShapeRight {width: calc(100% - 100px);}
     .sectionWrapper {padding: 80px 40px 200px 200px;}
 }
-@media only screen and (min-width: 1024.1px) {
+@media only screen and (min-width: 1070.1px) {
     .pageSliderOpen .backgroundShapeRight {border-radius: 200px 20px 20px 200px;right: 10px;}
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1070px) {
     .backgroundShapeRight {width: calc(100% - 100px); border-radius: 200px 0 0 200px; right: 0;}
     .sectionWrapper {padding: 80px 20px 200px 200px;}
 }

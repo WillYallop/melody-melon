@@ -4,6 +4,7 @@
     <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen }"/>
     <playlistSlider/>
 
+    <div class="mobilePlaylistToggle" v-on:click="$store.commit('toggleSlider')">></div>
     <div class="siteBackground"></div>
   </div>
 </template>
@@ -121,8 +122,24 @@ img{text-indent:-9999px}
   padding-right: 40px;
 }
 
+.mobilePlaylistToggle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #FFF;
+  z-index: 1000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1070.1px) {
+  .mobilePlaylistToggle {display: none;}
+}
+@media only screen and (max-width: 1070px) {
   /* page container (slider open css is inverted for mobile) */
   .pageContainer {left: -100%;}
   .pageContainer.pageSliderOpen {width: 100%; left: 0;}

@@ -392,7 +392,7 @@ export default {
 @media screen and (max-width: 1250px) {
     .pageSliderOpen .playlistPreviewCol {width: 50%;}
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1070px) {
     .playlistPreviewCol {width: 33.33% !important;}
     .playlistCardComponent {padding: 10px;}
 }

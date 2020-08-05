@@ -102,7 +102,7 @@ export default {
     /* hide image if slider open */
     .pageSliderOpen .bannerImg {display: none;}
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1070px) {
     /* hide image if slider open */
     .pageSliderOpen .bannerImg {display: flex;}
 }
@@ -115,7 +115,7 @@ export default {
     .imagearea { width: 100%; padding-left: 0; margin-top: 40px;}
     .textarea {min-width: auto; width: 100%;}
     .textarea h1 {font-size: 8vw; line-height: 8.5vw;}
-    .pageSliderOpen .bannerImg {width: 80%;}
+    .bannerImg {width: 80%;}
 }
 
 </style>
