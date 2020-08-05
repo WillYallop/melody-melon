@@ -42,7 +42,6 @@ export default {
             if(dist == 'submit') {
                 // open modal
             } else {
-                this.$store.commit('showToggleDesktopBtn', true) 
                 this.$router.push(dist)
             }
         }
@@ -114,8 +113,9 @@ export default {
 @media only screen and (max-width: 700px) {
     .bannerCon {flex-wrap: wrap;}
     .imagearea { width: 100%; padding-left: 0; margin-top: 40px;}
-    .textarea {min-width: auto; width: 100%;}    
+    .textarea {min-width: auto; width: 100%;}
     .textarea h1 {font-size: 8vw; line-height: 8.5vw;}
+    .pageSliderOpen .bannerImg {width: 80%;}
 }
 
 </style>

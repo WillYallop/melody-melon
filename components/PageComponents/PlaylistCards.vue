@@ -1,6 +1,7 @@
 <template>
     <div class="playlistCardComponent siteWrapper">
         
+        <!-- Slider -->
         <div v-if="showSlider" class="cardContainer">
             <div class="playlistCardContainer" v-swiper:mySwiper="swiperOptions">
                 <div class="swiper-wrapper">
@@ -13,7 +14,6 @@
                                 <div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>
                             </div>
                             <div class="playlistIframeContainer">
-                                <!-- Song 1 -->
                                 <div class="songRow" :key="song.number" v-for="song in playlist.songs">
                                     <div class="rowTextareHeader">
                                         <p class="songNumberP">{{song.number}}</p>
@@ -30,10 +30,8 @@
                 </div>
             </div>
         </div>
-        
-        <div v-if="!showSlider" class="slideLoading">
-
-        </div>
+        <!-- Slider Loading -->
+        <div v-if="!showSlider" class="slideLoading"></div>
 
     </div>
 </template>
@@ -140,9 +138,7 @@ export default {
         this.$nextTick(() => {
             window.addEventListener('resize', this.checkAndSetOptions);
         })
-
         this.setSwiperOptions()
-
     },
     computed: {
         sliderOpen() {

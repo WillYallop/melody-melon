@@ -2,21 +2,22 @@
     <div class="finderContainer">
         <div class="finderWrapper sitePadding"> 
 
-            <div class="finderImgContainer">
-                <div class="imgContainerMobile">
-                    <img class="mobileImg" src="../../assets/images/playlistFinderMobile.png" alt=""> 
-                </div>
-                <div class="imgContainerDesktop">
-                    <img class="desktopImg" src="../../assets/images/playlistFinderDesktio.png" alt="">
-                </div>
-                <div class="mobileBtnContainer">
+
+            <div class="finderTextarea">
+                <h4>Follow us on Spotify</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt.</p>
+                <div>
                     <button class="finderBtnStyle">visit</button>
                 </div>
             </div>
-            <div class="finderTextarea">
-                <h4>Find Your Perfect Playlist</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt.</p>
-                <div>
+            <div class="finderImgContainer">
+                <div class="imgContainerMobile">
+                    <img class="mobileImg" src="../../assets/images/spotifyMobile.png" alt=""> 
+                </div>
+                <div class="imgContainerDesktop">
+                    <img class="desktopImg" src="../../assets/images/spotifyDesktop.png" alt="">
+                </div>
+                <div class="mobileBtnContainer">
                     <button class="finderBtnStyle">visit</button>
                 </div>
             </div>
@@ -54,9 +55,8 @@ export default {
 .finderImgContainer { 
     display: flex;
     flex-wrap: wrap;
-    padding-right: 80px;
+    padding-left: 80px;
 }
-
 .imgContainerDesktop {
     display: none;
     width: 100%;
@@ -108,13 +108,13 @@ export default {
 }
 
 @media screen and (max-width: 1310px) {
-    .finderImgContainer {padding-right: 40px;}
+    .finderImgContainer {padding-left: 40px;}
 }
 @media screen and (max-width: 580px) {
     .imgContainerMobile {display: none;}
     .imgContainerDesktop {display: flex;}
-    .finderWrapper {flex-wrap: wrap-reverse;}
-    .finderImgContainer {width: 100%; padding-right: 0; margin-top: 40px;}
+    .finderWrapper {flex-wrap: wrap;}
+    .finderImgContainer {width: 100%; padding-left: 0; margin-top: 40px;}
     .mobileBtnContainer {display: flex;}
     .finderTextarea .finderBtnStyle {display: none;}
     .finderTextarea {width: 100%; text-align: center;}

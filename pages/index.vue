@@ -26,8 +26,10 @@
     <accordion :style="{ 'margin-top' : '-120px' }"
     :accordionData="accordionData"/>
 
+    <spotifyPlug/>
+
     <!-- section background right - always make div bellow margin-top: - 160px -->
-    <sectionBackgroundRight :style="{ 'margin-top' : '80px' }"/>
+    <sectionBackgroundRight/>
     <!-- Info Cards -->
     <infoCards :style="{ 'margin-top' : '-200px' }"/>
 
@@ -42,6 +44,7 @@ import playlistCards from '@/components/PageComponents/PlaylistCards'
 import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
 import playlistFinder from '@/components/PageComponents/PlaylistFinder'
 import accordion from '@/components/PageComponents/Accordion'
+import spotifyPlug from '@/components/PageComponents/SpotifyPlug'
 import infoCards from '@/components/PageComponents/InfoCards'
 
 export default {
@@ -81,6 +84,7 @@ export default {
     sectionBackgroundLeft,
     playlistFinder,
     accordion,
+    spotifyPlug,
     infoCards
   },
   mounted() {
