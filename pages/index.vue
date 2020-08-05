@@ -33,6 +33,8 @@
     <!-- Info Cards -->
     <infoCards :style="{ 'margin-top' : '-200px' }"/>
 
+    <footerComp/>
+
   </div>  
 </template>
 
@@ -46,6 +48,7 @@ import playlistFinder from '@/components/PageComponents/PlaylistFinder'
 import accordion from '@/components/PageComponents/Accordion'
 import spotifyPlug from '@/components/PageComponents/SpotifyPlug'
 import infoCards from '@/components/PageComponents/InfoCards'
+import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
   data() {
@@ -85,7 +88,8 @@ export default {
     playlistFinder,
     accordion,
     spotifyPlug,
-    infoCards
+    infoCards,
+    footerComp
   },
   mounted() {
 

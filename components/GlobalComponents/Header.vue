@@ -57,7 +57,6 @@ export default {
     height: 80px;
     width: 100%;
     background-color: rgba(30, 30, 30, 0);
-    border-radius: 0 0 20px 0;
     transition: 0.3s;
     padding: 40px 40px 0;
     display: flex;
@@ -67,11 +66,12 @@ export default {
 
 .headerContainer.headerSliderOpen {
   width: calc(100% - 510px);
+  border-radius: 0 0 20px 0;
 }
-
 
 /* Scroll down class */
 .headerScrolled {height: 60px;background-color: rgba(30, 30, 30, 0.9);align-items: center; padding: 0 40px;}
+
 
 .headerWrapper {
     height: 100%;
@@ -114,7 +114,7 @@ export default {
 
 @media only screen and (max-width: 1024px) {
     /* header slider pos (slider open css is inverted for mobile) */
-    .headerContainer {left: -100%; padding: 40px 20px 0;}
+    .headerContainer {left: -100%; padding: 40px 20px 0; border-radius: 0 !important;}
     .headerContainer.headerSliderOpen {width: 100%; left: 0;}
     .headerScrolled {padding: 0 20px;}
 }
