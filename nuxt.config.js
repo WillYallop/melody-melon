@@ -25,6 +25,20 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faChevronDown', 'faChevronUp', 'faChevronRight', 'faChevronLeft', 'faSearch', 'faHeadphones', 'faBars']
+        },
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faInstagram', 'faFacebookF', 'faSpotify']
+        }
+      ]
+    }],
+
   ],
   axios: {},
   build: {

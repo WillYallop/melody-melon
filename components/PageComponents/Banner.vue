@@ -117,5 +117,8 @@ export default {
     .textarea h1 {font-size: 8vw; line-height: 8.5vw;}
     .bannerImg {width: 80%;}
 }
+@media only screen and (max-width: 590px) {
+    .bannerCon {padding-top: 60px;}
+}
 
 </style>

@@ -4,7 +4,7 @@
     <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen }"/>
     <playlistSlider/>
 
-    <div class="mobilePlaylistToggle" v-on:click="$store.commit('toggleSlider')">></div>
+    <div class="mobilePlaylistToggle" v-on:click="$store.commit('toggleSlider')"><fa class="fas" :icon="['fas', 'headphones']" /></div>
     <div class="siteBackground"></div>
   </div>
 </template>
@@ -134,6 +134,10 @@ img{text-indent:-9999px}
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.mobilePlaylistToggle .fas {
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 1070.1px) {

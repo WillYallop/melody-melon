@@ -1,65 +1,65 @@
 <template>
-    <div class="sliderContainer"  :class="{ 'active' : sliderOpen }">
-        <div class="playlistSliderInner">
-            
-            <no-ssr>
-                <!-- Playlist Search -->
-                <div class="playlistSearchContainer">
-                    
-                    <h4 class="playlistTitle">Our Playlists</h4>
-
-                    <div v-on:click="playlistSerachInputContainer = !playlistSerachInputContainer" class="playlistSearchInput" ref="playlistSearchInput">
-                        <p class="inputText"><span v-if="genereQuery == 'all'">Filter by genre or mood</span><span class="capitaliseText" v-if="genereQuery != 'all'">{{genereQuery}}</span></p><fa class="fas" :icon="['fas', 'plus']" />
-
-                        <div v-if="playlistSerachInputContainer"  class="playlistSearchInputsContainer" v-closable="{exclude: ['playlistSearchInput'], handler: 'closePlaylistSearchInputContainer'}">
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'all'"><p>All</p></div>
-                                <div class="col" v-on:click="genereQuery = 'top hits'"><p>Top Hits</p></div>
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'pop'"><p>Pop</p></div>
-                                <div class="col" v-on:click="genereQuery = 'urban'"><p>Urban</p></div>
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'party'"><p>Party</p></div>
-                                <div class="col" v-on:click="genereQuery = 'feel good'"><p>Feel Good</p></div>
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'mood'"><p>Mood</p></div>
-                                <div class="col" v-on:click="genereQuery = 'indie'"><p>Indie</p></div>
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'nostalgia'"><p>Nostalgia</p></div>
-                                <div class="col" v-on:click="genereQuery = 'hiphop'"><p>Hip Hop</p></div>
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'hot'"><p>Hot</p></div>
-                                <div class="col" v-on:click="genereQuery = 'jazz'"><p>Jazz</p></div> 
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'workout'"><p>Workout</p></div>
-                                <div class="col" v-on:click="genereQuery = 'soundtrack'"><p>Soundtrack</p></div>
-                            </div>
-                            <div class="row">
-                                <div class="col" v-on:click="genereQuery = 'chill'"><p>Chill</p></div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </no-ssr>
-
-            <!-- Playlist Results -->
-            <div class="playlistResultsContainer">
-                <!-- Results -->
-                <div class="playlistBoxContainer" :key="results.id" v-for="results in playlistSearchQuery">
-                    <img class="playlistBoxInner" :src="getImageUrl(results.icon)" alt="Playlist Artwork">
-                    <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl) ; playlistAndPageSlideToggle()"></div>
-                </div>
-            </div>
+  <div class="sliderContainer"  :class="{ 'active' : sliderOpen }">
+    <div class="playlistSliderInner">
         
+      <div class="titleArea">
+        <h4 class="playlistTitle">Our Playlists</h4>
+      </div>
+
+      <no-ssr>
+        <!-- Playlist Search -->
+        <div class="playlistSearchContainer">
+          <div v-on:click="playlistSerachInputContainer = !playlistSerachInputContainer" class="playlistSearchInput" ref="playlistSearchInput">
+            <p class="inputText"><span v-if="genereQuery == 'all'">Filter by genre or mood</span><span class="capitaliseText" v-if="genereQuery != 'all'">{{genereQuery}}</span></p><fa class="fas" :icon="['fas', 'search']" />
+
+            <div v-if="playlistSerachInputContainer"  class="playlistSearchInputsContainer" v-closable="{exclude: ['playlistSearchInput'], handler: 'closePlaylistSearchInputContainer'}">
+              <div class="row">
+                <div class="col" v-on:click="genereQuery = 'all'"><p>All</p></div>
+                  <div class="col" v-on:click="genereQuery = 'top hits'"><p>Top Hits</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'pop'"><p>Pop</p></div>
+                  <div class="col" v-on:click="genereQuery = 'urban'"><p>Urban</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'party'"><p>Party</p></div>
+                  <div class="col" v-on:click="genereQuery = 'feel good'"><p>Feel Good</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'mood'"><p>Mood</p></div>
+                  <div class="col" v-on:click="genereQuery = 'indie'"><p>Indie</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'nostalgia'"><p>Nostalgia</p></div>
+                  <div class="col" v-on:click="genereQuery = 'hiphop'"><p>Hip Hop</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'hot'"><p>Hot</p></div>
+                  <div class="col" v-on:click="genereQuery = 'jazz'"><p>Jazz</p></div> 
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'workout'"><p>Workout</p></div>
+                  <div class="col" v-on:click="genereQuery = 'soundtrack'"><p>Soundtrack</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'chill'"><p>Chill</p></div> 
+                </div>
+              </div>
+          </div>
         </div>
+      </no-ssr>
+
+      <!-- Playlist Results -->
+      <div class="playlistResultsContainer">
+        <!-- Results -->
+        <div class="playlistBoxContainer" :key="results.id" v-for="results in playlistSearchQuery">
+          <img class="playlistBoxInner" :src="getImageUrl(results.icon)" alt="Playlist Artwork">
+          <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl) ; playlistAndPageSlideToggle()"></div>
+        </div>
+      </div>
+    
     </div>
+  </div>
 </template>
 
 <script>
@@ -159,16 +159,19 @@ export default {
 
 /* Playlist Search */
 .playlistSearchContainer {
-  padding: 30px 30px 20px;
+  padding: 20px 30px;
   z-index: 300;
   position: sticky;
-  top: 0;
+  top: -1px;
+  background-color: #111111;
+}
+.titleArea {
+  padding: 30px 30px 0;
   background-color: #111111;
 }
 .playlistTitle {
-    color: #FFF;
-    font-size: 20px;
-    margin-bottom: 20px;
+  color: #FFF;
+  font-size: 20px;
 }
 .playlistSearchInput {
   width: 100%;
@@ -188,7 +191,7 @@ export default {
 }
 .playlistSearchInput .fas {
   color: #FFF;
-  font-size: 10px;
+  font-size: 16px;
 }
 .inputText {
   padding: 0;
@@ -307,7 +310,8 @@ export default {
     .sliderContainer.active {right: -100% !important;}
     .playlistSliderInner {border-radius: 0;}
     /* Padding */
-    .playlistSearchContainer {padding: 30px 20px 20px;}
+    .titleArea {padding: 30px 20px 0;}
+    .playlistSearchContainer {padding: 20px;}
     .playlistResultsContainer {padding: 15px 15px 0;}
     .playlistBoxContainer {width: 25%;}
 }
