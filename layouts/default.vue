@@ -105,6 +105,7 @@ img{text-indent:-9999px}
   display: flex;
   flex-direction: column;
   z-index: 10;
+  overflow: hidden;
 }
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);

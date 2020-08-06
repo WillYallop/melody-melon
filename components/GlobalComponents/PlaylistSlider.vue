@@ -54,7 +54,7 @@
         <!-- Results -->
         <div class="playlistBoxContainer" :key="results.id" v-for="results in playlistSearchQuery">
           <img class="playlistBoxInner" :src="getImageUrl(results.icon)" alt="Playlist Artwork">
-          <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl) ; playlistAndPageSlideToggle()"></div>
+          <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl); mobileToggleSlider()"></div>
         </div>
       </div>
     
@@ -66,47 +66,54 @@
 import playlistsJson from '@/components/Playlists.json'
 
 export default {
-    data() {
-        return {
-            playlistObject: playlistsJson,
-            genereQuery: "all",
-            playlistSerachInputContainer: false,
-        }
-    },
-    components: {
+  data() {
+    return {
+      playlistObject: playlistsJson,
+      genereQuery: "all",
+      playlistSerachInputContainer: false,
+    }
+  },
+  components: {
 
-    },
-    mounted() {
+  },
+  mounted() {
 
 
+  },
+  computed: {
+    sliderOpen() {
+      return this.$store.state.playlistSlider.status
     },
-    computed: {
-        sliderOpen() {
-            return this.$store.state.playlistSlider.status
-        },
-        playlistSearchQuery() {
-            if(this.genereQuery != 'all') {
-                var target = this.playlistObject.filter( ({ categories }) => categories.includes(this.genereQuery))
-                return target
-            } else {
-                return this.playlistObject
-            }
-        }
-
-    },
-    methods: {
-      closePlaylistSearchInputContainer() {
-        this.playlistSerachInputContainer = false
-      },
-      //Gets the dynamic image url for each program
-      getImageUrl(name) {
-        var images = require.context('../../assets/images/playlistIcons/', false)
-        return images('./' + name)
-      },
-      navigateToPlaylist(id) {
-        this.$router.push('/playlist/' + id)
+    playlistSearchQuery() {
+      if(this.genereQuery != 'all') {
+        var target = this.playlistObject.filter( ({ categories }) => categories.includes(this.genereQuery))
+        return target
+      } else {
+        return this.playlistObject
       }
     }
+
+  },
+  methods: {
+    closePlaylistSearchInputContainer() {
+      this.playlistSerachInputContainer = false
+    },
+    //Gets the dynamic image url for each program
+    getImageUrl(name) {
+      var images = require.context('../../assets/images/playlistIcons/', false)
+      return images('./' + name)
+    },
+    navigateToPlaylist(id) {
+      this.$router.push('/playlist/' + id)
+    },
+    mobileToggleSlider() {
+      if (process.client) {
+        if(window.innerWidth <= 1070) {
+          this.$store.commit('toggleSlider')
+        }
+      }
+    }
+  }
 }
 </script>
 
