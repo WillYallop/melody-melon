@@ -6,6 +6,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'theme_color', content: '#080808' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
@@ -24,7 +25,7 @@ export default {
   ],
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
+    'nuxt-lazy-load',
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
@@ -38,10 +39,37 @@ export default {
         }
       ]
     }],
-
+    [
+      "nuxt-compress",
+      {
+        gzip: {
+          cache: true
+        },
+        brotli: {
+          threshold: 10240
+        }
+      }
+    ],
+    '@nuxtjs/pwa'
   ],
   axios: {},
   build: {
+  },
+  pwa: { 
+    workbox: {}, 
+    meta: { 
+      theme_color: '#000000', 
+      background_color: "#080808",
+      lang: 'en', 
+      nativeUI: true,
+      description: "Melody Melon",
+    }, 
+    icon: {}, 
+    manifest: { 
+      name: 'Melody Melon', 
+      lang: 'en', 
+      display: 'standalone' 
+    } 
   },
   env: {
     authHeader: 'Bearer UUt0YVA0NjlXK0VU',

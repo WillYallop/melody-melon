@@ -1,0 +1,78 @@
+<template>
+  <div>
+      
+    <!-- Banner -->
+    <banner 
+    :heading="bannerData.heading"
+    :subHeading="bannerData.subHeading"
+    :imageName="bannerData.imageName"
+    :button="bannerData.button"/>
+
+    <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
+    <sectionBackgroundRight
+    :heading="sectionData.faq.heading"
+    :subHeading="sectionData.faq.subHeading"/>/>
+    <!-- Accordion -->
+    <accordion :style="{ 'margin-top' : '-120px', 'padding-bottom' : '80px' }"
+    :accordionData="accordionData"/>
+
+    <!-- Footer -->
+    <footerComp/>
+
+  </div>  
+</template>
+
+<script>
+// components
+import banner from '@/components/PageComponents/Banner'
+import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
+import footerComp from '@/components/GlobalComponents/Footer'
+import accordion from '@/components/PageComponents/Accordion'
+
+export default {
+  data() {
+    return {
+      // banner data
+      bannerData: {
+        heading: 'For Artists',
+        subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
+        imageName: 'contactBannerImage.svg',
+        button: ['submit', 'submit song']
+      },
+      // section data
+      sectionData: {
+        faq: {
+          heading: 'More about us',
+          subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
+      },
+      accordionData: [
+        { id: 1, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
+        { id: 2, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
+        { id: 3, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
+        { id: 4, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."}
+      ]
+    }
+  },
+  components: {
+    banner,
+    sectionBackgroundRight,
+    footerComp,
+    accordion
+
+  },
+  mounted() {
+
+  },
+  computed: {
+
+  },
+  methods: {
+
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
