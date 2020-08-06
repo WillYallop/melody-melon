@@ -31,7 +31,7 @@ export default {
     return {
       // banner data
       bannerData: {
-        heading: 'Contact Us',
+        heading: 'Check Out Our Range of Playlists',
         subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
         imageName: 'contactBannerImage.svg',
         button: ['submit', 'submit song']

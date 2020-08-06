@@ -4,7 +4,7 @@
         <div class="rowContainer" :key="row.id" v-for="row in accordionData">
             <div class="accordionHeader" :class="{ 'headerOpen' : openAccordionArray[row.id - 1] }" v-on:click="openAccordionArray[row.id - 1] = !openAccordionArray[row.id - 1]; accordionKey++">
                 <p>{{row.title}}</p>
-                <button class="toggleAccordBtn" >></button>
+                <button class="toggleAccordBtn" ><fa v-if="!openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-down']" /><fa v-if="openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-up']" /></button>
             </div>
             <div class="accordionBody" :class="{ 'bodyOpen' : openAccordionArray[row.id - 1] }"  :key="accordionKey" v-if="openAccordionArray[row.id - 1]">
                 <p>{{row.body}}</p>
@@ -69,10 +69,14 @@ export default {
 .toggleAccordBtn {
     height: 30px;
     width: 30px;
-    background-color: #FFF;
+    background-color: #111111;
     border-radius: 50%;
     border: none;
     cursor: pointer;
+}
+.toggleAccordBtn .fas {
+    color: #3DA389;
+    font-size: 14px;
 }
 .accordionBody {
     width: 100%;

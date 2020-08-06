@@ -8,7 +8,7 @@
     :imageName="bannerData.imageName"
     :button="bannerData.button"/>
 
-    <!-- section background right - always make div bellow margin-top: - 160px -->
+    <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
     <sectionBackgroundRight
     :heading="sectionData.playlistCards.heading"
     :subHeading="sectionData.playlistCards.subHeading"/>
@@ -18,7 +18,7 @@
     <!-- Playlist finder link -->
     <playlistFinder/>
 
-    <!-- section background left - always make div bellow margin-top: - 160px -->
+    <!-- section background left - always make div bellow margin-top: -120px if section has text else its -200px -->
     <sectionBackgroundLeft
     :heading="sectionData.faq.heading"
     :subHeading="sectionData.faq.subHeading"/>
@@ -26,13 +26,15 @@
     <accordion :style="{ 'margin-top' : '-120px' }"
     :accordionData="accordionData"/>
 
+    <!-- Spotify Plug -->
     <spotifyPlug/>
 
-    <!-- section background right - always make div bellow margin-top: - 160px -->
+    <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
     <sectionBackgroundRight/>
     <!-- Info Cards -->
     <infoCards :style="{ 'margin-top' : '-200px' }"/>
 
+    <!-- Footer -->
     <footerComp/>
 
   </div>  

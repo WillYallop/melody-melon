@@ -10,14 +10,14 @@
                     <img class="desktopImg" src="../../assets/images/playlistFinderDesktio.png" alt="">
                 </div>
                 <div class="mobileBtnContainer">
-                    <button class="finderBtnStyle">visit</button>
+                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">visit</button>
                 </div>
             </div>
             <div class="finderTextarea">
                 <h4>Find Your Perfect Playlist</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt.</p>
                 <div>
-                    <button class="finderBtnStyle">visit</button>
+                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">visit</button>
                 </div>
             </div>
         </div>
@@ -30,6 +30,12 @@ export default {
     data() {
         return {
 
+        }
+    },
+    methods: {
+        navigateTo(url) {
+            var win = window.open(url, '_blank')
+            win.focus()
         }
     }
 }

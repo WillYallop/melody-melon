@@ -43,6 +43,10 @@ export default {
   axios: {},
   build: {
   },
+  env: {
+    authHeader: 'Bearer UUt0YVA0NjlXK0VU',
+    apiBaseUrl: 'https://api.melodymelon.com'
+  },
   server: {     
     port: 8000,
     host: '0.0.0.0',  

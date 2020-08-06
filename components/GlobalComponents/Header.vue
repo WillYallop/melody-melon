@@ -127,6 +127,12 @@ export default {
     border: none;
     margin-left: 20px;
 }
+.headerSliderOpen .toggleSliderBtn {
+    margin-right: -10px;
+}
+.toggleSliderBtn .fas {
+    font-size: 10px;
+}
 
 .mobielNavToggleBtn {
     height: 40px;

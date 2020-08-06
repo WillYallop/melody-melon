@@ -97,6 +97,7 @@ img{text-indent:-9999px}
 /* page container */
 .pageContainer {
   width: 100%;
+  min-height: 100%;
   transition: 0.3s;
   position: absolute;
   top: 80px;
@@ -104,7 +105,6 @@ img{text-indent:-9999px}
   display: flex;
   flex-direction: column;
   z-index: 10;
-  overflow: hidden;
 }
 .pageContainer.pageSliderOpen {
   width: calc(100% - 500px);

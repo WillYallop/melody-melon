@@ -14,8 +14,9 @@
                     <p>Melody Melon ©{{getYear}}. All Rights Reserved.</p>
                 </div>
                 <div class="socialLinksContainer">
-                    <div class="linkCon"></div>
-                    <div class="linkCon"></div>
+                    <div class="linkCon spotifyBg" v-on:click="navigateTo('https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y')"><fa class="fas" :icon="['fab', 'spotify']" /></div>
+                    <div class="linkCon instaBg" v-on:click="navigateTo('https://www.instagram.com/melodymelonmusic/')"><fa class="fas" :icon="['fab', 'instagram']" /></div>
+                    <div class="linkCon facebookBg" v-on:click="navigateTo('')"><fa class="fas" :icon="['fab', 'facebook-f']" /></div>
                 </div>
             </div>
         </div>
@@ -36,7 +37,10 @@ export default {
         }
     },
     methods: {
-
+        navigateTo(url) {
+            var win = window.open(url, '_blank')
+            win.focus()
+        }
     }
 }
 </script>
@@ -102,17 +106,28 @@ export default {
 .socialLinksContainer {
     display: flex;
 }
+
 .linkCon {
     height: 30px;
     width: 30px;
     border-radius: 50%;
     background-color: #FFF;
     margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.linkCon .fas {
+    color: #FFF;
+    font-size: 16px;
 }
 .linkCon:first-child {
     margin-left: 0;
 }
-
+.spotifyBg {background-color: #1DB954;} 
+.instaBg {background-color: #E1306C;} 
+.facebookBg {background-color: #006AFF;} 
 
 @media only screen and (max-width: 1070px) {
     .pageSliderOpen .footerContainer {width: 100%; border-radius: 0;}

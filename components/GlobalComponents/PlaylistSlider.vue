@@ -95,17 +95,17 @@ export default {
 
     },
     methods: {
-        closePlaylistSearchInputContainer() {
-            this.playlistSerachInputContainer = false
-        },
-        //Gets the dynamic image url for each program
-        getImageUrl(name) {
-            var images = require.context('../../assets/images/playlistIcons/', false)
-            return images('./' + name)
-        },
-        navigateToPlaylist(id) {
-            this.$router.push('/playlist/' + id)
-        }
+      closePlaylistSearchInputContainer() {
+        this.playlistSerachInputContainer = false
+      },
+      //Gets the dynamic image url for each program
+      getImageUrl(name) {
+        var images = require.context('../../assets/images/playlistIcons/', false)
+        return images('./' + name)
+      },
+      navigateToPlaylist(id) {
+        this.$router.push('/playlist/' + id)
+      }
     }
 }
 </script>
