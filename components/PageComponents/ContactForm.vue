@@ -373,7 +373,7 @@ export default {
     top: 20px;
     left: 10px;
     width: 1px;
-    background-color: #E72B51;
+    background-color: #292929;
 }
 .nextStepsRow:last-child .iconLineDown {
     display: none;

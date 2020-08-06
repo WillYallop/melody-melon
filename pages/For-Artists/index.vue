@@ -11,7 +11,7 @@
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
     <sectionBackgroundRight
     :heading="sectionData.faq.heading"
-    :subHeading="sectionData.faq.subHeading"/>/>
+    :subHeading="sectionData.faq.subHeading"/>
     <!-- Accordion -->
     <accordion :style="{ 'margin-top' : '-120px', 'padding-bottom' : '80px' }"
     :accordionData="accordionData"/>

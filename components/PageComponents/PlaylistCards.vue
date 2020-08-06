@@ -166,25 +166,6 @@ export default {
                             },
                         }
                         this.reloadSlider()
-                    } else {
-                        this.swiperOptions = {
-                            effect: 'coverflow',
-                            slidesPerView: 'auto',
-                            centeredSlides: true,
-
-                            loop: true,
-                            autoplay: {
-                                delay: 2500,
-                            },
-                            coverflowEffect: { 
-                                rotate: 45,
-                                stretch: 0,
-                                depth: 100,
-                                modifier: 1,
-                                slideShadows : false
-                            }
-                        }
-                        this.reloadSlider()
                     }
                 }
                 // set new height
@@ -233,7 +214,7 @@ export default {
     },
     watch: {
         sliderOpen: function (val) {
-            this.reloadSlider()
+            this.checkAndSetOptions()
         }
     },
     beforeDestroy() { 
