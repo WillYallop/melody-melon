@@ -135,6 +135,13 @@ export default {
                     if(res.data.message == 'Success') {
                         this.messageSent = true
                         this.sending = false
+                        //reset
+                        this.formData = {
+                            name: '',
+                            email: '',
+                            url: '',
+                            text: '',
+                        }
                     }
                 })
                 .catch((err) => {
@@ -168,6 +175,10 @@ export default {
     padding: 40px;
     position: relative;
     z-index: 20;
+    scrollbar-width: none;  /* Firefox */
+}
+.modalWrapper::-webkit-scrollbar {
+  display: none;
 }
 .modalContent {
     margin: auto;

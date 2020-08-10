@@ -10,6 +10,13 @@
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
     <sectionBackgroundRight
+    :heading="sectionData.counter.heading"
+    :subHeading="sectionData.counter.subHeading"/>
+    <!-- Counter -->
+    <counter :style="{ 'margin-top' : '-120px' }"/>
+
+    <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
+    <sectionBackgroundRight
     :heading="sectionData.faq.heading"
     :subHeading="sectionData.faq.subHeading"/>
     <!-- Accordion -->
@@ -26,6 +33,7 @@
 // components
 import banner from '@/components/PageComponents/Banner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
+import counter from '@/components/PageComponents/Counter'
 import footerComp from '@/components/GlobalComponents/Footer'
 import accordion from '@/components/PageComponents/Accordion'
 
@@ -41,6 +49,10 @@ export default {
       },
       // section data
       sectionData: {
+        counter: {
+          heading: 'What we can do for you',
+          subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
         faq: {
           heading: 'More about us',
           subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -58,7 +70,8 @@ export default {
     banner,
     sectionBackgroundRight,
     footerComp,
-    accordion
+    accordion,
+    counter
 
   },
   mounted() {
