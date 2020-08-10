@@ -4,7 +4,7 @@
             <h2 v-if="heading">{{heading}}</h2>
             <p v-if="subHeading">{{subHeading}}</p>
         </div>
-        <div class="backgroundShapeRight"></div>
+        <div class="backgroundShapeLeft"></div>
     </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
 .sectionWrapper p {
     color: #FFF;
 }
-.backgroundShapeRight {
+.backgroundShapeLeft {
     position: absolute;
     top: 0;
     right: 0;
@@ -57,19 +57,19 @@ export default {
 
 
 @media only screen and (max-width: 1700px) {
-    .backgroundShapeRight {width: calc(100% - 100px);}
+    .backgroundShapeLeft {width: calc(100% - 100px);}
     .sectionWrapper {padding: 80px 40px 200px 200px;}
 }
 @media only screen and (min-width: 1070.1px) {
-    .pageSliderOpen .backgroundShapeRight {border-radius: 200px 20px 20px 200px;right: 10px;}
+    .pageSliderOpen .backgroundShapeLeft {border-radius: 200px 20px 20px 200px;right: 10px;}
 }
 @media only screen and (max-width: 1070px) {
-    .backgroundShapeRight {width: calc(100% - 100px); border-radius: 200px 0 0 200px; right: 0;}
+    .backgroundShapeLeft {width: calc(100% - 100px); border-radius: 200px 0 0 200px; right: 0;}
     .sectionWrapper {padding: 80px 20px 200px 200px;}
 }
 @media only screen and (max-width: 700px) {
     .sectionContainer {display: flex; justify-content: flex-end;}
-    .backgroundShapeRight {width: calc(100% - 20px);}
+    .backgroundShapeLeft {width: calc(100% - 20px);}
     .sectionWrapper {width: 80%; padding: 80px 20px 200px 20px; margin: 0;}
 }
 </style>

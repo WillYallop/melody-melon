@@ -15,6 +15,13 @@
     <!-- Counter -->
     <counter :style="{ 'margin-top' : '-120px' }"/>
 
+    <!-- section background left - always make div bellow margin-top: -120px if section has text else its -200px -->
+    <sectionBackgroundLeft
+    :heading="sectionData.pricingTable.heading"
+    :subHeading="sectionData.pricingTable.subHeading"/>
+    <!-- pricing table -->
+    <pricingTable :style="{ 'margin-top' : '-120px' }"/>
+
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
     <sectionBackgroundRight
     :heading="sectionData.faq.heading"
@@ -35,7 +42,9 @@ import banner from '@/components/PageComponents/Banner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
 import counter from '@/components/PageComponents/Counter'
 import footerComp from '@/components/GlobalComponents/Footer'
+import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
 import accordion from '@/components/PageComponents/Accordion'
+import pricingTable from '@/components/PageComponents/PricingTable'
 
 export default {
   data() {
@@ -50,6 +59,10 @@ export default {
       // section data
       sectionData: {
         counter: {
+          heading: 'What we can do for you',
+          subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        },
+        pricingTable: {
           heading: 'What we can do for you',
           subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         },
@@ -70,8 +83,10 @@ export default {
     banner,
     sectionBackgroundRight,
     footerComp,
+    sectionBackgroundLeft,
     accordion,
-    counter
+    counter,
+    pricingTable
 
   },
   mounted() {
