@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div>
-                    <button class="contactFormBtn" style="margin-top: 40px">submit song</button>
+                    <button class="contactFormBtn" style="margin-top: 40px" v-on:click="$store.commit('toggleModal')">submit song</button>
                 </div>
             </div>  
 

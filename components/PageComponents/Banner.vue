@@ -6,7 +6,8 @@
             <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
         </div>
         <div class="imagearea">
-            <img class="bannerImg" :src="getImageUrl(imageName)" alt="Banner image">
+            <img v-if="imageName == 'contactBannerImage.svg'" class="bannerImg" src="../../assets/images/contactBannerImage.svg" alt="Banner image" data-not-lazy>
+            <img v-if="imageName == 'bannerImage.svg'" class="bannerImg" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy>
         </div>
     </div>
 </template>
@@ -28,7 +29,7 @@ export default {
 
     },
     mounted() {
-
+        
     },
     computed: {
 
@@ -40,7 +41,7 @@ export default {
         },
         navigate(dist) {
             if(dist == 'submit') {
-                // open modal
+                this.$store.commit('toggleModal')
             } else {
                 this.$router.push(dist)
             }

@@ -1,7 +1,7 @@
 <template>
     <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerScrolled' : scrollPos > 10 }">   
         <div class="headerWrapper">
-            <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')">
+            <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')" data-not-lazy>
             <nav class="siteNavigation">
                 <ul>
                     <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>

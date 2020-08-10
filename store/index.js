@@ -1,4 +1,5 @@
 import playlistSlider from './modules/playlistSlider.js'
+import submitSong from './modules/submitSong.js'
 
 const state = () => ({
   
@@ -13,7 +14,8 @@ const actions = {
 };
 
 const modules = {
-  playlistSlider
+  playlistSlider,
+  submitSong
 };
 
 export default {

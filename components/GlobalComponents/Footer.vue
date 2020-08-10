@@ -3,7 +3,7 @@
         <div class="siteWrapper sitePadding">
             <div class="topRow"> 
                 <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')">
-                <button class="submitSongBtn">submit song</button>
+                <button class="submitSongBtn" v-on:click="$store.commit('toggleModal')">submit song</button>
             </div>
             <div class="bottomRow">
                 <div class="textarea">

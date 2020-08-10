@@ -4,6 +4,8 @@
     <Nuxt class="pageContainer" :class="{ 'pageSliderOpen' : sliderOpen }"/>
     <playlistSlider/>
 
+    <submitSongModal v-if="modalOpen"/>
+
     <div class="mobilePlaylistToggle" v-on:click="$store.commit('toggleSlider')"><fa class="fas" :icon="['fas', 'headphones']" /></div>
     <div class="siteBackground"></div>
   </div>
@@ -13,6 +15,7 @@
 //components
 import siteHeader from '@/components/GlobalComponents/Header'
 import playlistSlider from '@/components/GlobalComponents/PlaylistSlider'
+import submitSongModal from '@/components/GlobalComponents/SubmitSongModal'
 
 export default {
   data() {
@@ -22,7 +25,8 @@ export default {
   },
   components: {
     siteHeader,
-    playlistSlider
+    playlistSlider,
+    submitSongModal
   },
   mounted() {
 
@@ -30,6 +34,9 @@ export default {
   computed: {
     sliderOpen() {
       return this.$store.state.playlistSlider.status
+    },
+    modalOpen() {
+      return this.$store.state.submitSong.status
     }
   },
   methods: {
