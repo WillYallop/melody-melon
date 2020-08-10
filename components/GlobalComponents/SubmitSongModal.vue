@@ -25,7 +25,7 @@
                     <div class="responceArea" v-if="messageSent || error"> 
                         <!-- Error -->
                         <p v-if="error">{{error}}</p>
-                        <p v-if="messageSent">Your message has been sent</p>
+                        <p v-if="messageSent">Your song has been submitted. We'll get in touch with you soon!</p>
                     </div>
 
                     <!-- submit -->
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     data() {
         return {

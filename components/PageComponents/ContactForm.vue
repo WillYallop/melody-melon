@@ -25,7 +25,6 @@
                         <p>Subject</p> 
                         <select class="inputStyle selectStyle" v-model="formData.subject" :class="{ 'inputError' : verifySubject == false }" >
                             <option>Question</option>
-                            <option>Song Request</option>
                             <option>Business Inquiry</option>
                             <option>More Information</option>
                             <option>Other</option>
@@ -145,9 +144,6 @@ export default {
             if(this.formData.subject.length > 0) {
 
                 if(this.formData.subject == 'Question') {
-                    this.dataComplete[2] = true
-                    return true
-                } else if(this.formData.subject == 'Song Request') {
                     this.dataComplete[2] = true
                     return true
                 } else if (this.formData.subject == 'Business Inquiry') {
@@ -402,8 +398,8 @@ export default {
 
 @media only screen and (max-width: 1070px) {
     .contactFormWrapper {flex-wrap: nowrap;}
-    .nextStepsCon {max-width: 400px; width: 100%; height: auto; margin-top: 0; border-radius: 0 20px 20px 0;}
-    .contactFormContainer {border-radius: 20px 0 0 20px;}
+    .nextStepsCon {max-width: 400px; width: 100%; height: auto; margin-top: 0; border-radius: 0 20px 20px 0;  padding: 30px 20px;}
+    .contactFormContainer {border-radius: 20px 0 0 20px; padding: 30px 20px;}
     .nextStepsHeader {margin-bottom: 54px;}
 }
 @media only screen and (max-width: 868px) {
