@@ -5,7 +5,12 @@
 
             </div>
             <div class="counterTextarea">
-                <p class="numberP">100<span>%</span></p>
+                <p class="numberP"><AnimatedNumber     
+                    :value="100"
+                    :formatValue="formatValue"
+                    :duration="1000"/>
+                    <span class="unitP">%</span>
+                </p>
                 <p class="titleP">organic growth</p>
             </div>
         </div>
@@ -14,7 +19,12 @@
                 
             </div>
             <div class="counterTextarea">
-                <p class="numberP">100<span>%</span></p>
+                <p class="numberP"><AnimatedNumber     
+                    :value="100"
+                    :formatValue="formatValue"
+                    :duration="1000"/>
+                    <span class="unitP">%</span>
+                </p>
                 <p class="titleP">organic growth</p>
             </div>
         </div>
@@ -23,7 +33,12 @@
 
             </div>
             <div class="counterTextarea">
-                <p class="numberP">100<span>%</span></p>
+                <p class="numberP"><AnimatedNumber     
+                    :value="100"
+                    :formatValue="formatValue"
+                    :duration="1000"/>
+                    <span class="unitP">%</span>
+                </p>
                 <p class="titleP">organic growth</p>
             </div>
         </div>
@@ -32,7 +47,12 @@
 
             </div>
             <div class="counterTextarea">
-                <p class="numberP">100<span>%</span></p>
+                <p class="numberP"><AnimatedNumber     
+                    :value="100"
+                    :formatValue="formatValue"
+                    :duration="1000"/>
+                    <span class="unitP">%</span>
+                </p>
                 <p class="titleP">organic growth</p>
             </div>
         </div>
@@ -40,17 +60,25 @@
 </template>
 
 <script>
+import AnimatedNumber from 'animated-number-vue'
+
 export default {
     data() {
         return {
 
         }
     },
+    components: {
+        AnimatedNumber
+    },
     mounted() {
+
 
     },
     methods: {
-
+        formatValue(value) {
+            return Math.round(value)
+        }
     }
 }
 </script>
@@ -98,8 +126,9 @@ export default {
     font-weight: bold;
     padding-bottom: 5px;
 } 
-.numberP span {
+.unitP {
     font-size: 20px;
+    margin-left: -5px;
 }
 .titleP {
     font-size: 18px;
