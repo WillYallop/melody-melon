@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="indexCon">
       
     <!-- Banner -->
     <banner 
@@ -104,5 +104,8 @@ export default {
 </script>
 
 <style scoped>
+.indexCon {
 
+  overflow: hidden;
+}
 </style>

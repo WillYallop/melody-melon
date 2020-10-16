@@ -20,7 +20,7 @@
 
 <script>
 // components
-import banner from '@/components/Contact/Banner'
+import banner from '@/components/Contact/ContactBanner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
 import contactForm from '@/components/PageComponents/ContactForm'
 import footerComp from '@/components/GlobalComponents/Footer'

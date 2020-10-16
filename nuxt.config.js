@@ -1,13 +1,15 @@
 export default {
-  mode: 'universal',
   target: 'static',
   head: {
-    title: process.env.npm_package_name || 'Melody Melon',
+    htmlAttrs: {
+      lang: 'en'
+    },
+    title: 'Melody Melon',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme_color', content: '#080808' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'Discover a wide range of fruity playlists to fuel your day! Discover and promote music with Melody Melon!' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -19,6 +21,7 @@ export default {
   plugins: [
     { src: '~/plugins/vue-awesome-swiper.js', ssr: false },
     { src: '~/plugins/vue-closable.js', ssr: false },
+    { src: '~plugins/social.js', ssr: false }
   ],
   components: true,
   buildModules: [
@@ -26,16 +29,20 @@ export default {
   modules: [
     '@nuxtjs/axios',
     'nuxt-lazy-load',
+    '@nuxt/content',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    '@nuxtjs/pwa',
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
         {
           set: '@fortawesome/free-solid-svg-icons',
-          icons: ['faChevronDown', 'faChevronUp', 'faChevronRight', 'faChevronLeft', 'faSearch', 'faHeadphones', 'faBars', 'faTimes']
+          icons: ['faChevronDown', 'faChevronUp', 'faChevronRight', 'faChevronLeft', 'faSearch', 'faHeadphones', 'faBars', 'faTimes', 'faUserCircle', 'faCalendarAlt', 'faEnvelope']
         },
         {
           set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faInstagram', 'faFacebookF', 'faSpotify']
+          icons: ['faInstagram', 'faFacebookF', 'faSpotify', 'faFacebook', 'faTwitter']
         }
       ]
     }],
@@ -51,23 +58,38 @@ export default {
       }
     ]
   ],
+  robots: {
+    UserAgent: '*'
+
+  },
+  sitemap: {
+    hostname: 'https://dev.melodymelon.com',
+    gzip: true,
+
+  },
   axios: {},
   build: {
   },
   pwa: { 
-    workbox: {}, 
+    workbox: true,
+    icon: {
+      fileName: 'icon.png'
+    },
     meta: { 
-      theme_color: '#000000', 
+      name: 'Melody Melon',
+      theme_color: '#080808', 
+      author: 'William Yallop',
       lang: 'en', 
       nativeUI: true,
-      description: "Melody Melon",
+      description: "Discover awesome playlists!",
     }, 
-    icon: {}, 
     manifest: { 
       name: 'Melody Melon', 
+      short_name: 'Melody Melon', 
       lang: 'en', 
       display: 'standalone',
-      background_color: "#080808",
+      background_color: '#080808',
+      theme_color: '#080808'
     } 
   },
   env: {
@@ -77,5 +99,13 @@ export default {
   server: {     
     port: 8000,
     host: '0.0.0.0',  
+  },
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   }
 }

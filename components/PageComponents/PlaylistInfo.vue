@@ -162,7 +162,7 @@ export default {
     .playlistContainer {flex-wrap: wrap;}
 
     .col1 {width: 100%; height: auto; background-color: #1E1E1E;}
-    .imageContainer {width: 100%; height: auto; display: flex; justify-content: center; background-color: #1E1E1E; padding: 40px; border-radius: 20px; overflow: hidden;}
+    .imageContainer {width: 100%; height: auto; display: flex; align-items: flex-start; justify-content: center; background-color: #1E1E1E; padding: 40px; border-radius: 20px; overflow: hidden;}
     .playlistImage {width: 100%;max-width:300px;height: auto;position: relative;border-radius: 10px;overflow: hidden;object-fit: cover;position: relative;z-index: 20;background-color: rgba(255, 255, 255, 0.2);}
     .playlistBoxInner::after {content: "";display: block;padding-bottom: 100%;}
     .col1 .followPlaylistBtn {display: none;}

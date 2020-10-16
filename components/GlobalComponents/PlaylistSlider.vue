@@ -6,7 +6,7 @@
         <h4 class="playlistTitle">Our Playlists</h4>
       </div>
 
-      <no-ssr>
+      <client-only>
         <!-- Playlist Search -->
         <div class="playlistSearchContainer">
           <div v-on:click="playlistSerachInputContainer = !playlistSerachInputContainer" class="playlistSearchInput" ref="playlistSearchInput">
@@ -47,7 +47,7 @@
               </div>
           </div>
         </div>
-      </no-ssr>
+      </client-only>
 
       <!-- Playlist Results -->
       <div class="playlistResultsContainer">

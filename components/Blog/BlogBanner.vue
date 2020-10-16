@@ -6,7 +6,7 @@
             <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
         </div>
         <div class="imagearea">
-            <img class="bannerImg" src="../../assets/images/contactBannerImage.png" alt="Banner image" data-not-lazy>
+            <img class="bannerImg" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy>
         </div>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     },
     props: {
         heading: {type: String},  
-        subHeading: {type: String},
+        subHeading: {type: String}, 
         button: {type: Array}
     },
     components: {
@@ -114,7 +114,8 @@ export default {
     .imagearea { width: 100%; padding-left: 0; margin-top: 40px;}
     .textarea {min-width: auto; width: 100%;}
     .textarea h1 {font-size: 8vw; line-height: 8.5vw;}
-    .bannerImg {width: 80%;}
+    .imagearea  {display: none;}
+    .bannerImg {display: none;}
 }
 @media only screen and (max-width: 590px) {
     .bannerCon {padding-top: 60px;}
