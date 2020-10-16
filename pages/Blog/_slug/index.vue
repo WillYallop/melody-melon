@@ -69,14 +69,14 @@
 
 
         <!-- Footer -->
-        <footerComp/>
+        <FooterComp/>
 
     </div>  
 </template>
 
 <script>
 // components
-import footerComp from '@/components/GlobalComponents/Footer'
+import FooterComp from '@/components/GlobalComponents/Footer'
 
 export default {
     async asyncData({ $content, params }) {
@@ -140,7 +140,7 @@ export default {
         }
     },
     components: {
-        footerComp,
+        FooterComp,
 
     },
     methods: {

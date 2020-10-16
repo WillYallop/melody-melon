@@ -2,58 +2,50 @@
   <div>
       
     <!-- Banner -->
-    <banner 
-    :heading="bannerData.heading"
-    :subHeading="bannerData.subHeading"
-    :button="bannerData.button"/>
+    <ForArtistsBanner/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundRight
+    <ForArtistsSectionBackgroundRight
     :heading="sectionData.counter.heading"
     :subHeading="sectionData.counter.subHeading"/>
     <!-- Counter -->
-    <counter :style="{ 'margin-top' : '-120px' }"/>
+    <Counter :style="{ 'margin-top' : '-120px' }"/>
 
     <!-- section background left - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundLeft
+    <ForArtistsSectionBackgroundLeft
     :heading="sectionData.pricingTable.heading"
     :subHeading="sectionData.pricingTable.subHeading"/>
     <!-- pricing table -->
-    <pricingTable :style="{ 'margin-top' : '-120px' }"/>
+    <PricingTable :style="{ 'margin-top' : '-120px' }"/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundRight
+    <ForArtistsSectionBackgroundRight
     :heading="sectionData.faq.heading"
     :subHeading="sectionData.faq.subHeading"/>
     <!-- Accordion -->
-    <accordion :style="{ 'margin-top' : '-120px', 'padding-bottom' : '80px' }"
+    <ForArtistsAccordion :style="{ 'margin-top' : '-120px', 'padding-bottom' : '80px' }"
     :accordionData="accordionData"/>
 
     <!-- Footer -->
-    <footerComp/>
+    <FooterComp/>
 
   </div>  
 </template>
 
 <script>
 // components
-import banner from '@/components/PageComponents/Banner'
-import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
-import counter from '@/components/PageComponents/Counter'
-import footerComp from '@/components/GlobalComponents/Footer'
-import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
-import accordion from '@/components/PageComponents/Accordion'
-import pricingTable from '@/components/PageComponents/PricingTable'
+import ForArtistsBanner from '@/components/ForArtists/ForArtistsBanner'
+import ForArtistsSectionBackgroundRight from '@/components/ForArtists/ForArtistsSectionBackgroundRight'
+import Counter from '@/components/ForArtists/Counter'
+import ForArtistsSectionBackgroundLeft from '@/components/ForArtists/ForArtistsSectionBackgroundLeft'
+import PricingTable from '@/components/ForArtists/PricingTable'
+import ForArtistsAccordion from '@/components/ForArtists/ForArtistsAccordion'
+import FooterComp from '@/components/GlobalComponents/Footer'
 
 export default {
   data() {
     return {
-      // banner data
-      bannerData: {
-        heading: 'For Artists',
-        subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
-        button: ['submit', 'submit song']
-      },
+
       // section data
       sectionData: {
         counter: {
@@ -78,14 +70,14 @@ export default {
     }
   },
   components: {
-    banner,
-    sectionBackgroundRight,
-    footerComp,
-    sectionBackgroundLeft,
-    accordion,
-    counter,
-    pricingTable
-
+    ForArtistsBanner,
+    ForArtistsSectionBackgroundRight,
+    ForArtistsSectionBackgroundLeft,
+    Counter,
+    PricingTable,
+    ForArtistsAccordion,
+    FooterComp
+    
   },
   mounted() {
 

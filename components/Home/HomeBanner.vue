@@ -1,9 +1,9 @@
 <template>
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
-            <h1>Fruity Blogs</h1>
+            <h1>Fruity Playlists To Fuel Your Day</h1>
             <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.</h4>
-            <button class="bannerBtnStyle" v-on:click="navigate('contact')">contact us</button>
+            <button class="bannerBtnStyle" v-on:click="navigate('contact')">Contact Us</button>
         </div>
         <div class="imagearea">
             <img class="bannerImg" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy>
@@ -18,31 +18,13 @@ export default {
 
         }
     },
-    props: {
-        heading: {type: String},  
-        subHeading: {type: String}, 
-        button: {type: Array}
-    },
-    components: {
-
-    },
-    mounted() {
-        
-    },
-    computed: {
-
-    },
     methods: {
         getImageUrl(name) {
             var images = require.context('../../assets/images/', false)
             return images('./' + name)
         },
         navigate(dist) {
-            if(dist == 'submit') {
-                this.$store.commit('toggleModal')
-            } else {
-                this.$router.push(dist)
-            }
+            this.$router.push(dist)
         }
     }
 }
@@ -114,8 +96,7 @@ export default {
     .imagearea { width: 100%; padding-left: 0; margin-top: 40px;}
     .textarea {min-width: auto; width: 100%;}
     .textarea h1 {font-size: 8vw; line-height: 8.5vw;}
-    .imagearea  {display: none;}
-    .bannerImg {display: none;}
+    .bannerImg {width: 80%;}
 }
 @media only screen and (max-width: 590px) {
     .bannerCon {padding-top: 60px;}

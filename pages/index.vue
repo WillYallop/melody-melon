@@ -2,64 +2,55 @@
   <div class="indexCon">
       
     <!-- Banner -->
-    <banner 
-    :heading="bannerData.heading"
-    :subHeading="bannerData.subHeading"
-    :button="bannerData.button"/>
+    <HomeBanner/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundRight
+    <HomeSectionBackgroundRight
     :heading="sectionData.playlistCards.heading"
     :subHeading="sectionData.playlistCards.subHeading"/>
     <!-- playlist cards -->
-    <playlistCards :style="{ 'margin-top' : '-120px' }"/>
+    <PlaylistCards :style="{ 'margin-top' : '-120px' }"/>
 
     <!-- Playlist finder link -->
-    <playlistFinder/>
+    <PlaylistFinder/>
 
     <!-- section background left - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundLeft
+    <HomeSectionBackgroundLeft
     :heading="sectionData.faq.heading"
     :subHeading="sectionData.faq.subHeading"/>
     <!-- Accordion -->
-    <accordion :style="{ 'margin-top' : '-120px' }"
+    <HomeAccordion :style="{ 'margin-top' : '-120px' }"
     :accordionData="accordionData"/>
 
     <!-- Spotify Plug -->
-    <spotifyPlug/>
+    <SpotifyPlug/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundRight/>
+    <HomeSectionBackgroundRight/>
     <!-- Info Cards -->
-    <infoCards :style="{ 'margin-top' : '-200px' }"/>
+    <InfoCards :style="{ 'margin-top' : '-200px' }"/>
 
     <!-- Footer -->
-    <footerComp/>
+    <FooterComp/>
 
   </div>  
 </template>
 
 <script>
 // components
-import banner from '@/components/PageComponents/Banner'
-import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
-import playlistCards from '@/components/PageComponents/PlaylistCards'
-import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
-import playlistFinder from '@/components/PageComponents/PlaylistFinder'
-import accordion from '@/components/PageComponents/Accordion'
-import spotifyPlug from '@/components/PageComponents/SpotifyPlug'
-import infoCards from '@/components/PageComponents/InfoCards'
-import footerComp from '@/components/GlobalComponents/Footer'
+import HomeBanner from '@/components/Home/HomeBanner'
+import HomeSectionBackgroundRight from '@/components/Home/HomeSectionBackgroundRight'
+import PlaylistCards from '@/components/Home/PlaylistCards'
+import HomeSectionBackgroundLeft from '@/components/Home/HomeSectionBackgroundLeft'
+import PlaylistFinder from '@/components/Home/PlaylistFinder'
+import HomeAccordion from '@/components/Home/HomeAccordion'
+import SpotifyPlug from '@/components/Home/SpotifyPlug'
+import InfoCards from '@/components/Home/InfoCards'
+import FooterComp from '@/components/GlobalComponents/Footer'
 
 export default {
   data() {
     return {
-      // banner data
-      bannerData: {
-        heading: 'Fruity Playlists To Fuel Your Day',
-        subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.',
-        button: ['/contact', 'contact us']
-      },
       // section data
       sectionData: {
         playlistCards: {
@@ -81,15 +72,15 @@ export default {
     }
   },
   components: {
-    banner,
-    sectionBackgroundRight,
-    playlistCards,
-    sectionBackgroundLeft,
-    playlistFinder,
-    accordion,
-    spotifyPlug,
-    infoCards,
-    footerComp
+    HomeBanner,
+    HomeSectionBackgroundRight,
+    PlaylistCards,
+    PlaylistFinder,
+    HomeSectionBackgroundLeft,
+    HomeAccordion,
+    SpotifyPlug,
+    InfoCards,
+    FooterComp
   },
   mounted() {
 

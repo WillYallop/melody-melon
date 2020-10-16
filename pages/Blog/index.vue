@@ -2,30 +2,27 @@
   <div>
     
     <!-- Banner -->
-    <banner 
-    :heading="bannerData.heading"
-    :subHeading="bannerData.subHeading"
-    :button="bannerData.button"/>
+    <BlogBanner/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundRight/>
+    <BlogSectionBackgroundRight/>
     <!-- Blog List -->
     <BlogList :style="{ 'margin-top' : '-200px' }"
     :blogs="blogs"
     :pinned="pinned"/>
 
     <!-- Footer -->
-    <footerComp/>
+    <FooterComp/>
 
   </div>  
 </template>
 
 <script>
 // components
-import banner from '@/components/Blog/BlogBanner.vue'
-import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
+import BlogBanner from '@/components/Blog/BlogBanner.vue'
+import BlogSectionBackgroundRight from '@/components/Blog/BlogSectionBackgroundRight'
 import BlogList from '@/components/Blog/Slug/BlogList'
-import footerComp from '@/components/GlobalComponents/Footer'
+import FooterComp from '@/components/GlobalComponents/Footer'
 
 export default {
     async asyncData({ $content }) {
@@ -35,20 +32,14 @@ export default {
     },
     data() {
         return {
-        // banner data
-        bannerData: {
-            heading: 'Fruity Blogs',
-            subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.',
-            button: ['/contact', 'contact us']
-        },
 
         }
     },
     components: {
-        banner,
-        sectionBackgroundRight,
+        BlogBanner,
+        BlogSectionBackgroundRight,
         BlogList,
-        footerComp,
+        FooterComp,
 
     },
     mounted() {

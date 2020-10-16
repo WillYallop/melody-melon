@@ -2,26 +2,23 @@
   <div>
       
     <!-- Banner -->
-    <banner 
-    :heading="bannerData.heading"
-    :subHeading="bannerData.subHeading"
-    :button="bannerData.button"/>
+    <PlaylistBanner/>
     
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundRight/>
+    <PlaylistSectionBackgroundRight/>
     <!-- playlist info -->
-    <playlistInfo :style="{ 'margin-top' : '-200px' }"
+    <PlaylistInfo :style="{ 'margin-top' : '-200px' }"
     :playlistData="playlistData"/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <sectionBackgroundLeft
+    <PlaylistSectionBackgroundLeft
     :heading="sectionData.contactSection.heading"
     :subHeading="sectionData.contactSection.subHeading"/>
     <!-- contact  -->
-    <contactForm :style="{ 'margin-top' : '-120px' }"/>
+    <ContactForm :style="{ 'margin-top' : '-120px' }"/>
 
     <!-- Footer -->
-    <footerComp/>
+    <FooterComp/>
 
   </div>  
 </template>
@@ -31,12 +28,12 @@
 import playlistsJson from '@/components/Playlists.json'
 
 // components
-import banner from '@/components/PageComponents/Banner'
-import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
-import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
-import playlistInfo from '@/components/PageComponents/PlaylistInfo'
-import contactForm from '@/components/PageComponents/ContactForm'
-import footerComp from '@/components/GlobalComponents/Footer'
+import PlaylistBanner from '@/components/Playlists/PlaylistBanner'
+import PlaylistSectionBackgroundRight from '@/components/Playlists/PlaylistSectionBackgroundRight'
+import PlaylistSectionBackgroundLeft from '@/components/Playlists/PlaylistSectionBackgroundLeft'
+import PlaylistInfo from '@/components/Playlists/PlaylistInfo'
+import ContactForm from '@/components/PageComponents/ContactForm'
+import FooterComp from '@/components/GlobalComponents/Footer'
 
 export default {
     validate ({ params }) {
@@ -52,12 +49,6 @@ export default {
         return {
             //json
             playlistObject: playlistsJson,
-            // banner data
-            bannerData: {
-                heading: 'Check Out Our Range of Playlists',
-                subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.',
-                button: ['submit', 'submit song']
-            },
             // section data
             sectionData: {
                 contactSection: {
@@ -68,12 +59,12 @@ export default {
         }
     },
     components: {
-        banner,
-        sectionBackgroundRight,
-        sectionBackgroundLeft,
-        playlistInfo,
-        contactForm,
-        footerComp
+        PlaylistBanner,
+        PlaylistSectionBackgroundRight,
+        PlaylistInfo,
+        PlaylistSectionBackgroundLeft,
+        ContactForm,
+        FooterComp
 
     },
     mounted() {

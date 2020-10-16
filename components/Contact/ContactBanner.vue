@@ -1,9 +1,9 @@
 <template>
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
-            <h1>{{heading}}</h1>
-            <h4>{{subHeading}}</h4>
-            <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
+            <h1>Contact Us</h1>
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.</h4>
+            <button class="bannerBtnStyle" v-on:click="navigate()">submit song</button>
         </div>
         <div class="imagearea">
             <img class="bannerImg" src="../../assets/images/contactBannerImage.svg" alt="Banner image" data-not-lazy>
@@ -18,31 +18,13 @@ export default {
 
         }
     },
-    props: {
-        heading: {type: String},  
-        subHeading: {type: String},
-        button: {type: Array}
-    },
-    components: {
-
-    },
-    mounted() {
-        
-    },
-    computed: {
-
-    },
     methods: {
         getImageUrl(name) {
             var images = require.context('../../assets/images/', false)
             return images('./' + name)
         },
-        navigate(dist) {
-            if(dist == 'submit') {
-                this.$store.commit('toggleModal')
-            } else {
-                this.$router.push(dist)
-            }
+        navigate() {
+            this.$store.commit('toggleModal')
         }
     }
 }
