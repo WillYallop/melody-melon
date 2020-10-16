@@ -5,7 +5,6 @@
     <banner 
     :heading="bannerData.heading"
     :subHeading="bannerData.subHeading"
-    :imageName="bannerData.imageName"
     :button="bannerData.button"/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
@@ -21,7 +20,7 @@
 
 <script>
 // components
-import banner from '@/components/PageComponents/Banner'
+import banner from '@/components/Contact/Banner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
 import contactForm from '@/components/PageComponents/ContactForm'
 import footerComp from '@/components/GlobalComponents/Footer'

@@ -5,7 +5,6 @@
     <banner 
     :heading="bannerData.heading"
     :subHeading="bannerData.subHeading"
-    :imageName="bannerData.imageName"
     :button="bannerData.button"/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
@@ -59,7 +58,6 @@ export default {
       bannerData: {
         heading: 'Fruity Playlists To Fuel Your Day',
         subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.',
-        imageName: 'bannerImage.svg',
         button: ['/contact', 'contact us']
       },
       // section data

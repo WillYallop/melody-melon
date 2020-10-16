@@ -258,6 +258,7 @@ export default {
     position: relative;
     padding: 30px 0;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
 }

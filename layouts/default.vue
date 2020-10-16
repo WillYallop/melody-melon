@@ -60,7 +60,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   height: 100%;
-
 }
 @keyframes gradient {
 	0% {	background-position: 0% 50%;}

@@ -60,6 +60,7 @@ export default {
 .finderImgContainer { 
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     padding-right: 80px;
 }
 
@@ -67,6 +68,7 @@ export default {
     display: none;
     width: 100%;
     justify-content: center;
+    align-items: flex-start;
 }
 .mobileImg  {
     width: auto;

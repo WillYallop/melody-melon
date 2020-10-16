@@ -2,7 +2,7 @@ export default {
   mode: 'universal',
   target: 'static',
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || 'Melody Melon',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,7 @@ export default {
     'swiper/dist/css/swiper.css',
   ],
   plugins: [
-    { src: '~/plugins/vue-awesome-swiper.js', ssr: false } ,
+    { src: '~/plugins/vue-awesome-swiper.js', ssr: false },
     { src: '~/plugins/vue-closable.js', ssr: false },
   ],
   components: true,
@@ -49,8 +49,7 @@ export default {
           threshold: 10240
         }
       }
-    ],
-    '@nuxtjs/pwa'
+    ]
   ],
   axios: {},
   build: {
@@ -59,7 +58,6 @@ export default {
     workbox: {}, 
     meta: { 
       theme_color: '#000000', 
-      background_color: "#080808",
       lang: 'en', 
       nativeUI: true,
       description: "Melody Melon",
@@ -68,7 +66,8 @@ export default {
     manifest: { 
       name: 'Melody Melon', 
       lang: 'en', 
-      display: 'standalone' 
+      display: 'standalone',
+      background_color: "#080808",
     } 
   },
   env: {

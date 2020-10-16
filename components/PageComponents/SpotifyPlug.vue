@@ -61,12 +61,14 @@ export default {
 .finderImgContainer { 
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     padding-left: 80px;
 }
 .imgContainerDesktop {
     display: none;
     width: 100%;
     justify-content: center;
+    align-items: flex-start;
 }
 .mobileImg  {
     width: auto;

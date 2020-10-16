@@ -6,7 +6,7 @@
             <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
         </div>
         <div class="imagearea">
-            <img class="bannerImg" src="../../assets/images/bannerImage.png" alt="Banner image" data-not-lazy>
+            <img class="bannerImg" src="../../assets/images/contactBannerImage.png" alt="Banner image" data-not-lazy>
         </div>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     },
     props: {
         heading: {type: String},  
-        subHeading: {type: String}, 
+        subHeading: {type: String},
         button: {type: Array}
     },
     components: {
