@@ -58,7 +58,7 @@
                         <div class="iconLineDown"></div>
                         <div class="rowTextarea">
                             <h4>1. We will review the song.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit.</p>
+                            <p>When we recieve a song submit we will review the song and judge its potential on our playlists.</p>
                         </div>
                     </div>
                     <div class="nextStepsRow">
@@ -68,7 +68,7 @@
                         <div class="iconLineDown"></div>
                         <div class="rowTextarea">
                             <h4>2. Discuss payment.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit.</p>
+                            <p>If we approve your song for our playlists we will return with a list of playlists and their costs.</p>
                         </div>    
                     </div>
                     <div class="nextStepsRow">
@@ -78,7 +78,7 @@
                         <div class="iconLineDown"></div>
                         <div class="rowTextarea">
                             <h4>3. Place it on our playlists.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit.</p>
+                            <p>Your track will get exposure on our playlists and your results will flood in.</p>
                         </div>
                     </div>
                 </div>

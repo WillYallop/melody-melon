@@ -4,8 +4,8 @@
 
 
             <div class="finderTextarea">
-                <h4>Follow us on Spotify</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt.</p>
+                <h4>Follow our Spotify</h4>
+                <p>What are you waiting for? Follow Melody Melon on Spotify now so you always have an up to date playlist to jam out to, no matter where you are.</p>
                 <div>
                     <button class="finderBtnStyle" v-on:click="navigateTo('https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y')">visit</button>
                 </div>

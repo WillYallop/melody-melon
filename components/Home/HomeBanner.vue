@@ -2,7 +2,7 @@
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
             <h1>Fruity Playlists To Fuel Your Day</h1>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.</h4>
+            <h4>Discover your perfect playlist today with Melody Melon! We have playlists for every mood and genre, that are updated weekly to stay fresh!</h4>
             <button class="bannerBtnStyle" v-on:click="navigate('contact')">Contact Us</button>
         </div>
         <div class="imagearea">
@@ -46,7 +46,6 @@ export default {
 .textarea h1 {
     font-size: 50px;
     line-height: 55px;
-    font-weight: 900;
     color: #FFF;
     margin: 0 0 20px;
 }

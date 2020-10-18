@@ -4,25 +4,25 @@
             <img class="cardImage" src="../../assets/images/forArtistsImg.svg" alt="For Artists">
             <div class="textarea">
                 <h4>For artists</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. sit  vehicula ultrices tincidunt.</p>
-                <button class="cardBtn" v-on:click="$router.push('/for-artists')">read more</button>
+                <p>We offer promotional campaigns to solo artists who want to be featured in our playlists.</p>
             </div>
+            <button class="cardBtn" v-on:click="$router.push('/for-artists')">read more</button>
         </div>
         <div class="infoColOuter">
             <img class="cardImage" src="../../assets/images/chatWithUsImg.svg" alt="Chat With Us">
             <div class="textarea">
                 <h4>Chat with us</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. sit  vehicula ultrices tincidunt.</p>
-                <button class="cardBtn" v-on:click="$router.push('/contact')">contact</button>
+                <p> Still have questions about Melody Melon? Get in touch with us and we’ll be more than happy to help.</p>
             </div>
+            <button class="cardBtn" v-on:click="$router.push('/contact')">contact</button>
         </div>
         <div class="infoColOuter"> 
             <img class="cardImage" src="../../assets/images/ourPlaylistsImg.svg" alt="Our Playlists">
             <div class="textarea">
                 <h4>Our playlists</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. sit  vehicula ultrices tincidunt.</p>
-                <button class="cardBtn" v-on:click="$router.push('/playlist/the-big-pre-playlist')">discover</button>
+                <p>Check out our weekly updated Spotify Playlists. We have all the sounds to suit your musical needs.</p>
             </div>
+            <button class="cardBtn" v-on:click="$router.push('/playlist/the-big-pre-playlist')">discover</button>
         </div>
     </div>
 </template>
@@ -58,11 +58,12 @@ export default {
     width: 32%;
     background-color: #1E1E1E;
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 40px 20px 79px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    position: relative;
 } 
 .cardImage {
     width: 80%;
@@ -72,7 +73,7 @@ export default {
     padding-top: 40px;
     text-align: center;
     padding: 40px 0 0;
-    max-width: 260px;
+    max-width: 300px;
 }
 .textarea h4 {
     font-size: 18px;
@@ -84,7 +85,10 @@ export default {
     color: #EAEAEA;
 }
 .cardBtn {
-    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
     padding: 10px 40px;
     border-radius: 20px;
     border: none;
@@ -93,7 +97,6 @@ export default {
     color: #FFF;
     font-size: 16px;
     background-color: #FF2F45;
-    margin-top: 40px;
 }
 .cardBtn:hover {
     transform: scale(1.1);

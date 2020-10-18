@@ -1,8 +1,8 @@
 <template>
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
-            <h1>Contact Us</h1>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo. Sit amet justo.</h4>
+            <h1>Hit Us Up</h1>
+            <h4>Still have questions? Feel free to drop us a message for questions you may have.</h4>
             <button class="bannerBtnStyle" v-on:click="navigate()">submit song</button>
         </div>
         <div class="imagearea">

@@ -15,7 +15,7 @@
             </div>
             <div class="finderTextarea">
                 <h4>Find Your Perfect Playlist</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt.</p>
+                <p>Struggle to find playlists to fuel your day? Look no further, check out Melody Melon playlist finder app that helps find your perfect playlist in 5 quick questions.</p>
                 <div>
                     <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">visit</button>
                 </div>

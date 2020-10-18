@@ -2,7 +2,7 @@
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
             <h1>Fruity Blogs</h1>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.</h4>
+            <h4>Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.</h4>
             <button class="bannerBtnStyle" v-on:click="navigate('contact')">contact us</button>
         </div>
         <div class="imagearea">
@@ -13,25 +13,6 @@
 
 <script>
 export default {
-    data() {
-        return {
-
-        }
-    },
-    props: {
-        heading: {type: String},  
-        subHeading: {type: String}, 
-        button: {type: Array}
-    },
-    components: {
-
-    },
-    mounted() {
-        
-    },
-    computed: {
-
-    },
     methods: {
         getImageUrl(name) {
             var images = require.context('../../assets/images/', false)

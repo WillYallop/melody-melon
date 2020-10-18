@@ -13,25 +13,6 @@
 
 <script>
 export default {
-    data() {
-        return {
-
-        }
-    },
-    props: {
-        heading: {type: String},  
-        subHeading: {type: String}, 
-        button: {type: Array}
-    },
-    components: {
-
-    },
-    mounted() {
-        
-    },
-    computed: {
-
-    },
     methods: {
         getImageUrl(name) {
             var images = require.context('../../assets/images/', false)

@@ -49,7 +49,7 @@ export default {
     bottom: 0;
     width: calc(100% - 400px);
     background-color: #FFF;
-    opacity: 0.3;
+    opacity: 0.15;
     border-radius: 200px 0 0 200px;
     z-index: 10;
 }

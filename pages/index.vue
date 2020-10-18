@@ -55,18 +55,18 @@ export default {
       sectionData: {
         playlistCards: {
           heading: 'Our Top Playlists',
-          subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          subHeading: 'Checkout our top playlists that are currently booming on Spotify. We have some of the Fruitiest Spotify Playlists out there. Melody Melon playlists feature some of the best new and upcoming artists the world has to offer.',
         },
         faq: {
-          heading: 'More about us',
-          subHeading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          heading: 'Frequently Asked Questions',
+          subHeading: "Get quick answers to some of our most commonly asked questions about Melody Melon. If we don't answer your question here, pop us a message on our contact form.",
         },
       },
       accordionData: [
-        { id: 1, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
-        { id: 2, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
-        { id: 3, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."},
-        { id: 4, title: "This is a title", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor. Suspendisse vehicula ultrices tincidunt."}
+        { id: 1, action: false, title: "How often do you update your playlists?", body: "We aim to update all of our playlists on a monthly basis so the playlists never get stale. However there are some special exceptions such as special event playlists which are fixed to capture their essence."},
+        { id: 2, action: false, title: "How Can I work with Melody Melon", body: "We are always looking for ways we can work with others so if you have a proposal, just hit us up on our contact form and we will get back to you as soon as possible. Or send us an email at hello@melodymelon.com"},
+        { id: 3, action: 'submit', title: "Can I submit my song to Melody Melon Playlists?", body: "If you are an independent artist or manager you can submit tracks to us using our submit track link as seen bellow. We also have a campaign manager tool coming soon so stay tuned."},
+        { id: 4, action: 'socials', title: "Are you guys on any social media platforms?", body: "Yes you can find us on a number of social medias, the links for those are bellow. Our Instagram and twitter are the places to be. PS. We also do giveaways ;)"}
       ]
 
     }

@@ -2,7 +2,7 @@
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
             <h1>Check Out Our Range of Playlists</h1>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum sit amet justo ut porttitor suspendisse.</h4>
+            <h4>Melody melon provides an extensive library of Spotify Playlists that can harmonize any genre, mood, or setting. </h4>
             <button class="bannerBtnStyle" v-on:click="navigate()">submit song</button>
         </div>
         <div class="imagearea">
