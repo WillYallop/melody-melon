@@ -9,7 +9,11 @@
                     <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
                         <div class="playlistPreviewColInner" v-on:click="navigateToPlaylist(playlist.playlistUrl)">
                             <div class="colHeader"> 
-                                <img class="playlistIcon" :src="getImageUrl(playlist.icon)" alt="" data-not-lazy>
+                                <picture >
+                                    <source class="playlistIcon" :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon)" type="image/jpg" />
+                                    <img class="playlistIcon" :src="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" />
+                                </picture>
+                               
                                 <div class="colHeaderBackgroundImageOverlay"></div>
                                 <div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>
                             </div>
@@ -261,6 +265,9 @@ export default {
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+}
+.colHeader picture {
+    text-align: center;
 }
 .playlistIcon {
     width: 50%;

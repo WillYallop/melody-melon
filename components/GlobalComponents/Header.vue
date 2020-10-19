@@ -4,8 +4,9 @@
             <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')" data-not-lazy>
             <nav class="siteNavigation">
                 <ul>
+                    <li><nuxt-link to="/">HOME</nuxt-link></li>
                     <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
-                    <li><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>
+                    <!--<li><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>-->
                     <li><nuxt-link to="/blog">BLOG</nuxt-link></li>
                 </ul>
                 <button class="toggleSliderBtn" v-on:click="$store.commit('toggleSlider')"><fa class="fas" v-if="sliderOpen" :icon="['fas', 'chevron-right']" /><fa class="fas" v-if="!sliderOpen" :icon="['fas', 'chevron-left']" /></button>
@@ -21,7 +22,7 @@
                 <ul class="navUl">
                     <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/">HOME</nuxt-link></li>
                     <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/contact">CONTACT</nuxt-link></li>
-                    <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>
+                    <!--<li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>-->
                     <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/blog">BLOG</nuxt-link></li>
                 </ul>
             </div>
