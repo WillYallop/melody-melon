@@ -2,39 +2,58 @@
   <div>
       
     <!-- Banner -->
-    <ContactBanner/>
+    <banner 
+    :heading="bannerData.heading"
+    :subHeading="bannerData.subHeading"
+    :button="bannerData.button"/>
 
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
-    <ContactSectionBackgroundRight/>
+    <sectionBackgroundRight/>
     <!-- contact  -->
-    <ContactForm :style="{ 'margin-top' : '-200px' }"/>
+    <contactForm :style="{ 'margin-top' : '-200px' }"/>
 
     <!-- Footer -->
-    <FooterComp/>
+    <footerComp/>
 
   </div>  
 </template>
 
 <script>
 // components
-import ContactBanner from '@/components/Contact/ContactBanner'
-import ContactSectionBackgroundRight from '@/components/Contact/ContactSectionBackgroundRight'
-import ContactForm from '@/components/PageComponents/ContactForm'
-import FooterComp from '@/components/GlobalComponents/Footer'
+import banner from '@/components/Contact/ContactBanner'
+import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
+import contactForm from '@/components/PageComponents/ContactForm'
+import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
   data() {
     return {
+      // banner data
+      bannerData: {
+        heading: 'Hit Us Up',
+        subHeading: 'Still have questions? Feel free to drop us a message on any questions you may have.',
+        imageName: 'contactBannerImage.svg',
+        button: ['submit', 'submit song']
+      },
 
     }
   },
   components: {
-    ContactBanner,
-    ContactSectionBackgroundRight,
-    ContactForm,
-    FooterComp
+    banner,
+    sectionBackgroundRight,
+    contactForm,
+    footerComp
 
   },
+  mounted() {
+
+  },
+  computed: {
+
+  },
+  methods: {
+
+  }
 }
 </script>
 

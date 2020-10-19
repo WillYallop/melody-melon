@@ -1,9 +1,9 @@
 <template>
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
-            <h1>Check Out Our Range of Playlists</h1>
-            <h4>Melody melon provides an extensive library of Spotify Playlists that can harmonize any genre, mood, or setting. </h4>
-            <button class="bannerBtnStyle" v-on:click="navigate()">submit song</button>
+            <h1>{{heading}}</h1>
+            <h4>{{subHeading}}</h4>
+            <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
         </div>
         <div class="imagearea">
             <img class="bannerImg" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy>
@@ -18,13 +18,31 @@ export default {
 
         }
     },
+    props: {
+        heading: {type: String},  
+        subHeading: {type: String}, 
+        button: {type: Array}
+    },
+    components: {
+
+    },
+    mounted() {
+        
+    },
+    computed: {
+
+    },
     methods: {
         getImageUrl(name) {
             var images = require.context('../../assets/images/', false)
             return images('./' + name)
         },
-        navigate() {
-            this.$store.commit('toggleModal')
+        navigate(dist) {
+            if(dist == 'submit') {
+                this.$store.commit('toggleModal')
+            } else {
+                this.$router.push(dist)
+            }
         }
     }
 }
@@ -46,7 +64,6 @@ export default {
 .textarea h1 {
     font-size: 50px;
     line-height: 55px;
-    font-weight: 900;
     color: #FFF;
     margin: 0 0 20px;
 }

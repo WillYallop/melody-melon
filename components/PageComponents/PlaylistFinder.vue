@@ -10,14 +10,14 @@
                     <img class="desktopImg" src="../../assets/images/playlistFinderDesktio.png" alt="">
                 </div>
                 <div class="mobileBtnContainer">
-                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">visit</button>
+                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">find playlist</button>
                 </div>
             </div>
             <div class="finderTextarea">
                 <h4>Find Your Perfect Playlist</h4>
-                <p>Struggle to find playlists to fuel your day? Look no further, check out Melody Melon playlist finder app that helps find your perfect playlist in 5 quick questions.</p>
+                <p>Struggle to find playlists to fuel your day?Look no further, check out Melody Melon playlist finder app that helps find your perfect playlist in 5 quick questions.</p>
                 <div>
-                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">visit</button>
+                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">find playlist</button>
                 </div>
             </div>
         </div>

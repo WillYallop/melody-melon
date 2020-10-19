@@ -31,17 +31,13 @@
 export default {
     data() {
         return {
-
         }
     },
     mounted() {
-
     },
     computed: {
-
     },
     methods: {
-
     }
 }
 </script>
@@ -101,7 +97,6 @@ export default {
 .cardBtn:hover {
     transform: scale(1.1);
 }
-
 @media only screen and (max-width: 1350px) {
     .pageSliderOpen .infoCardsContainer {flex-wrap: wrap; justify-content: center;}
     .pageSliderOpen .infoColOuter {width: 80%; margin-top: 20px;}

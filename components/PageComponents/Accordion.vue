@@ -100,7 +100,6 @@ export default {
     background-color: #333333;
     color: #FFF;
 }
-
 /* Action */
 .accordionActionCon {
     margin-top: 20px;
