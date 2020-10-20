@@ -6,7 +6,7 @@
                 <p>{{row.title}}</p>
                 <button class="toggleAccordBtn" ><fa v-if="!openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-down']" /><fa v-if="openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-up']" /></button>
             </div>
-            <div class="accordionBody" :class="{ 'bodyOpen' : openAccordionArray[row.id - 1] }"  :key="accordionKey" v-if="openAccordionArray[row.id - 1]">
+            <div class="accordionBody" :class="{ 'bodyOpen' : openAccordionArray[row.id - 1] }"  :key="accordionKey" v-show="openAccordionArray[row.id - 1]">
                 <p>{{row.body}}</p>
                 <div v-if="row.action === 'submit'" class="accordionActionCon">
                     <button class="submitSongBtn" v-on:click="$store.commit('toggleModal')">submit song</button>

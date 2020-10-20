@@ -10,39 +10,47 @@
         <!-- Playlist Search -->
         <div class="playlistSearchContainer">
           <div v-on:click="playlistSerachInputContainer = !playlistSerachInputContainer" class="playlistSearchInput" ref="playlistSearchInput">
-            <p class="inputText"><span v-if="genereQuery == 'all'">Filter by genre or mood</span><span class="capitaliseText" v-if="genereQuery != 'all'">{{genereQuery}}</span></p><fa class="fas" :icon="['fas', 'search']" />
+            <p class="inputText"><span v-if="genereQuery === 'all'">Filter by genre or mood</span><span class="capitaliseText" v-if="genereQuery != 'all'">{{genereQuery}}</span></p><fa class="fas" :icon="['fas', 'search']" />
 
             <div v-if="playlistSerachInputContainer"  class="playlistSearchInputsContainer" v-closable="{exclude: ['playlistSearchInput'], handler: 'closePlaylistSearchInputContainer'}">
               <div class="row">
                 <div class="col" v-on:click="genereQuery = 'all'"><p>All</p></div>
-                  <div class="col" v-on:click="genereQuery = 'top hits'"><p>Top Hits</p></div>
+                  <div class="col" v-on:click="genereQuery = 'pop'"><p>Pop</p></div>
                 </div>
                 <div class="row">
-                  <div class="col" v-on:click="genereQuery = 'pop'"><p>Pop</p></div>
-                  <div class="col" v-on:click="genereQuery = 'urban'"><p>Urban</p></div>
+                  <div class="col" v-on:click="genereQuery = 'rap'"><p>Rap</p></div>
+                  <div class="col" v-on:click="genereQuery = 'hype'"><p>Hype</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'dance'"><p>Dance</p></div>
+                  <div class="col" v-on:click="genereQuery = 'charts'"><p>Charts</p></div>
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'house'"><p>House</p></div>
+                  <div class="col" v-on:click="genereQuery = 'chill rap'"><p>Chill Rap</p></div>
                 </div>
                 <div class="row">
                   <div class="col" v-on:click="genereQuery = 'party'"><p>Party</p></div>
-                  <div class="col" v-on:click="genereQuery = 'feel good'"><p>Feel Good</p></div>
-                </div>
-                <div class="row">
-                  <div class="col" v-on:click="genereQuery = 'mood'"><p>Mood</p></div>
-                  <div class="col" v-on:click="genereQuery = 'indie'"><p>Indie</p></div>
-                </div>
-                <div class="row">
-                  <div class="col" v-on:click="genereQuery = 'nostalgia'"><p>Nostalgia</p></div>
                   <div class="col" v-on:click="genereQuery = 'hiphop'"><p>Hip Hop</p></div>
                 </div>
                 <div class="row">
-                  <div class="col" v-on:click="genereQuery = 'hot'"><p>Hot</p></div>
-                  <div class="col" v-on:click="genereQuery = 'jazz'"><p>Jazz</p></div> 
+                  <div class="col" v-on:click="genereQuery = 'lofi'"><p>Lo-Fi</p></div>
+                  <div class="col" v-on:click="genereQuery = 'rock'"><p>Rock</p></div> 
                 </div>
                 <div class="row">
-                  <div class="col" v-on:click="genereQuery = 'workout'"><p>Workout</p></div>
-                  <div class="col" v-on:click="genereQuery = 'soundtrack'"><p>Soundtrack</p></div>
+                  <div class="col" v-on:click="genereQuery = 'chill beats'"><p>Chill Beats</p></div>
+                  <div class="col" v-on:click="genereQuery = 'feel good'"><p>Feel Good</p></div>
                 </div>
                 <div class="row">
-                  <div class="col" v-on:click="genereQuery = 'chill'"><p>Chill</p></div> 
+                  <div class="col" v-on:click="genereQuery = 'indie'"><p>Indie</p></div> 
+                  <div class="col" v-on:click="genereQuery = 'reggae'"><p>Reggae</p></div> 
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'techno'"><p>Techno</p></div> 
+                  <div class="col" v-on:click="genereQuery = 'summer'"><p>Summer</p></div> 
+                </div>
+                <div class="row">
+                  <div class="col" v-on:click="genereQuery = 'disco'"><p>Disco</p></div>
                 </div>
               </div>
           </div>

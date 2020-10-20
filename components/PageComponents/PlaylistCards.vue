@@ -9,8 +9,9 @@
                     <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
                         <div class="playlistPreviewColInner" v-on:click="navigateToPlaylist(playlist.playlistUrl)">
                             <div class="colHeader"> 
-                                <picture >
-                                    <source class="playlistIcon" :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon)" type="image/jpg" />
+                                <picture>
+                                    <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" type="image/webp" />
+                                    <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon)" type="image/jpg" />
                                     <img class="playlistIcon" :src="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" />
                                 </picture>
                                
@@ -57,9 +58,48 @@ export default {
             //PLaylist Array
             playlists: [
                 {
+                    playlistName: "House Party Hits", 
+                    icon: "houseparty.jpg", 
+                    playlistId: 1,
+                    playlistUrl: "house-party-hits",
+                    songs: [
+                        {number: 1, songName: "Pursuit Of Happiness (Nightmare)", songArtist: "Kid Cudi, MGMT, Ratatat", songDuration: "4:55"},
+                        {number: 2, songName: "In My Mind", songArtist: "Dynoro, Gigi D'Agostino", songDuration: "3:05"},
+                        {number: 3, songName: "Lady (Hear Me Tonight)", songArtist: "Modjo", songDuration: "4:34"},
+                        {number: 4, songName: "Groovejet", songArtist: "Spiller", songDuration: "7:30"},
+                        {number: 5, songName: "Deep Inside", songArtist: "Hardrive", songDuration: "6:31"}
+                    ]
+                },
+                {
+                    playlistName: "In my feels", 
+                    icon: "inmyfeels.jpg", 
+                    playlistId: 2,
+                    playlistUrl: "in-my-feels",
+                    songs: [
+                        {number: 1, songName: "I Fall Apart", songArtist: "Post Malone", songDuration: "3:43"},
+                        {number: 2, songName: "changes", songArtist: "XXXTENTACION", songDuration: "2:02"},
+                        {number: 3, songName: "Falling", songArtist: "Trevor Daniel", songDuration: "2:39"},
+                        {number: 4, songName: "Robbery", songArtist: "Juice WRLD", songDuration: "4:00"},
+                        {number: 5, songName: "Ivy", songArtist: "Frank Ocean", songDuration: "4:09"}
+                    ]
+                },
+                {
+                    playlistName: "Chill Rap", 
+                    icon: "chillrap.jpg", 
+                    playlistId: 3,
+                    playlistUrl: "chill-rap",
+                    songs: [
+                        {number: 1, songName: "Laugh Now Cry Later (feat. Lil Durk)", songArtist: "Drake, Lil Durk", songDuration: "4:21"},
+                        {number: 2, songName: "Love is Only a Feeling", songArtist: "Joey Bada$$", songDuration: "2:32"},
+                        {number: 3, songName: "Dapper (feat. Anderson .Paak)", songArtist: "Domo Genesis, Anderson .Paak", songDuration: "3:13"},
+                        {number: 4, songName: "After Hours", songArtist: "The Weeknd", songDuration: "6:01"},
+                        {number: 5, songName: "SKELETONS", songArtist: "Travis Scott", songDuration: "2:56"}
+                    ]
+                },
+                {
                     playlistName: "Summer Chillouts", 
                     icon: "summerchillouts.jpg", 
-                    playlistId: 1,
+                    playlistId: 4,
                     playlistUrl: "summer-chillouts",
                     songs: [
                         {number: 1, songName: "Are You With Me - Radio Edit", songArtist: "Lost Frequencies", songDuration: "2:18"},
@@ -70,22 +110,9 @@ export default {
                     ]
                 },
                 {
-                    playlistName: "Summer Road Trip", 
-                    icon: "summerroadtrip.jpg", 
-                    playlistId: 2,
-                    playlistUrl: "summer-road-trip",
-                    songs: [
-                        {number: 1, songName: "Odessa", songArtist: "Caribou", songDuration: "5:15"},
-                        {number: 2, songName: "The Look", songArtist: "Metronomy", songDuration: "4:38"},
-                        {number: 3, songName: "Low Rider", songArtist: "War", songDuration: "3:11"},
-                        {number: 4, songName: "Need You Tonight", songArtist: "INXS", songDuration: "3:01"},
-                        {number: 5, songName: "Brandy (You're a Fine Girl)", songArtist: "Looking Glass", songDuration: "3:07"}
-                    ]
-                },
-                {
                     playlistName: "Summer 2020", 
                     icon: "summer2020.jpg", 
-                    playlistId: 3,
+                    playlistId: 5,
                     playlistUrl: "summer-2020",
                     songs: [
                         {number: 1, songName: "Blinding Lights", songArtist: "The Weeknd", songDuration: "3:22"},
@@ -98,7 +125,7 @@ export default {
                 {
                     playlistName: "The BIG Pre's Playlist", 
                     icon: "preplaylist.jpg", 
-                    playlistId: 4,
+                    playlistId: 6,
                     playlistUrl: "the-big-pre-playlist",
                     songs: [
                         {number: 1, songName: "Get on Your Knees", songArtist: "MC Pat Flynn", songDuration: "4:47"},
@@ -106,32 +133,6 @@ export default {
                         {number: 3, songName: "Me & U", songArtist: "Marty Guilfoyle, John Gibbons", songDuration: "2:39"},
                         {number: 4, songName: "Flowers (feat. Jaykae)", songArtist: "Nathan Dawe, Jaykae", songDuration: "3:17"},
                         {number: 5, songName: "Pursuit Of Happiness (Nightmare)", songArtist: "Kid Cudi, MGMT, Ratatat", songDuration: "4:55"}
-                    ]
-                },
-                {
-                    playlistName: "In my feels", 
-                    icon: "inmyfeels.jpg", 
-                    playlistId: 5,
-                    playlistUrl: "in-my-feels",
-                    songs: [
-                        {number: 1, songName: "I Fall Apart", songArtist: "Post Malone", songDuration: "3:43"},
-                        {number: 2, songName: "changes", songArtist: "XXXTENTACION", songDuration: "2:02"},
-                        {number: 3, songName: "Falling", songArtist: "Trevor Daniel", songDuration: "2:39"},
-                        {number: 4, songName: "Robbery", songArtist: "Juice WRLD", songDuration: "4:00"},
-                        {number: 5, songName: "Ivy", songArtist: "Frank Ocean", songDuration: "4:09"}
-                    ]
-                },
-                {
-                    playlistName: "House Party Hits", 
-                    icon: "houseparty.jpg", 
-                    playlistId: 6,
-                    playlistUrl: "house-party-hits",
-                    songs: [
-                        {number: 1, songName: "Pursuit Of Happiness (Nightmare)", songArtist: "Kid Cudi, MGMT, Ratatat", songDuration: "4:55"},
-                        {number: 2, songName: "In My Mind", songArtist: "Dynoro, Gigi D'Agostino", songDuration: "3:05"},
-                        {number: 3, songName: "Lady (Hear Me Tonight)", songArtist: "Modjo", songDuration: "4:34"},
-                        {number: 4, songName: "Groovejet", songArtist: "Spiller", songDuration: "7:30"},
-                        {number: 5, songName: "Deep Inside", songArtist: "Hardrive", songDuration: "6:31"}
                     ]
                 },
 
