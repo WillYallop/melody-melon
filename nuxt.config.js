@@ -7,7 +7,7 @@ export default {
     },
     title: 'Melody Melon',
     meta: [
-      { charset: 'utf-8' },
+      { charset: 'UTF-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme_color', content: '#080808' },
       { hid: 'description', name: 'description', content: 'Discover a wide range of fruity playlists to fuel your day! Discover and promote music with Melody Melon!' }
@@ -84,7 +84,7 @@ export default {
     },
     webp: {
       preset: 'default',
-      quality: 75,
+      quality: 85,
     },
     
   },

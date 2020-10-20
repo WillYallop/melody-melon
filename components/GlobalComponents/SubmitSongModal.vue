@@ -218,7 +218,7 @@ export default {
     transition: 0.3s;
 }
 .toggleModalBtn:hover .fas {
-    color: #FF2F45;
+    color: #E32539;
 }
 
 /* form */
@@ -241,7 +241,7 @@ export default {
     border-bottom: 2px solid #3DA389;
 }  
 .inputError:focus {
-    border-bottom: 2px solid #FF2F45;
+    border-bottom: 2px solid #E32539;
 }
 .textareaStyle {
     width: 100%;
@@ -257,7 +257,7 @@ export default {
 .formBtn {
     padding: 10px 40px;
     border-radius: 20px;
-    background-color: #FF2F45;
+    background-color: #E32539;
     border: none;
     color: #FFF;
     font-size: 16px;

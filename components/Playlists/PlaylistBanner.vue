@@ -8,9 +8,9 @@
         <div class="imagearea">
             <!--<img class="bannerImg" loading="lazy" src="../../assets/images/contactBannerImage.svg" alt="Banner image" data-not-lazy>-->
             <picture>
-                <source :srcSet="require('~/assets/images/contactBannerImage.png?webp')" type="image/webp"/>
-                <source :srcSet="require('~/assets/images/contactBannerImage.png')" type="image/png"/>
-                <img class="bannerImg" loading="lazy" :src="require('~/assets/images/contactBannerImage.png')" alt="Hit us up" data-not-lazy/>
+                <source :srcSet="require('~/assets/images/bannerImage.png?webp')" type="image/webp" />
+                <source :srcSet="require('~/assets/images/bannerImage.png')" type="image/png" />
+                <img class="bannerImg" loading="lazy" :src="require('~/assets/images/bannerImage.png')" alt="Hit us up" data-not-lazy/>
             </picture>
         </div>
     </div>

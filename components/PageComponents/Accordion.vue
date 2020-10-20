@@ -4,7 +4,7 @@
         <div class="rowContainer" :key="row.id" v-for="row in accordionData">
             <div class="accordionHeader" :class="{ 'headerOpen' : openAccordionArray[row.id - 1] }" v-on:click="openAccordionArray[row.id - 1] = !openAccordionArray[row.id - 1]; accordionKey++">
                 <p>{{row.title}}</p>
-                <button class="toggleAccordBtn" ><fa v-if="!openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-down']" /><fa v-if="openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-up']" /></button>
+                <button class="toggleAccordBtn" aria-label="Open accordion box"><fa v-if="!openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-down']" /><fa v-if="openAccordionArray[row.id - 1]" class="fas" :icon="['fas', 'chevron-up']" /></button>
             </div>
             <div class="accordionBody" :class="{ 'bodyOpen' : openAccordionArray[row.id - 1] }"  :key="accordionKey" v-show="openAccordionArray[row.id - 1]">
                 <p>{{row.body}}</p>
@@ -116,7 +116,7 @@ export default {
     border: none;
     font-size: 16px;
     transition: 0.3s;
-    background-color: #FF2F45;
+    background-color: #E32539;
     cursor: pointer;
 }
 .submitSongBtn:hover {

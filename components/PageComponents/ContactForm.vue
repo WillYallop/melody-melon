@@ -287,7 +287,7 @@ export default {
 .contactFormBtn {
     padding: 10px 40px;
     border-radius: 20px;
-    background-color: #FF2F45;
+    background-color: #E32539;
     border: none;
     color: #FFF;
     font-size: 16px;
@@ -320,7 +320,7 @@ export default {
 
 .inputError:focus {
     border-radius: 5px 5px 0 0;
-    border-bottom: 2px solid #FF2F45;
+    border-bottom: 2px solid #E32539;
 }
 
 

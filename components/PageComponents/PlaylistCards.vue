@@ -9,10 +9,10 @@
                     <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
                         <nuxt-link :to="'/playlist/' + playlist.playlistUrl" class="playlistPreviewColInner">
                             <div class="colHeader"> 
-                                <picture>
+                                <picture class="playlistIconCon">
                                     <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" type="image/webp" />
                                     <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon)" type="image/jpg" />
-                                    <img class="playlistIcon" :src="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" />
+                                    <img class="playlistIcon" loading="lazy" :src="require('~/assets/images/playlistIcons/'+playlist.icon)" alt="Playlist Artwork"/>
                                 </picture>
                                
                                 <div class="colHeaderBackgroundImageOverlay"></div>
@@ -20,7 +20,7 @@
                                 <picture>
                                     <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" type="image/webp" />
                                     <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon)" type="image/jpg" />
-                                    <img class="colHeaderBackgroundImage" :src="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" />
+                                    <img class="colHeaderBackgroundImage" loading="lazy" :src="require('~/assets/images/playlistIcons/'+playlist.icon)" alt="Playlist Artwork Background"/>
                                 </picture>
                                 <!--<div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>-->
                             </div>
@@ -273,7 +273,8 @@ export default {
     overflow: hidden;
     border-radius: 20px 20px 0 0;
 }
-.colHeader picture {
+.playlistIconCon {
+    width: 100%;
     text-align: center;
 }
 .playlistIcon {

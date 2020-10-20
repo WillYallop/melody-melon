@@ -272,7 +272,7 @@ export default {
     border-bottom: 1px solid #2A2A2A;
 }
 .breadcrumbsCon a {
-    color: #FF2F45;
+    color: #E32539;
     text-decoration: none;
 } 
 .crumbSlug {

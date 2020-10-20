@@ -2,15 +2,15 @@
     <div class="bannerCon siteWrapper sitePadding">
         <div class="textarea">
             <h1>{{heading}}</h1>
-            <h4>{{subHeading}}</h4>
-            <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
+            <p>{{subHeading}}</p>
+            <nuxt-link :to="button[0]" class="bannerBtnStyle">{{button[1]}}</nuxt-link>
         </div>
         <div class="imagearea">
-            <!-- <img class="bannerImg" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy> -->
+            <!-- <img class="bannerImg" loading="lazy" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy> -->
             <picture>
-                <source :srcSet="require('~/assets/images/bannerImage.png?webp')" type="image/webp" />
-                <source :srcSet="require('~/assets/images/bannerImage.png')" type="image/png" />
-                <img class="bannerImg" :src="require('~/assets/images/bannerImage.png?webp')" alt="Fruity Blogs" data-not-lazy/>
+                <source :srcSet="require('~/assets/images/bannerImage.png?webp')" type="image/webp"/>
+                <source :srcSet="require('~/assets/images/bannerImage.png')" type="image/png"/>
+                <img class="bannerImg" loading="lazy" :src="require('~/assets/images/bannerImage.png')" alt="Fruity Blogs" data-not-lazy/>
             </picture>
         </div>
     </div>
@@ -73,7 +73,7 @@ export default {
     color: #FFF;
     margin: 0 0 20px;
 }
-.textarea h4 {
+.textarea p {
     color: #EAEAEA;
     font-weight: normal;
     font-size: 20px;
@@ -87,6 +87,10 @@ export default {
     width: 100%;
 }
 .bannerBtnStyle {
+    width: 173px;
+    text-decoration: none;
+    text-decoration: none;
+    display: block;
     padding: 10px 40px;
     border: 2px solid #FFF;
     background-color: transparent;

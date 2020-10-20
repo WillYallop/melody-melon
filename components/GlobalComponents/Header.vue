@@ -1,12 +1,12 @@
 <template>
     <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerScrolled' : scrollPos > 10 }">   
         <div class="headerWrapper">
-            <!--<img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')" data-not-lazy>-->
+            <!--<img class="logoImg" loading="lazy" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')" data-not-lazy>-->
             <nuxt-link to="/">
                 <picture>
                     <source :srcSet="require('~/assets/images/siteLogo.png?webp')" type="image/webp" />
-                    <source :srcSet="require('~/assets/images/siteLogo.png')" type="image/png" />
-                    <img class="logoImg" :src="require('~/assets/images/siteLogo.png?webp')" alt="Melody Melon" data-not-lazy/>
+                    <source :srcSet="require('~/assets/images/siteLogo.png')" type="image/png"/>
+                    <img class="logoImg" loading="lazy" :src="require('~/assets/images/siteLogo.png')" alt="Melody Melon" data-not-lazy/>
                 </picture>
             </nuxt-link>
             <nav class="siteNavigation">
@@ -18,7 +18,7 @@
                 </ul>
                 <button class="toggleSliderBtn" v-on:click="$store.commit('toggleSlider')"><fa class="fas" v-if="sliderOpen" :icon="['fas', 'chevron-right']" /><fa class="fas" v-if="!sliderOpen" :icon="['fas', 'chevron-left']" /></button>
                 <!-- mobile nav toggle -->
-                <button class="mobielNavToggleBtn" v-on:click="showMobileNav = !showMobileNav">
+                <button aria-label="Open Site Navigation" class="mobielNavToggleBtn" v-on:click="showMobileNav = !showMobileNav">
                     <fa class="fas" :icon="['fas', 'bars']" />
                 </button>
             </nav>

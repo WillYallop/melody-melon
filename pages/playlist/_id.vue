@@ -31,7 +31,7 @@
 import playlistsJson from '@/components/Playlists.json'
 
 // components
-import banner from '@/components/PageComponents/Banner'
+import banner from '@/components/Playlists/PlaylistBanner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
 import sectionBackgroundLeft from '@/components/PageComponents/SectionBackgroundLeft'
 import playlistInfo from '@/components/PageComponents/PlaylistInfo'

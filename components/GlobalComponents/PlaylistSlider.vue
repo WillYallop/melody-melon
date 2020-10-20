@@ -61,13 +61,16 @@
       <div class="playlistResultsContainer">
         <!-- Results -->
         <div class="playlistBoxContainer" :key="results.id" v-for="results in playlistSearchQuery">
-          <!--<img class="playlistBoxInner" :src="getImageUrl(results.icon)" alt="Playlist Artwork">-->
-          <picture>
+          <nuxt-link :to="'/playlist/' + results.playlistUrl" @click.native="mobileToggleSlider()">
+            <img class="playlistBoxInner" loading="lazy" :src="getImageUrl(results.icon)" alt="Playlist Artwork">
+          </nuxt-link>
+          
+          <!--<picture>
             <source :srcSet="require('~/assets/images/playlistIcons/'+results.icon+'?webp')" type="image/webp" />
             <source :srcSet="require('~/assets/images/playlistIcons/'+results.icon)" type="image/jpg" />
-            <img class="playlistBoxInner" :src="require('~/assets/images/playlistIcons/'+results.icon+'?webp')" alt="Playlist Artwork" />
+            <img class="playlistBoxInner" loading="lazy" :src="require('~/assets/images/playlistIcons/'+results.icon+'?webp')" alt="Playlist Artwork" />
           </picture>
-          <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl); mobileToggleSlider()"></div>
+          <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl); mobileToggleSlider()"></div>-->
         </div>
       </div>
     
@@ -116,11 +119,8 @@ export default {
       var images = require.context('../../assets/images/playlistIcons/', false)
       return images('./' + name)
     },
-    navigateToPlaylist(id) {
-      this.$router.push('/playlist/' + id)
-    },
     mobileToggleSlider() {
-      if (process.client) {
+      if(process.client) {
         if(window.innerWidth <= 1070) {
           this.$store.commit('toggleSlider')
         }

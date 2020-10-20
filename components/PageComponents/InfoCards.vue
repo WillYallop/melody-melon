@@ -1,25 +1,25 @@
 <template>
     <div class="infoCardsContainer siteWrapper sitePadding">
         <div class="infoColOuter">
-            <img class="cardImage" src="../../assets/images/forArtistsImg.svg" alt="For Artists">
+            <img class="cardImage" loading="lazy" src="../../assets/images/forArtistsImg.svg" alt="For Artists">
             <div class="textarea">
-                <h4>For artists</h4>
+                <h3>For artists</h3>
                 <p>We offer promotional campaigns to solo artists who want to be featured in our playlists.</p>
             </div>
-            <nuxt-link  to="/contact" class="cardBtn">more info</nuxt-link>
+            <nuxt-link  to="/contact" class="cardBtn">hit us up</nuxt-link>
         </div>
         <div class="infoColOuter">
-            <img class="cardImage" src="../../assets/images/chatWithUsImg.svg" alt="Chat With Us">
+            <img class="cardImage" loading="lazy" src="../../assets/images/chatWithUsImg.svg" alt="Chat With Us">
             <div class="textarea">
-                <h4>Chat with us</h4>
+                <h3>Chat with us</h3>
                 <p> Still have questions about Melody Melon? Get in touch with us and we’ll be more than happy to help.</p>
             </div>
             <nuxt-link to="/contact" class="cardBtn">contact</nuxt-link>
         </div>
         <div class="infoColOuter"> 
-            <img class="cardImage" src="../../assets/images/ourPlaylistsImg.svg" alt="Our Playlists">
+            <img class="cardImage" loading="lazy" src="../../assets/images/ourPlaylistsImg.svg" alt="Our Playlists">
             <div class="textarea">
-                <h4>Our playlists</h4>
+                <h3>Our playlists</h3>
                 <p>Check out our weekly updated Spotify Playlists. We have all the sounds to suit your musical needs.</p>
             </div>
             <nuxt-link to="/playlist/chill-rap" class="cardBtn">discover</nuxt-link>
@@ -70,7 +70,7 @@ export default {
     padding: 40px 0 0;
     max-width: 300px;
 }
-.textarea h4 {
+.textarea h3 {
     font-size: 18px;
     font-weight: bold;
     color: #FFF;
@@ -93,7 +93,7 @@ export default {
     transition: 0.3s;
     color: #FFF;
     font-size: 16px;
-    background-color: #FF2F45;
+    background-color: #E32539;
 }
 .cardBtn:hover {
     transform: scale(1.05);

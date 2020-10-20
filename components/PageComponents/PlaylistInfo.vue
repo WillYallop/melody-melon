@@ -4,29 +4,29 @@
             
             <div class="playlistContainer">
                 <div class="col1">
-                    <h4>{{playlistData.playlistName}}</h4>
+                    <h2>{{playlistData.playlistName}}</h2>
                     <p>{{playlistData.playlistDescription}}</p>
                     <div class="imageContainer">
-                        <!--<img class="playlistImage" :src="getImageUrl(playlistData.icon)" alt="Playlist Artwork">-->
+                        <!--<img class="playlistImage" loading="lazy" :src="getImageUrl(playlistData.icon)" alt="Playlist Artwork">-->
                         <picture>
                             <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" type="image/webp" />
                             <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon)" type="image/jpg" />
-                            <img class="playlistImage" :src="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" alt="Playlist Artwork"/>
+                            <img class="playlistImage" loading="lazy" :src="require('~/assets/images/playlistIcons/'+playlistData.icon)" alt="Playlist Artwork"/>
                         </picture>
                         <div class="backgrounImageOverlay"></div>
-                        <!--<img :src="getImageUrl(playlistData.icon)" alt="playlist artwork" class="backgrounImage">-->
+                        <!--<img loading="lazy" :src="getImageUrl(playlistData.icon)" alt="playlist artwork" class="backgrounImage">-->
                         <picture>
                             <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" type="image/webp" />
                             <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon)" type="image/jpg" />
-                            <img class="backgrounImage" :src="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" alt="Playlist Artwork"/>
+                            <img class="backgrounImage" loading="lazy" :src="require('~/assets/images/playlistIcons/'+playlistData.icon)" alt="Playlist Artwork"/>
                         </picture>
                     </div>
-                    <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" class="followPlaylistBtn">follow</a> 
+                    <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" rel="noopener" class="followPlaylistBtn">follow</a> 
                 </div>
                 <div class="col2">
                     <iframe :src="'https://open.spotify.com/embed/playlist/' + playlistData.playlistSpotifyUrl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     <div class="col2BtnArea">
-                        <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" class="followPlaylistBtn">follow</a>  
+                        <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" rel="noopener" class="followPlaylistBtn">follow</a>  
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ export default {
     padding: 30px;
     position: relative;
 }
-.col1 h4 {
+.col1 h2 {
     font-size: 24px;
     text-transform: capitalize;
     margin-bottom: 10px;

@@ -172,7 +172,7 @@ export default {
     border: none;
     font-size: 16px;
     transition: 0.3s;
-    background-color: #FF2F45;
+    background-color: #E32539;
     cursor: pointer;
 }
 .rowContent .btnStyle1:hover {

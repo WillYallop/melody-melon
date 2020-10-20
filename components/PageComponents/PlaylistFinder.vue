@@ -4,30 +4,30 @@
 
             <div class="finderImgContainer">
                 <div class="imgContainerMobile">
-                    <!--<img class="mobileImg" src="../../assets/images/playlistFinderMobile.png" alt="Playlist Finder">-->
+                    <!--<img class="mobileImg" loading="lazy" src="../../assets/images/playlistFinderMobile.png" alt="Playlist Finder">-->
                     <picture>
                         <source :srcSet="require('~/assets/images/playlistFinderMobile.png?webp')" type="image/webp" />
                         <source :srcSet="require('~/assets/images/playlistFinderMobile.png')" type="image/png" />
-                        <img class="mobileImg" :src="require('~/assets/images/playlistFinderMobile.png?webp')" alt="Playlist Finder"/>
+                        <img class="mobileImg" loading="lazy" :src="require('~/assets/images/playlistFinderMobile.png')" alt="Playlist Finder"/>
                     </picture>
                 </div>
                 <div class="imgContainerDesktop">
-                    <!--<img class="desktopImg" src="../../assets/images/playlistFinderDesktio.png" alt="Playlist Finder">-->
+                    <!--<img class="desktopImg" loading="lazy" src="../../assets/images/playlistFinderDesktio.png" alt="Playlist Finder">-->
                     <picture class="desktopImgCon">
                         <source :srcSet="require('~/assets/images/playlistFinderDesktio.png?webp')" type="image/webp" />
                         <source :srcSet="require('~/assets/images/playlistFinderDesktio.png')" type="image/png" />
-                        <img class="desktopImg" :src="require('~/assets/images/playlistFinderDesktio.png?webp')" alt="Playlist Finder"/>
+                        <img class="desktopImg" loading="lazy" :src="require('~/assets/images/playlistFinderDesktio.png')" alt="Playlist Finder"/>
                     </picture>
                 </div>
                 <div class="mobileBtnContainer">
-                    <a href="https://finder.melodymelon.com" target="_blank" class="finderBtnStyle">find playlist</a>
+                    <a href="https://finder.melodymelon.com" target="_blank" rel="noopener" class="finderBtnStyle">find playlist</a>
                 </div>
             </div>
             <div class="finderTextarea">
-                <h4>Find Your Perfect Playlist</h4>
+                <h2>Find Your Perfect Playlist</h2>
                 <p>Struggle to find playlists to fuel your day?Look no further, check out Melody Melon playlist finder app that helps find your perfect playlist in 5 quick questions.</p>
                 <div>
-                    <a href="https://finder.melodymelon.com" target="_blank" class="finderBtnStyle">find playlist</a>
+                    <a href="https://finder.melodymelon.com" target="_blank" rel="noopener" class="finderBtnStyle">find playlist</a>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
     flex-direction: column;
     justify-content: center;
 }
-.finderTextarea h4 {
+.finderTextarea h2 {
     font-size: 24px;
     color: #FFF;
     margin: 0 0 20px;
