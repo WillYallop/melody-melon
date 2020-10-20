@@ -4,42 +4,36 @@
 
             <div class="finderImgContainer">
                 <div class="imgContainerMobile">
-                    <img class="mobileImg" src="../../assets/images/playlistFinderMobile.png" alt=""> 
+                    <!--<img class="mobileImg" src="../../assets/images/playlistFinderMobile.png" alt="Playlist Finder">-->
+                    <picture>
+                        <source :srcSet="require('~/assets/images/playlistFinderMobile.png?webp')" type="image/webp" />
+                        <source :srcSet="require('~/assets/images/playlistFinderMobile.png')" type="image/png" />
+                        <img class="mobileImg" :src="require('~/assets/images/playlistFinderMobile.png?webp')" alt="Playlist Finder"/>
+                    </picture>
                 </div>
                 <div class="imgContainerDesktop">
-                    <img class="desktopImg" src="../../assets/images/playlistFinderDesktio.png" alt="">
+                    <!--<img class="desktopImg" src="../../assets/images/playlistFinderDesktio.png" alt="Playlist Finder">-->
+                    <picture class="desktopImgCon">
+                        <source :srcSet="require('~/assets/images/playlistFinderDesktio.png?webp')" type="image/webp" />
+                        <source :srcSet="require('~/assets/images/playlistFinderDesktio.png')" type="image/png" />
+                        <img class="desktopImg" :src="require('~/assets/images/playlistFinderDesktio.png?webp')" alt="Playlist Finder"/>
+                    </picture>
                 </div>
                 <div class="mobileBtnContainer">
-                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">find playlist</button>
+                    <a href="https://finder.melodymelon.com" target="_blank" class="finderBtnStyle">find playlist</a>
                 </div>
             </div>
             <div class="finderTextarea">
                 <h4>Find Your Perfect Playlist</h4>
                 <p>Struggle to find playlists to fuel your day?Look no further, check out Melody Melon playlist finder app that helps find your perfect playlist in 5 quick questions.</p>
                 <div>
-                    <button class="finderBtnStyle" v-on:click="navigateTo('https://finder.melodymelon.com')">find playlist</button>
+                    <a href="https://finder.melodymelon.com" target="_blank" class="finderBtnStyle">find playlist</a>
                 </div>
             </div>
         </div>
 
     </div>
 </template>
-
-<script>
-export default {
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-        navigateTo(url) {
-            var win = window.open(url, '_blank')
-            win.focus()
-        }
-    }
-}
-</script>
 
 <style scoped>
 .finderContainer {
@@ -75,7 +69,12 @@ export default {
     max-height: 400px;
     border-radius: 10px;
 }
-.desktopImg  {
+.desktopImgCon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.desktopImg {
     width: 80%;
 }
 .mobileBtnContainer  {
@@ -100,6 +99,9 @@ export default {
 }
 /* btn style */
 .finderBtnStyle {
+    display: block;
+    width: 224px;
+    text-decoration: none;
     margin-top: 40px;
     padding: 10px 60px;
     border-radius: 20px;

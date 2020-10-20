@@ -77,6 +77,7 @@ export default {
 .accordionHeader p {
     font-weight: bold;
     cursor: default;
+    padding-right: 20px;
 }
 .headerOpen {
     border-radius: 20px 20px 0 0;
@@ -84,6 +85,7 @@ export default {
 .toggleAccordBtn {
     height: 30px;
     width: 30px;
+    min-width: 30px;
     background-color: #111111;
     border-radius: 50%;
     border: none;

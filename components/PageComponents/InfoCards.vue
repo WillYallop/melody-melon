@@ -6,7 +6,7 @@
                 <h4>For artists</h4>
                 <p>We offer promotional campaigns to solo artists who want to be featured in our playlists.</p>
             </div>
-            <button class="cardBtn" v-on:click="$router.push('/for-artists')">read more</button>
+            <nuxt-link  to="/contact" class="cardBtn">more info</nuxt-link>
         </div>
         <div class="infoColOuter">
             <img class="cardImage" src="../../assets/images/chatWithUsImg.svg" alt="Chat With Us">
@@ -14,7 +14,7 @@
                 <h4>Chat with us</h4>
                 <p> Still have questions about Melody Melon? Get in touch with us and we’ll be more than happy to help.</p>
             </div>
-            <button class="cardBtn" v-on:click="$router.push('/contact')">contact</button>
+            <nuxt-link to="/contact" class="cardBtn">contact</nuxt-link>
         </div>
         <div class="infoColOuter"> 
             <img class="cardImage" src="../../assets/images/ourPlaylistsImg.svg" alt="Our Playlists">
@@ -22,7 +22,7 @@
                 <h4>Our playlists</h4>
                 <p>Check out our weekly updated Spotify Playlists. We have all the sounds to suit your musical needs.</p>
             </div>
-            <button class="cardBtn" v-on:click="$router.push('/playlist/the-big-pre-playlist')">discover</button>
+            <nuxt-link to="/playlist/chill-rap" class="cardBtn">discover</nuxt-link>
         </div>
     </div>
 </template>
@@ -62,7 +62,6 @@ export default {
     position: relative;
 } 
 .cardImage {
-    width: 80%;
     max-height: 110px;
 } 
 .textarea {
@@ -81,6 +80,8 @@ export default {
     color: #EAEAEA;
 }
 .cardBtn {
+    text-align: center;
+    text-decoration: none;
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -95,7 +96,7 @@ export default {
     background-color: #FF2F45;
 }
 .cardBtn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 @media only screen and (max-width: 1350px) {
     .pageSliderOpen .infoCardsContainer {flex-wrap: wrap; justify-content: center;}

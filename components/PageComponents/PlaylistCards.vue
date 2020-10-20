@@ -7,7 +7,7 @@
                 <div class="swiper-wrapper">
                     <!-- Slide V-For -->
                     <div class="playlistPreviewCol swiper-slide" :key="playlist.playlistName" v-for="playlist in playlists">
-                        <div class="playlistPreviewColInner" v-on:click="navigateToPlaylist(playlist.playlistUrl)">
+                        <nuxt-link :to="'/playlist/' + playlist.playlistUrl" class="playlistPreviewColInner">
                             <div class="colHeader"> 
                                 <picture>
                                     <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" type="image/webp" />
@@ -16,7 +16,13 @@
                                 </picture>
                                
                                 <div class="colHeaderBackgroundImageOverlay"></div>
-                                <div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>
+
+                                <picture>
+                                    <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" type="image/webp" />
+                                    <source :srcSet="require('~/assets/images/playlistIcons/'+playlist.icon)" type="image/jpg" />
+                                    <img class="colHeaderBackgroundImage" :src="require('~/assets/images/playlistIcons/'+playlist.icon+'?webp')" />
+                                </picture>
+                                <!--<div class="colHeaderBackgroundImage" :style="{ backgroundImage: `url(${getImageUrl(playlist.icon)})` }"></div>-->
                             </div>
                             <div class="playlistIframeContainer">
                                 <div class="songRow" :key="song.number" v-for="song in playlist.songs">
@@ -30,7 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
@@ -251,12 +257,11 @@ export default {
     width: 33.33%;
 }
 .playlistPreviewColInner {
-    overflow: hidden;
-    border-radius: 20px;
     background-color: #4A4A4A;  
     position: relative;  
+    text-decoration: none;
+    transition: 0.3s;
 }
-
 /* Playlist Slide design */
 .colHeader {
     width: 100%;
@@ -266,6 +271,7 @@ export default {
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
 }
 .colHeader picture {
     text-align: center;
@@ -286,8 +292,9 @@ export default {
     z-index: 15;
 }
 .colHeaderBackgroundImage {
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: blur(6px);
     transform: scale(1.1); 
     position: absolute;
@@ -297,9 +304,10 @@ export default {
     bottom: 0;
     z-index: 10;
 }
-
 .playlistIframeContainer {
     background-color: #181818;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
 }
 .spotifyPlaylistIframe {
     height: 100%;
@@ -314,9 +322,6 @@ export default {
     padding: 8px 0;
     transition: background 0.1s;
     cursor: pointer;
-}
-.songRow:hover{
-    background-color: #242424;
 }
 .rowTextareHeader {
     display: flex;

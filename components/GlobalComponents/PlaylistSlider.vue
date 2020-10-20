@@ -61,7 +61,12 @@
       <div class="playlistResultsContainer">
         <!-- Results -->
         <div class="playlistBoxContainer" :key="results.id" v-for="results in playlistSearchQuery">
-          <img class="playlistBoxInner" :src="getImageUrl(results.icon)" alt="Playlist Artwork">
+          <!--<img class="playlistBoxInner" :src="getImageUrl(results.icon)" alt="Playlist Artwork">-->
+          <picture>
+            <source :srcSet="require('~/assets/images/playlistIcons/'+results.icon+'?webp')" type="image/webp" />
+            <source :srcSet="require('~/assets/images/playlistIcons/'+results.icon)" type="image/jpg" />
+            <img class="playlistBoxInner" :src="require('~/assets/images/playlistIcons/'+results.icon+'?webp')" alt="Playlist Artwork" />
+          </picture>
           <div class="playlistBoxInnerOverlay" v-on:click="navigateToPlaylist(results.playlistUrl); mobileToggleSlider()"></div>
         </div>
       </div>

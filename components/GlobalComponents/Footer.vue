@@ -2,7 +2,14 @@
     <footer class="footerContainer">
         <div class="siteWrapper sitePadding">
             <div class="topRow"> 
-                <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')">
+                <!-- <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')"> -->
+                <nuxt-link to="/">
+                    <picture>
+                        <source :srcSet="require('~/assets/images/siteLogo.png?webp')" type="image/webp" />
+                        <source :srcSet="require('~/assets/images/siteLogo.png')" type="image/png" />
+                        <img class="logoImg" :src="require('~/assets/images/siteLogo.png?webp')" alt="Melody Melon" data-not-lazy/>
+                    </picture>
+                </nuxt-link>
                 <button class="submitSongBtn" v-on:click="$store.commit('toggleModal')">submit song</button>
             </div>
             <div class="bottomRow">

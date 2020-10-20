@@ -1,7 +1,14 @@
 <template>
     <header id="siteHeader" class="headerContainer" :class="{ 'headerSliderOpen' : sliderOpen, 'headerScrolled' : scrollPos > 10 }">   
         <div class="headerWrapper">
-            <img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')" data-not-lazy>
+            <!--<img class="logoImg" src="../../assets/images/siteLogo.png" alt="Melody Melon" v-on:click="$router.push('/')" data-not-lazy>-->
+            <nuxt-link to="/">
+                <picture>
+                    <source :srcSet="require('~/assets/images/siteLogo.png?webp')" type="image/webp" />
+                    <source :srcSet="require('~/assets/images/siteLogo.png')" type="image/png" />
+                    <img class="logoImg" :src="require('~/assets/images/siteLogo.png?webp')" alt="Melody Melon" data-not-lazy/>
+                </picture>
+            </nuxt-link>
             <nav class="siteNavigation">
                 <ul>
                     <li><nuxt-link to="/">HOME</nuxt-link></li>

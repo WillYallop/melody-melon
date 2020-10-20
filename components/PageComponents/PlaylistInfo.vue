@@ -7,16 +7,26 @@
                     <h4>{{playlistData.playlistName}}</h4>
                     <p>{{playlistData.playlistDescription}}</p>
                     <div class="imageContainer">
-                        <img class="playlistImage" :src="getImageUrl(playlistData.icon)" alt="Playlist Artwork">
+                        <!--<img class="playlistImage" :src="getImageUrl(playlistData.icon)" alt="Playlist Artwork">-->
+                        <picture>
+                            <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" type="image/webp" />
+                            <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon)" type="image/jpg" />
+                            <img class="playlistImage" :src="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" alt="Playlist Artwork"/>
+                        </picture>
                         <div class="backgrounImageOverlay"></div>
-                        <img :src="getImageUrl(playlistData.icon)" alt="playlist artwork" class="backgrounImage">
+                        <!--<img :src="getImageUrl(playlistData.icon)" alt="playlist artwork" class="backgrounImage">-->
+                        <picture>
+                            <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" type="image/webp" />
+                            <source :srcSet="require('~/assets/images/playlistIcons/'+playlistData.icon)" type="image/jpg" />
+                            <img class="backgrounImage" :src="require('~/assets/images/playlistIcons/'+playlistData.icon+'?webp')" alt="Playlist Artwork"/>
+                        </picture>
                     </div>
-                    <button class="followPlaylistBtn">follow</button> 
+                    <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" class="followPlaylistBtn">follow</a> 
                 </div>
                 <div class="col2">
                     <iframe :src="'https://open.spotify.com/embed/playlist/' + playlistData.playlistSpotifyUrl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     <div class="col2BtnArea">
-                        <button class="followPlaylistBtn">follow</button>  
+                        <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" class="followPlaylistBtn">follow</a>  
                     </div>
                 </div>
             </div>
@@ -115,6 +125,10 @@ export default {
     z-index: 5;
 }
 .followPlaylistBtn {
+    text-align: center;
+    display: block;
+    width: 128px;
+    text-decoration: none;
     background-color: #3DA389;
     padding: 10px 40px;
     border-radius: 20px;

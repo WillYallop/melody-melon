@@ -7,40 +7,34 @@
                 <h4>Follow us on Spotify</h4>
                 <p>What are you waiting for? Follow Melody Melon on Spotify now so you always have an up to date playlist to jam out to, no matter where you are.</p>
                 <div>
-                    <button class="finderBtnStyle" v-on:click="navigateTo('https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y')">follow us</button>
+                    <a class="finderBtnStyle" href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y" target="_blank">follow us</a>
                 </div>
             </div>
             <div class="finderImgContainer">
                 <div class="imgContainerMobile">
-                    <img class="mobileImg" src="../../assets/images/spotifyMobile.png" alt=""> 
+                    <!--<img class="mobileImg" src="../../assets/images/spotifyMobile.png" alt="Follow us on Spotify"> -->
+                    <picture>
+                        <source :srcSet="require('~/assets/images/spotifyMobile.png?webp')" type="image/webp" />
+                        <source :srcSet="require('~/assets/images/spotifyMobile.png')" type="image/png" />
+                        <img class="mobileImg" :src="require('~/assets/images/spotifyMobile.png?webp')" alt="Follow us on Spotify"/>
+                    </picture>
                 </div>
                 <div class="imgContainerDesktop">
-                    <img class="desktopImg" src="../../assets/images/spotifyDesktop.png" alt="">
+                    <!--<img class="desktopImg" src="../../assets/images/spotifyDesktop.png" alt="Follow us on Spotify">-->
+                    <picture class="desktopImgCon">
+                        <source :srcSet="require('~/assets/images/spotifyDesktop.png?webp')" type="image/webp" />
+                        <source :srcSet="require('~/assets/images/spotifyDesktop.png')" type="image/png" />
+                        <img class="desktopImg" :src="require('~/assets/images/spotifyDesktop.png?webp')" alt="Follow us on Spotify"/>
+                    </picture>
                 </div>
                 <div class="mobileBtnContainer">
-                    <button class="finderBtnStyle" v-on:click="navigateTo('https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y')">follow us</button>
+                    <a href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y" target="_blank" class="finderBtnStyle">follow us</a>
                 </div>
             </div>
         </div>
 
     </div>
 </template>
-
-<script>
-export default {
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-        navigateTo(url) {
-            var win = window.open(url, '_blank')
-            win.focus()
-        }
-    }
-}
-</script>
 
 <style scoped>
 .finderContainer {
@@ -75,6 +69,11 @@ export default {
     max-height: 400px;
     border-radius: 10px;
 }
+.desktopImgCon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 .desktopImg  {
     width: 80%;
 }
@@ -100,6 +99,8 @@ export default {
 }
 /* btn style */
 .finderBtnStyle {
+    display: block;
+    width: 200px;
     margin-top: 40px;
     padding: 10px 60px;
     border-radius: 20px;
@@ -110,6 +111,7 @@ export default {
     color: #FFF;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
 }
 .finderBtnStyle:hover {
     transform: scale(1.1);

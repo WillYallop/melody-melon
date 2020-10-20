@@ -6,7 +6,12 @@
             <button class="bannerBtnStyle" v-on:click="navigate(button[0])">{{button[1]}}</button>
         </div>
         <div class="imagearea">
-            <img class="bannerImg" src="../../assets/images/bannerImage.svg" alt="Banner image" data-not-lazy>
+            <!--<img class="bannerImg" src="../../assets/images/bannerImage.png" alt="Banner image" data-not-lazy>-->
+            <picture>
+                <source :srcSet="require('~/assets/images/bannerImage.png?webp')" type="image/webp" />
+                <source :srcSet="require('~/assets/images/bannerImage.png')" type="image/png" />
+                <img class="bannerImg" :src="require('~/assets/images/bannerImage.png?webp')" alt="Banner image" data-not-lazy/>
+            </picture>
         </div>
     </div>
 </template>
