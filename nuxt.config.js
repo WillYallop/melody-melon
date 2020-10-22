@@ -1,6 +1,6 @@
 export default {
-  ssr: false,
-  target: 'static',
+  ssr: true,
+  target: 'server',
   head: {
     htmlAttrs: {
       lang: 'en'
