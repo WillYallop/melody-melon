@@ -121,7 +121,7 @@ export default {
                 {
                     hid: "og:type",
                     property: 'og:type',
-                    content: 'blog'
+                    content: 'website'
                 },
                 {
                     hid: "og:title",
