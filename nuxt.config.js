@@ -117,8 +117,7 @@ export default {
       theme_color: '#080808', 
       author: 'William Yallop',
       lang: 'en', 
-      nativeUI: true,
-      description: "Discover awesome playlists!",
+      nativeUI: true
     }, 
     manifest: { 
       name: 'Melody Melon', 
