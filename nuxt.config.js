@@ -14,7 +14,7 @@ export default {
       {
         hid: "og:image",
         property: 'og:image',
-        content: '/ogImage.png'
+        content: 'https://drive.google.com/uc?export=view&id=1xq8KXg3tlNhdb9Lev-Rh8SvoGMRqkCLM'
       }
     ],
     link: [
