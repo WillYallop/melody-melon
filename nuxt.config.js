@@ -99,7 +99,7 @@ export default {
 
   },
   sitemap: {
-    hostname: 'https://dev.melodymelon.com',
+    hostname: 'https://melodymelon.com',
     gzip: true,
 
   },
