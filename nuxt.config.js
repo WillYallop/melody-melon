@@ -10,7 +10,6 @@ export default {
       { charset: 'UTF-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme_color', content: '#080808' },
-      { hid: 'description', name: 'description', content: 'Discover a wide range of fruity playlists to fuel your day! Discover and promote music with Melody Melon!' },
       {
         hid: "og:image",
         property: 'og:image',

@@ -100,7 +100,7 @@ export default {
             return 'Check out my awesome blogs at my personal website, williamyallop.com'
         },
         blogUrl() {
-            if (this.blog) return 'https://melodymelon.com/' + this.blog.slug
+            if (this.blog) return 'https://melodymelon.com/blog/' + this.blog.slug
             return 'https://melodymelon.com'
         }, 
     },
