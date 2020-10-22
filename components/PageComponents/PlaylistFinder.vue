@@ -20,14 +20,14 @@
                     </picture>
                 </div>
                 <div class="mobileBtnContainer">
-                    <a href="https://finder.melodymelon.com" target="_blank" rel="noopener" class="finderBtnStyle">find playlist</a>
+                    <a href="https://finder.melodymelon.com" class="finderBtnStyle">find playlist</a>
                 </div>
             </div>
             <div class="finderTextarea">
                 <h2>Find Your Perfect Playlist</h2>
                 <p>Struggle to find playlists to fuel your day?Look no further, check out Melody Melon playlist finder app that helps find your perfect playlist in 5 quick questions.</p>
                 <div>
-                    <a href="https://finder.melodymelon.com" target="_blank" rel="noopener" class="finderBtnStyle">find playlist</a>
+                    <a href="https://finder.melodymelon.com" class="finderBtnStyle">find playlist</a>
                 </div>
             </div>
         </div>

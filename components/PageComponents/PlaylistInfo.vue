@@ -21,12 +21,12 @@
                             <img class="backgrounImage" loading="lazy" :src="require('~/assets/images/playlistIcons/'+playlistData.icon)" alt="Playlist Artwork"/>
                         </picture>
                     </div>
-                    <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" rel="noopener" class="followPlaylistBtn">follow</a> 
+                    <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" class="followPlaylistBtn">follow</a> 
                 </div>
                 <div class="col2">
                     <iframe :src="'https://open.spotify.com/embed/playlist/' + playlistData.playlistSpotifyUrl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     <div class="col2BtnArea">
-                        <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" target="_blank" rel="noopener" class="followPlaylistBtn">follow</a>  
+                        <a :href="'https://open.spotify.com/playlist/' + playlistData.playlistSpotifyUrl" class="followPlaylistBtn">follow</a>  
                     </div>
                 </div>
             </div>

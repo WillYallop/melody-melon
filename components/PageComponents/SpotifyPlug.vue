@@ -7,7 +7,7 @@
                 <h2>Follow us on Spotify</h2>
                 <p>What are you waiting for? Follow Melody Melon on Spotify now so you always have an up to date playlist to jam out to, no matter where you are.</p>
                 <div>
-                    <a class="finderBtnStyle" href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y" target="_blank" rel="noopener">follow us</a>
+                    <a class="finderBtnStyle" href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y">follow us</a>
                 </div>
             </div>
             <div class="finderImgContainer">
@@ -28,7 +28,7 @@
                     </picture>
                 </div>
                 <div class="mobileBtnContainer">
-                    <a href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y" target="_blank" rel="noopener" class="finderBtnStyle">follow us</a>
+                    <a href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y" class="finderBtnStyle">follow us</a>
                 </div>
             </div>
         </div>

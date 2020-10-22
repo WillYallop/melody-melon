@@ -35,6 +35,7 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxtjs/pwa',
+    ['nuxt-canonical', { baseUrl: 'https://melodymelon.com' }],
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
