@@ -33,14 +33,52 @@ export default {
         const pinned = await $content('blog').where({ pinned: true }).limit(1).fetch()
         return { blogs, pinned }
     },
+    head() {
+      return {
+        title: 'Fruity blogs | Melody Melon',
+        meta: [
+            {
+              hid: 'description',
+              name: 'description',
+              content: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.'
+            },
+            {
+              hid: "og:url",
+              property: 'og:url',
+              content: 'https://melodymelon.com/blog'
+            },
+            {
+              hid: "og:type",
+              property: 'og:type',
+              content: 'website'
+            },
+            {
+              hid: "og:title",
+              property: 'og:title',
+              content: 'Fruity blogs | Melody Melon'
+            },
+            {
+              hid: "og:description",
+              property: 'og:description',
+              content: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.'
+            }
+        ],
+        link: [
+            {
+                rel: 'canonical',
+                href: 'https://melodymelon.com/blog'
+            }
+        ]
+      }
+  },
     data() {
         return {
-        // banner data
-        bannerData: {
-            heading: 'Fruity Blogs',
-            subHeading: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.',
-            button: ['/contact', 'contact us']
-        },
+            // banner data
+            bannerData: {
+                heading: 'Fruity Blogs',
+                subHeading: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.',
+                button: ['/contact', 'contact us']
+            },
 
         }
     },

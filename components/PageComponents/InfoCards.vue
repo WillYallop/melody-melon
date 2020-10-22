@@ -52,7 +52,7 @@ export default {
 }
 .infoColOuter {
     width: 32%;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e ;
     border-radius: 20px;
     padding: 40px 20px 79px;
     display: flex;

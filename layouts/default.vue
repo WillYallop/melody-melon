@@ -142,6 +142,7 @@ img{text-indent:-9999px}
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: 1px solid black;
 }
 .mobilePlaylistToggle .fas {
   font-size: 16px;

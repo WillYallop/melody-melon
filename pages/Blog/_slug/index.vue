@@ -1,59 +1,59 @@
 <template>
     <div>
-        
-        <!-- Blog Content -->
-        <div class="blogContent siteWrapper sitePadding">
-            <!-- Banner -->
-            <div class="blogBannerContainer">
-                <div class="blogBanner" :style="{ backgroundImage: `url(${getImageUrl(blog.image)})`, 'background-color' : blog.accentColor}">
-                    <div class="blogBanWrapper">
-                        <div class="banContCon">
-                            <!-- Title -->
-                            <h1 class="banTitleP">{{blog.title}}</h1>
-                            <!-- Tags -->
-                            <div class="tagCon" :key="tag" v-for="tag in blog.tags">
-                                <p>{{tag}}</p>
+
+        <!-- Banner -->
+        <div class="blogBannerContainer">
+            <div class="blogBanner" :style="{ backgroundImage: `url(${getImageUrl(blog.image)})`, 'background-color' : blog.accentColor}">
+                <div class="blogBanWrapper">
+                    <div class="banContCon">
+                        <!-- Title -->
+                        <h1 class="banTitleP">{{blog.title}}</h1>
+                        <!-- Tags -->
+                        <div class="tagCon" :key="tag" v-for="tag in blog.tags">
+                            <p>{{tag}}</p>
+                        </div>
+                        <!-- Blog Info -->
+                        <div class="postInfoCon">
+                            <div class="postInfoCol">
+                                <p><fa class="fas" :icon="['fas', 'user-circle']" />{{blog.author}}</p>
                             </div>
-                            <!-- Blog Info -->
-                            <div class="postInfoCon">
-                                <div class="postInfoCol">
-                                    <p><fa class="fas" :icon="['fas', 'user-circle']" />{{blog.author}}</p>
-                                </div>
-                                <div class="postInfoCol">
-                                    <p><fa class="fas" :icon="['fas', 'calendar-alt']" />{{formatDate(blog.createdAt)}}</p>
-                                </div>
+                            <div class="postInfoCol">
+                                <p><fa class="fas" :icon="['fas', 'calendar-alt']" />{{formatDate(blog.createdAt)}}</p>
                             </div>
-                            <!-- Socials Share -->
-                            <div class="socialLinksCon"> 
-                                <client-only>
-                                    <ShareNetwork class="socialCol fbCol"
-                                        :network="'facebook'"
-                                        :url="'https://melodymelon.com/blog/' + blog.slug"
-                                        :title="blog.title"
-                                        :description="blog.description">
-                                        <fa class="fas" :icon="['fab', 'facebook']" />
-                                    </ShareNetwork>
-                                    <ShareNetwork class="socialCol emailCol"
-                                        :network="'Email'"
-                                        :url="'https://melodymelon.com/blog/' + blog.slug"
-                                        :title="blog.title"
-                                        :description="blog.description">
-                                        <fa class="fas" :icon="['fas', 'envelope']" />
-                                    </ShareNetwork>
-                                    <ShareNetwork class="socialCol twitCol"
-                                        :network="'Twitter'"
-                                        :url="'https://melodymelon.com/blog/' + blog.slug"
-                                        :title="blog.title"
-                                        :description="blog.description">
-                                        <fa class="fas" :icon="['fab', 'twitter']" />
-                                    </ShareNetwork>
-                                </client-only>
-                            </div>
+                        </div>
+                        <!-- Socials Share -->
+                        <div class="socialLinksCon"> 
+                            <client-only>
+                                <ShareNetwork class="socialCol fbCol"
+                                    :network="'facebook'"
+                                    :url="'https://melodymelon.com/blog/' + blog.slug"
+                                    :title="blog.title"
+                                    :description="blog.description">
+                                    <fa class="fas" :icon="['fab', 'facebook']" />
+                                </ShareNetwork>
+                                <ShareNetwork class="socialCol emailCol"
+                                    :network="'Email'"
+                                    :url="'https://melodymelon.com/blog/' + blog.slug"
+                                    :title="blog.title"
+                                    :description="blog.description">
+                                    <fa class="fas" :icon="['fas', 'envelope']" />
+                                </ShareNetwork>
+                                <ShareNetwork class="socialCol twitCol"
+                                    :network="'Twitter'"
+                                    :url="'https://melodymelon.com/blog/' + blog.slug"
+                                    :title="blog.title"
+                                    :description="blog.description">
+                                    <fa class="fas" :icon="['fab', 'twitter']" />
+                                </ShareNetwork>
+                            </client-only>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+        
+        <!-- Blog Content -->
+        <div class="blogContent siteWrapper sitePadding">
             <!-- Blog Content -->
             <div class="blogContainer">
                 <div class="breadcrumbsCon">
@@ -67,9 +67,11 @@
             </div>
         </div>
 
-
         <!-- Footer -->
-        <footerComp/>
+        <footerComp class="footerCon"/>
+
+        <!-- Site Background -->
+        <div class="blogBg"></div>
 
     </div>  
 </template>
@@ -90,16 +92,20 @@ export default {
     },
     computed: {
         blogTitle() {
-            if (this.blog) return this.blog.title
-            return 'A blog'
+            if (this.blog) return 'Melody Melon | ' + this.blog.title
+            return 'Melody Melon | Blog'
         },
         blogDescription() {
-            if (this.blog) return this.blog.description
+            if (this.blog) return this.formatDate(this.blog.createdAt) + ' - ' + this.blog.description
             return 'Check out my awesome blogs at my personal website, williamyallop.com'
         },
         blogImage() {
             if (this.blog) return this.getImageUrl(this.blog.image)
             return 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'
+        }, 
+        blogUrl() {
+            if (this.blog) return 'https://melodymelon.com/' + this.blog.slug
+            return 'https://melodymelon.com'
         }, 
     },
     head() {
@@ -114,12 +120,12 @@ export default {
                 {
                     hid: "og:url",
                     property: 'og:url',
-                    content: 'https:/melodymelon.com'
+                    content: this.blogUrl
                 },
                 {
                     hid: "og:type",
                     property: 'og:type',
-                    content: 'website'
+                    content: 'blog'
                 },
                 {
                     hid: "og:title",
@@ -135,6 +141,12 @@ export default {
                     hid: "og:image",
                     property: 'og:image',
                     content: 'https://melodymelon.com' + this.blogImage
+                }
+            ],
+            link: [
+                {
+                    rel: 'canonical',
+                    href: this.blogUrl
                 }
             ]
         }
@@ -158,28 +170,47 @@ export default {
 </script>
 
 <style scoped>
+/* Background */
+.blogBg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFCFC;
+    z-index: 0;
+}
+/* Site  */
 .blogContent {
     padding-bottom: 80px;
+    z-index: 10;
+    position: relative;
+}
+.footerCon {
+    z-index: 10;
+    position: relative;
 }
 /* Banner */
 .blogBannerContainer {
-    width: calc(100% + 40px);
+    padding: 10px 10px 0;
+    width: 100%;
     border-radius: 10px;
-    overflow: hidden;
-    margin-left: -20px;
-    border-radius: 10px;
-    margin-top: -60px;
+    margin-top: -80px;
+    z-index: 10;
+    position: relative;
 }
 .blogBanner {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .blogBanWrapper {
     min-height: 100%;
     height: 100%;
     width: 100%;
-    padding: 160px 40px 120px;
+    padding: 180px 30px 120px;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -221,7 +252,7 @@ export default {
 }
 .postInfoCol p .fas {
     margin-right: 5px;
-    color: #00FF5F;
+    color: #5CE9C5;
 }
 .socialLinksCon {
     width: 100%;
@@ -255,13 +286,15 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
     max-width: 1400px;
     margin: -20px 0 0;
     transition: 0.3s;
-    background-color: #1E1E1E;
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
     padding: 20px;
     border-radius: 10px;
-    color: #FFF;
+
 }
 /* Content */
 .breadcrumbsCon {
@@ -269,14 +302,14 @@ export default {
     display: flex;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #2A2A2A;
+    border-bottom: 1px solid #E4E4E4;
 }
 .breadcrumbsCon a {
     color: #E32539;
     text-decoration: none;
 } 
 .crumbSlug {
-    color: #D5D5D5;
+    color: #2D2D2D;
 }
 .crumbSpacer {
     padding: 0 5px;
@@ -284,14 +317,9 @@ export default {
 
 
 /* Media Queries */
-@media only screen and (max-width: 1350px) {
-    .blogContentCol {width: 100%; margin-bottom: 40px;} 
-    .blogSidebarCol {width: 100%; min-width: auto;} 
-}
 @media only screen and (max-width: 1070px) {
-    .blogBannerContainer {margin-top: -75px;width: calc(100% + 30px); margin-left: -15px;}
-    .blogBanWrapper {padding: 175px 15px 120px;}
-} 
+    .blogBanWrapper {padding: 180px 10px 120px;}
+}
 @media only screen and (max-width: 768px) {
     .crumbSlug {display: none;}
     .lastCrumbSpacer {display: none;}

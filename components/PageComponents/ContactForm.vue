@@ -232,7 +232,7 @@ export default {
 }
 .contactFormContainer {
     width: 100%;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e ;
     border-radius: 20px 0 0 20px;
     padding: 30px;
 }

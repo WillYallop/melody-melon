@@ -137,7 +137,7 @@ export default {
     right: -500px;
     bottom: 10px;
     width: 490px;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e ;
     border-radius: 20px;
     transition: right 0.3s;
     z-index: 1000;
@@ -150,7 +150,7 @@ export default {
 .playlistSliderInner {
   height: 100%;
   width: 100%;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e ;
   border-radius: 20px 0 0 20px;
   padding: 0 0 25px;
   overflow-y: scroll;
@@ -197,7 +197,7 @@ export default {
   width: 100%;
   height: 40px;
   padding: 0 10px;
-  background-color: #1E1E1E;
+  background-color: #1e1e1e ;
   border-radius: 5px;
   border: none;
   margin: 0;

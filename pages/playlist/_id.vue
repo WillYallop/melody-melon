@@ -48,6 +48,49 @@ export default {
             return false
         }
     },
+    head() {
+        return {
+            title: this.playlistData.metaTitle + ' | Spotify Playlist | Melody Melon',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: this.playlistData.playlistDescription
+                },
+                {
+                    hid: "og:url",
+                    property: 'og:url',
+                    content: 'https://melodymelon.com/playlist/' + this.playlistData.playlistUrl
+                },
+                {
+                    hid: "og:type",
+                    property: 'og:type',
+                    content: 'website'
+                },
+                {
+                    hid: "og:title",
+                    property: 'og:title',
+                    content: this.playlistData.metaTitle + ' | Spotify Playlist | Melody Melon'
+                },
+                {
+                    hid: "og:description",
+                    property: 'og:description',
+                    content: this.playlistData.playlistDescription
+                },
+                {
+                    hid: "og:image",
+                    property: 'og:image',
+                    content: 'https://melodymelon.com' + this.getImageUrl(this.playlistData.icon)
+                }
+            ],
+            link: [
+                {
+                    rel: 'canonical',
+                    href: 'https://melodymelon.com/playlist/' + this.playlistData.playlistUrl
+                }
+            ]
+        }
+    },
     data() {
         return {
             //json
@@ -87,7 +130,10 @@ export default {
         }
     },
     methods: {
-
+        getImageUrl(name) {
+            var images = require.context('../../assets/images/playlistIcons/', false)
+            return images('./' + name)
+        },
     }
 }
 </script>

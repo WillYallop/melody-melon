@@ -136,7 +136,7 @@ export default {
 .blogRow {
     display: flex;
     padding: 10px;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e ;
     border-radius: 10px;
     margin-bottom: 10px;
     text-decoration: none;

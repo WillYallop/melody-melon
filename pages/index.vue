@@ -52,12 +52,43 @@ import infoCards from '@/components/PageComponents/InfoCards'
 import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
+  head: {
+    title: 'Melody Melon | Fruity playlist to fuel your day',
+    meta: [
+      {
+        name: 'description',
+        content: 'Discover your perfect playlist today with Melody Melon. We have playlists for every mood and genre, whats more, they are all updated monthly to stay fresh.'
+      },
+      {
+        property: 'og:url',
+        content: 'https://melodymelon.com'
+      },
+      {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        property: 'og:title',
+        content: 'Melody Melon | Fruity playlist to fuel your day'
+      },
+      {
+        property: 'og:description',
+        content: 'Discover your perfect playlist today with Melody Melon. We have playlists for every mood and genre, whats more, they are all updated monthly to stay fresh.'
+      }
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: 'https://melodymelon.com'
+        }
+    ]
+  },
   data() {
     return {
       // banner data
       bannerData: {
         heading: 'Fruity Playlists To Fuel Your Day',
-        subHeading: 'Discover your perfect playlist today with Melody Melon! We have playlists for every mood and genre, that are updated weekly to stay fresh!',
+        subHeading: 'Discover your perfect playlist today with Melody Melon! We have playlists for every mood and genre, that are updated monthly to stay fresh!',
         button: ['/contact', 'contact us']
       },
       // section data

@@ -12,9 +12,9 @@
                     <button class="submitSongBtn" v-on:click="$store.commit('toggleModal')">submit song</button>
                 </div>
                 <div v-if="row.action === 'socials'" class="accordionActionCon">
-                    <div class="linkCon spotifyBg" v-on:click="navigateTo('https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y')"><fa class="fas" :icon="['fab', 'spotify']" /></div>
-                    <div class="linkCon instaBg" v-on:click="navigateTo('https://www.instagram.com/melodymelonmusic/')"><fa class="fas" :icon="['fab', 'instagram']" /></div>
-                    <div class="linkCon facebookBg" v-on:click="navigateTo('')"><fa class="fas" :icon="['fab', 'facebook-f']" /></div>
+                    <a class="linkCon spotifyBg" href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y"><fa class="fas" :icon="['fab', 'spotify']" /></a>
+                    <a class="linkCon instaBg" href="https://www.instagram.com/melodymelonmusic/"><fa class="fas" :icon="['fab', 'instagram']" /></a>
+                    <a class="linkCon facebookBg" href="https://www.facebook.com/Melody-Melon-101765358205970"><fa class="fas" :icon="['fab', 'facebook-f']" /></a>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@ export default {
 .accordionHeader {
     width: 100%;
     border-radius: 20px;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e ;
     padding: 20px;
     display: flex;
     justify-content: space-between;
