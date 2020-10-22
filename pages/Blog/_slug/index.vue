@@ -99,10 +99,6 @@ export default {
             if (this.blog) return this.formatDate(this.blog.createdAt) + ' - ' + this.blog.description
             return 'Check out my awesome blogs at my personal website, williamyallop.com'
         },
-        blogImage() {
-            if (this.blog) return this.getImageUrl(this.blog.image)
-            return 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'
-        }, 
         blogUrl() {
             if (this.blog) return 'https://melodymelon.com/' + this.blog.slug
             return 'https://melodymelon.com'
@@ -140,7 +136,7 @@ export default {
                 {
                     hid: "og:image",
                     property: 'og:image',
-                    content: 'https://melodymelon.com' + this.blogImage
+                    content: 'https://melodymelon.com' + this.getImageUrl(this.blog.image)
                 }
             ],
             link: [
