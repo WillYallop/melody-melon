@@ -130,7 +130,7 @@ export default {
     apiBaseUrl: 'https://api.melodymelon.com'
   },
   server: {     
-    port: 8000,
+    port: process.env.PORT || 8000,
     host: '0.0.0.0',  
   },
   generate: {
