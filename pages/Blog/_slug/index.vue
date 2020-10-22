@@ -92,7 +92,7 @@ export default {
     },
     computed: {
         blogTitle() {
-            if (this.blog) return 'Melody Melon | ' + this.blog.title
+            if (this.blog) return this.blog.title
             return 'Melody Melon | Blog'
         },
         blogDescription() {
@@ -110,7 +110,7 @@ export default {
     },
     head() {
         return {
-            title: 'Melody Melon | ' + this.blogTitle,
+            title: this.blogTitle,
             meta: [
                 {
                     hid: 'description',
