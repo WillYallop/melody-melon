@@ -1,7 +1,7 @@
 ---
 title: Where to discover new and upcoming music!
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue nisl, gravida id aliquet a, malesuada in mi. Morbi varius pharetra erat. Sed consectetur dui tellus, sed convallis sem eleifend id. Ut tortor nisi, volutpat ac ante non, blandit pulvinar
-image: placeholderBlog.png
+image: https://drive.google.com/uc?export=view&id=184GOADhEZrMhG_lLFvhVfe7UD0rd7R37
 tags:
   - news
 author: William Yallop

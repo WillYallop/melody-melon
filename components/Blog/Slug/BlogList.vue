@@ -3,7 +3,7 @@
 
         <!-- Pinned Blog -->
         <div class="pinCon" :key="pinned.slug + ' 1'" v-for="pinned in pinned">
-            <nuxt-link :to="'/blog/' + pinned.slug" v-if="pinned.pinned" class="pinnedBlog" :style="{ backgroundImage: `url(${getImageUrl(pinned.image)})`, 'background-color' : pinned.accentColor}">
+            <nuxt-link :to="'/blog/' + pinned.slug" v-if="pinned.pinned" class="pinnedBlog" :style="{ backgroundImage: `url(${pinned.image})`, 'background-color' : pinned.accentColor}">
                 <div class="pinContent" >
                     <div class="topRow">
                         <div class="tagCon" :key="tag" v-for="tag in pinned.tags">
@@ -19,7 +19,7 @@
 
         <!-- Blog Row -->
         <div class="blogRow" :key="blog.slug" v-for="blog in blogs" v-on:click="$router.push('/blog/' + blog.slug)">
-            <div class="rowImgCon" :style="{ backgroundImage: `url(${getImageUrl(blog.image)})`, 'background-color' : blog.accentColor }"></div>
+            <div class="rowImgCon" :style="{ backgroundImage: `url(${blog.image})`, 'background-color' : blog.accentColor }"></div>
             <div class="rowContent">
                 <div class="topRow">
                     <div class="tagCon" :key="tag" v-for="tag in blog.tags">
@@ -50,10 +50,6 @@ export default {
     },
     methods: {
         /* Format Methods */
-        getImageUrl(name) {
-            var images = require.context('../../../assets/images/blog/', false)
-            return images('./' + name)
-        },
         formatDate(date) {
             const options = { year: 'numeric', month: 'long', day: 'numeric' }
             return new Date(date).toLocaleDateString('en', options)

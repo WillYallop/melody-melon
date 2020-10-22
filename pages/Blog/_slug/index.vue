@@ -3,7 +3,7 @@
 
         <!-- Banner -->
         <div class="blogBannerContainer">
-            <div class="blogBanner" :style="{ backgroundImage: `url(${getImageUrl(blog.image)})`, 'background-color' : blog.accentColor}">
+            <div class="blogBanner" :style="{ backgroundImage: `url(${blog.image})`, 'background-color' : blog.accentColor}">
                 <div class="blogBanWrapper">
                     <div class="banContCon">
                         <!-- Title -->
@@ -136,7 +136,7 @@ export default {
                 {
                     hid: "og:image",
                     property: 'og:image',
-                    content: 'https://melodymelon.com' + this.getImageUrl(this.blog.image)
+                    content: this.blog.image
                 }
             ],
             link: [
@@ -153,10 +153,6 @@ export default {
     },
     methods: {
         /* Format Methods */
-        getImageUrl(name) {
-            var images = require.context('../../../assets/images/blog/', false)
-            return images('./' + name)
-        },
         formatDate(date) {
             const options = { year: 'numeric', month: 'long', day: 'numeric' }
             return new Date(date).toLocaleDateString('en', options)
