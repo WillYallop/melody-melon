@@ -99,7 +99,28 @@ export default {
   sitemap: {
     hostname: 'https://melodymelon.com',
     gzip: true,
-
+    routes: [
+      '/playlist/house-party-hits',
+      '/playlist/in-my-feels',
+      '/playlist/chill-rap',
+      '/playlist/lo-fi-waves',
+      '/playlist/full-send',
+      '/playlist/bodybuilding-beats',
+      '/playlist/your-a-game',
+      '/playlist/the-big-pre-playlist',
+      '/playlist/techno-town',
+      '/playlist/get-a-groove-on',
+      '/playlist/black-lives-matter',
+      '/playlist/rock-city',
+      '/playlist/90s-hip-hop',
+      '/playlist/royalty-free-for-you-and-me',
+      '/playlist/reggae-beach',
+      '/playlist/summer-2020',
+      '/playlist/summer-chillouts',
+      '/playlist/campfire-tunes',
+      '/playlist/feel-good-friday',
+      '/playlist/summer-road-trip'
+    ]
   },
   axios: {},
   build: {
