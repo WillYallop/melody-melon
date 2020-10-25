@@ -3,8 +3,8 @@
       
     <!-- Banner -->
     <banner 
-    :heading="bannerData.heading"
-    :subHeading="bannerData.subHeading"
+    :heading="playlistData.metaTitle"
+    :subHeading="playlistData.metaDescription"
     :button="bannerData.button"/>
     
     <!-- section background right - always make div bellow margin-top: -120px if section has text else its -200px -->
@@ -55,7 +55,7 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: this.playlistData.playlistDescription
+                    content: this.playlistData.metaDescription
                 },
                 {
                     hid: "og:url",
@@ -75,7 +75,7 @@ export default {
                 {
                     hid: "og:description",
                     property: 'og:description',
-                    content: this.playlistData.playlistDescription
+                    content: this.playlistData.metaDescription
                 },
                 {
                     hid: "og:image",
@@ -97,8 +97,6 @@ export default {
             playlistObject: playlistsJson,
             // banner data
             bannerData: {
-                heading: 'Check Out Our Range of Playlists',
-                subHeading: 'Melody melon provides an extensive library of Spotify Playlists that can harmonize any genre, mood, or setting.',
                 button: ['submit', 'submit song']
             },
             // section data

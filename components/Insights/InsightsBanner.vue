@@ -69,7 +69,6 @@ export default {
 .textarea h1 {
     font-size: 50px;
     line-height: 55px;
-    font-weight: 900;
     color: #FFF;
     margin: 0 0 20px;
 }

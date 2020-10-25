@@ -2,7 +2,7 @@
   <div>
     
     <!-- Banner -->
-    <banner 
+    <Banner 
     :heading="bannerData.heading"
     :subHeading="bannerData.subHeading"
     :button="bannerData.button"/>
@@ -11,7 +11,7 @@
     <sectionBackgroundRight/>
     <!-- Blog List -->
     <BlogList :style="{ 'margin-top' : '-200px' }"
-    :blogs="blogs"
+    :insights="insights"
     :pinned="pinned"/>
 
     <!-- Footer -->
@@ -22,30 +22,30 @@
 
 <script>
 // components
-import banner from '@/components/Blog/BlogBanner.vue'
+import Banner from '@/components/Insights/InsightsBanner'
 import sectionBackgroundRight from '@/components/PageComponents/SectionBackgroundRight'
-import BlogList from '@/components/Blog/Slug/BlogList'
+import BlogList from '@/components/Insights/Slug/BlogList'
 import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
     async asyncData({ $content }) {
-        const blogs = await $content('blog').sortBy('createdAt', 'desc').limit(10).fetch()
-        const pinned = await $content('blog').where({ pinned: true }).limit(1).fetch()
-        return { blogs, pinned }
+        const insights = await $content('insights').sortBy('createdAt', 'desc').limit(10).fetch()
+        const pinned = await $content('insights').where({ pinned: true }).limit(1).fetch()
+        return { insights, pinned }
     },
     head() {
       return {
-        title: 'Fruity blogs | Melody Melon',
+        title: 'Fruity insights | Melody Melon',
         meta: [
             {
               hid: 'description',
               name: 'description',
-              content: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.'
+              content: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity insights.'
             },
             {
               hid: "og:url",
               property: 'og:url',
-              content: 'https://melodymelon.com/blog'
+              content: 'https://melodymelon.com/insights'
             },
             {
               hid: "og:type",
@@ -55,18 +55,18 @@ export default {
             {
               hid: "og:title",
               property: 'og:title',
-              content: 'Fruity blogs | Melody Melon'
+              content: 'Fruity insights | Melody Melon'
             },
             {
               hid: "og:description",
               property: 'og:description',
-              content: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.'
+              content: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity insights.'
             }
         ],
         link: [
             {
                 rel: 'canonical',
-                href: 'https://melodymelon.com/blog'
+                href: 'https://melodymelon.com/insights'
             }
         ]
       }
@@ -75,15 +75,15 @@ export default {
         return {
             // banner data
             bannerData: {
-                heading: 'Fruity Blogs',
-                subHeading: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity blog.',
+                heading: 'Fruity Insights',
+                subHeading: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity insights.',
                 button: ['/contact', 'contact us']
             },
 
         }
     },
     components: {
-        banner,
+        Banner,
         sectionBackgroundRight,
         BlogList,
         footerComp,

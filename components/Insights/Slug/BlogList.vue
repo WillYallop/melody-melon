@@ -3,7 +3,7 @@
 
         <!-- Pinned Blog -->
         <div class="pinCon" :key="pinned.slug + ' 1'" v-for="pinned in pinned">
-            <nuxt-link :to="'/blog/' + pinned.slug" v-if="pinned.pinned" class="pinnedBlog" :style="{ backgroundImage: `url(${pinned.image})`, 'background-color' : pinned.accentColor}">
+            <nuxt-link :to="'/insights/' + pinned.slug" v-if="pinned.pinned" class="pinnedBlog" :style="{ backgroundImage: `url(${pinned.image})`, 'background-color' : pinned.accentColor}">
                 <div class="pinContent" >
                     <div class="topRow">
                         <div class="tagCon" :key="tag" v-for="tag in pinned.tags">
@@ -18,18 +18,18 @@
         </div>
 
         <!-- Blog Row -->
-        <div class="blogRow" :key="blog.slug" v-for="blog in blogs" v-on:click="$router.push('/blog/' + blog.slug)">
-            <div class="rowImgCon" :style="{ backgroundImage: `url(${blog.image})`, 'background-color' : blog.accentColor }"></div>
+        <div class="blogRow" :key="insight.slug" v-for="insight in insights" v-on:click="$router.push('/insights/' + insight.slug)">
+            <div class="rowImgCon" :style="{ backgroundImage: `url(${insight.image})`, 'background-color' : insight.accentColor }"></div>
             <div class="rowContent">
                 <div class="topRow">
-                    <div class="tagCon" :key="tag" v-for="tag in blog.tags">
+                    <div class="tagCon" :key="tag" v-for="tag in insight.tags">
                         <p>{{tag}}</p>
                     </div>
-                    <p class="createdDate">{{formatDate(blog.createdAt)}}</p>
+                    <p class="createdDate">{{formatDate(insight.createdAt)}}</p>
                 </div>
-                <p class="rowTitleP">{{blog.title}}</p>
-                <p class="rowDescP">{{blog.description}}</p>
-                <nuxt-link :to="'/blog/' + blog.slug" class="btnStyle1">Read more..</nuxt-link>
+                <p class="rowTitleP">{{insight.title}}</p>
+                <p class="rowDescP">{{insight.description}}</p>
+                <nuxt-link :to="'/insights/' + insight.slug" class="btnStyle1">Read more..</nuxt-link>
             </div>
         </div>
 
@@ -44,7 +44,7 @@ export default {
         }
     },
     props: {
-        blogs: Array,
+        insights: Array,
         pinned: Array
 
     },

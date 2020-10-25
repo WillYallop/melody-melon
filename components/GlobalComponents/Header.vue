@@ -14,7 +14,7 @@
                     <li><nuxt-link to="/">HOME</nuxt-link></li>
                     <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
                     <!--<li><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>-->
-                    <li><nuxt-link to="/blog">BLOG</nuxt-link></li>
+                    <li><nuxt-link to="/insights">INSIGHTS</nuxt-link></li>
                 </ul>
                 <button class="toggleSliderBtn" v-on:click="$store.commit('toggleSlider')"><fa class="fas" v-if="sliderOpen" :icon="['fas', 'chevron-right']" /><fa class="fas" v-if="!sliderOpen" :icon="['fas', 'chevron-left']" /></button>
                 <!-- mobile nav toggle -->
@@ -30,7 +30,7 @@
                     <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/">HOME</nuxt-link></li>
                     <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/contact">CONTACT</nuxt-link></li>
                     <!--<li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/for-artists">FOR ARTISTS</nuxt-link></li>-->
-                    <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/blog">BLOG</nuxt-link></li>
+                    <li v-on:click="showMobileNav = !showMobileNav"><nuxt-link to="/insights">INSIGHTS</nuxt-link></li>
                 </ul>
             </div>
         </nav>

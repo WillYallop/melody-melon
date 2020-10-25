@@ -56,31 +56,36 @@ export default {
     title: 'Melody Melon | Fruity playlist to fuel your day',
     meta: [
       {
+        hid: 'description',
         name: 'description',
-        content: 'Discover your perfect playlist today with Melody Melon. We have playlists for every mood and genre, whats more, they are all updated monthly to stay fresh.'
+        content: 'Discover your perfect fruity playlist to fuel your day with Melody Melon. Discover, promote and insights all in one place with Melody Melon.'
       },
       {
+        hid: "og:url",
         property: 'og:url',
         content: 'https://melodymelon.com'
       },
       {
+        hid: "og:type",
         property: 'og:type',
         content: 'website'
       },
       {
+        hid: "og:title",
         property: 'og:title',
         content: 'Melody Melon | Fruity playlist to fuel your day'
       },
       {
+        hid: "og:description",
         property: 'og:description',
-        content: 'Discover your perfect playlist today with Melody Melon. We have playlists for every mood and genre, whats more, they are all updated monthly to stay fresh.'
+        content: 'Discover your perfect fruity playlist to fuel your day with Melody Melon. Discover, promote and insights all in one place with Melody Melon.'
       }
     ],
     link: [
-        {
-            rel: 'canonical',
-            href: 'https://melodymelon.com'
-        }
+      {
+        rel: 'canonical',
+        href: 'https://melodymelon.com'
+      }
     ]
   },
   data() {

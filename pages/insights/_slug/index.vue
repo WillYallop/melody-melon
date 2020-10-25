@@ -3,22 +3,22 @@
 
         <!-- Banner -->
         <div class="blogBannerContainer">
-            <div class="blogBanner" :style="{ backgroundImage: `url(${blog.image})`, 'background-color' : blog.accentColor}">
+            <div class="blogBanner" :style="{ backgroundImage: `url(${insights.image})`, 'background-color' : insights.accentColor}">
                 <div class="blogBanWrapper">
                     <div class="banContCon">
                         <!-- Title -->
-                        <h1 class="banTitleP">{{blog.title}}</h1>
+                        <h1 class="banTitleP">{{insights.title}}</h1>
                         <!-- Tags -->
-                        <div class="tagCon" :key="tag" v-for="tag in blog.tags">
+                        <div class="tagCon" :key="tag" v-for="tag in insights.tags">
                             <p>{{tag}}</p>
                         </div>
                         <!-- Blog Info -->
                         <div class="postInfoCon">
                             <div class="postInfoCol">
-                                <p><fa class="fas" :icon="['fas', 'user-circle']" />{{blog.author}}</p>
+                                <p><fa class="fas" :icon="['fas', 'user-circle']" />{{insights.author}}</p>
                             </div>
                             <div class="postInfoCol">
-                                <p><fa class="fas" :icon="['fas', 'calendar-alt']" />{{formatDate(blog.createdAt)}}</p>
+                                <p><fa class="fas" :icon="['fas', 'calendar-alt']" />{{formatDate(insights.createdAt)}}</p>
                             </div>
                         </div>
                         <!-- Socials Share -->
@@ -26,23 +26,23 @@
                             <client-only>
                                 <ShareNetwork class="socialCol fbCol"
                                     :network="'facebook'"
-                                    :url="'https://melodymelon.com/blog/' + blog.slug"
-                                    :title="blog.title"
-                                    :description="blog.description">
+                                    :url="'https://melodymelon.com/insights/' + insights.slug"
+                                    :title="insights.title"
+                                    :description="insights.description">
                                     <fa class="fas" :icon="['fab', 'facebook']" />
                                 </ShareNetwork>
                                 <ShareNetwork class="socialCol emailCol"
                                     :network="'Email'"
-                                    :url="'https://melodymelon.com/blog/' + blog.slug"
-                                    :title="blog.title"
-                                    :description="blog.description">
+                                    :url="'https://melodymelon.com/insights/' + insights.slug"
+                                    :title="insights.title"
+                                    :description="insights.description">
                                     <fa class="fas" :icon="['fas', 'envelope']" />
                                 </ShareNetwork>
                                 <ShareNetwork class="socialCol twitCol"
                                     :network="'Twitter'"
-                                    :url="'https://melodymelon.com/blog/' + blog.slug"
-                                    :title="blog.title"
-                                    :description="blog.description">
+                                    :url="'https://melodymelon.com/insights/' + insights.slug"
+                                    :title="insights.title"
+                                    :description="insights.description">
                                     <fa class="fas" :icon="['fab', 'twitter']" />
                                 </ShareNetwork>
                             </client-only>
@@ -59,11 +59,11 @@
                 <div class="breadcrumbsCon">
                     <nuxt-link to="/">Home</nuxt-link>
                     <p class="crumbSpacer">»</p>
-                    <nuxt-link to="/blog">Blog</nuxt-link>
+                    <nuxt-link to="/insights">Insights</nuxt-link>
                     <p class="crumbSpacer lastCrumbSpacer">»</p>
-                    <p class="crumbSlug">{{blog.slug}}</p>
+                    <p class="crumbSlug">{{insights.slug}}</p>
                 </div>
-                <nuxt-content :document="blog" />
+                <nuxt-content :document="insights" />
             </div>
         </div>
 
@@ -82,8 +82,8 @@ import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
     async asyncData({ $content, params }) {
-        const blog = await $content('blog', params.slug).fetch()
-        return { blog }
+        const insights = await $content('insights', params.slug).fetch()
+        return { insights }
     },
     data() {
         return {
@@ -91,16 +91,16 @@ export default {
         }
     },
     computed: {
-        blogTitle() {
-            if (this.blog) return this.blog.title
-            return 'Melody Melon | Blog'
+        insightsTitle() {
+            if (this.insights) return this.insights.title
+            return 'Melody Melon | Insights'
         },
-        blogDescription() {
-            if (this.blog) return this.formatDate(this.blog.createdAt) + ' - ' + this.blog.description
-            return 'Check out my awesome blogs at my personal website, williamyallop.com'
+        insightsDescription() {
+            if (this.insights) return this.formatDate(this.insights.createdAt) + ' - ' + this.insights.description
+            return 'Check our awesome industry and insider insights at Melody Melon.'
         },
-        blogUrl() {
-            if (this.blog) return 'https://melodymelon.com/blog/' + this.blog.slug
+        insightsUrl() {
+            if (this.insights) return 'https://melodymelon.com/insights/' + this.insights.slug
             return 'https://melodymelon.com'
         }, 
     },
@@ -111,12 +111,12 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: this.blogDescription
+                    content: this.insightsDescription
                 },
                 {
                     hid: "og:url",
                     property: 'og:url',
-                    content: this.blogUrl
+                    content: this.insightsUrl
                 },
                 {
                     hid: "og:type",
@@ -126,23 +126,23 @@ export default {
                 {
                     hid: "og:title",
                     property: 'og:title',
-                    content: this.blogTitle
+                    content: this.insightsTitle
                 },
                 {
                     hid: "og:description",
                     property: 'og:description',
-                    content: this.blogDescription
+                    content: this.insightsDescription
                 },
                 {
                     hid: "og:image",
                     property: 'og:image',
-                    content: this.blog.image
+                    content: this.insights.image
                 }
             ],
             link: [
                 {
                     rel: 'canonical',
-                    href: this.blogUrl
+                    href: this.insightsUrl
                 }
             ]
         }

@@ -5,7 +5,7 @@
             <div class="modalContent">
                 <div class="formHeader">
                     <h4>Submit a song</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>If you have a song you want to get in one of our playlists, submit your song to us and we will get in touch.</p>
                     <button class="toggleModalBtn" v-on:click="$store.commit('toggleModal')"><fa class="fas" :icon="['fas', 'times']" /></button>
                 </div>
                 <div class="formContainer">

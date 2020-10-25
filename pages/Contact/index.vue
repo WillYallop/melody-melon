@@ -33,7 +33,7 @@ export default {
             {
               hid: 'description',
               name: 'description',
-              content: 'Got a question or just want to tell us something? Hit us up! We always love to hear from our fans.'
+              content: 'Got a question for the Melody Melon team or just want to tell us something? Hit us up! We always love to hear from our fans.'
             },
             {
               hid: "og:url",
@@ -53,7 +53,7 @@ export default {
             {
               hid: "og:description",
               property: 'og:description',
-              content: 'Got a question or just want to tell us something? Hit us up! We always love to hear from our fans.'
+              content: 'Got a question for the Melody Melon team or just want to tell us something? Hit us up! We always love to hear from our fans.'
             }
         ],
         link: [
