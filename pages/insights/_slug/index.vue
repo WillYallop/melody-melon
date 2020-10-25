@@ -107,7 +107,7 @@ export default {
     },
     head() {
         return {
-            title: this.blogTitle,
+            title: this.insightsTitle,
             meta: [
                 {
                     hid: 'description',
