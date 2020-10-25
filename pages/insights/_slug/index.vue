@@ -1,5 +1,5 @@
 <template>
-    <div class="slugPageCon">
+    <div>
 
         <!-- Banner -->
         <div class="blogBannerContainer">
@@ -163,11 +163,6 @@ export default {
 </script>
 
 <style scoped>
-.slugPageCon {
-    background-color: #FFFCFC;
-    height: 100%;
-    width: 100%;
-}
 /* Background */
 .blogBg {
     position: fixed;
