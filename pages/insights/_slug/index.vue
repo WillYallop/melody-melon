@@ -63,7 +63,8 @@
                     <p class="crumbSpacer lastCrumbSpacer">»</p>
                     <p class="crumbSlug">{{insights.slug}}</p>
                 </div>
-                <nuxt-content :document="insights" />
+                <nuxt-content :document="insights"/>
+                <p class="signatureP">Melody Melon - Fruity playlist to fuel your day</p>
             </div>
         </div>
 
@@ -87,7 +88,7 @@ export default {
     },
     data() {
         return {
-     
+           
         }
     },
     computed: {
@@ -203,7 +204,7 @@ export default {
     height: 100%;
     width: 100%;
     padding: 180px 30px 120px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,6 +212,7 @@ export default {
 .banContCon {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     max-width: 650px;
     flex-direction: column;
     align-items: center;
@@ -223,7 +225,7 @@ export default {
 }
 .tagCon {
     margin: 20px 0;
-    background-color: #1E63EB;
+    background-color: #E32539;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: default;
@@ -307,6 +309,11 @@ export default {
     padding: 0 5px;
 }
 
+.signatureP {
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #E4E4E4;
+}
 
 /* Media Queries */
 @media only screen and (max-width: 1070px) {
@@ -323,5 +330,48 @@ export default {
     .postInfoCon {flex-wrap: wrap; text-align: center;}
     .postInfoCol {width: 100%;}
     .postInfoCol:last-child {margin-top: 5px;}
+}
+</style>
+
+<style>
+/* Blog Content Styling */
+.nuxt-content a {
+    color: #E32539;
+    text-decoration: none;
+}
+.nuxt-content h2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #111A2C;
+}
+.nuxt-content h3 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #111A2C;
+}
+.nuxt-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.nuxt-content ul {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.nuxt-content .blogImg {
+    width: 100%;
+    border-radius: 10px;
+}
+.nuxt-content-highlight {
+    margin-bottom: 20px;
+}
+.nuxt-content blockquote {
+    margin-top: 10px;
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: .25em solid #dfe2e5;
 }
 </style>
