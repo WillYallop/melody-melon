@@ -1,5 +1,5 @@
 ---
-title: Chill Rap Playlist
+title: Best Chill Rap Playlist
 description: Looking for the perfect Chill Rap playlist on Spotify? Check out Melody Melon's relaxing and vibed out rap playlist, Chill Rap.
 image: https://drive.google.com/uc?export=view&id=191fHT26uUp_ecHrhwIiuJj51Nw-9wJD5
 tags:
