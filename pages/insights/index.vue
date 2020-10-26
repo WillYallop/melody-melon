@@ -29,7 +29,7 @@ import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
     async asyncData({ $content }) {
-        const insights = await $content('insights').sortBy('createdAt', 'desc').limit(10).fetch()
+        const insights = await $content('insights').sortBy('date', 'desc').limit(10).fetch()
         const pinned = await $content('insights').where({ pinned: true }).limit(1).fetch()
         return { insights, pinned }
     },

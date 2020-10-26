@@ -43,7 +43,7 @@ export default {
 .playlistEmbedCon {
     width: 100%;
     padding: 0 20px 20px;
-    background-color: #4C4C4C;
+    background-color: #1E1E1E;
     border-radius: 20px;
     display: flex;
     margin: 20px 0;

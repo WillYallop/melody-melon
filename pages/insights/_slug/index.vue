@@ -56,18 +56,19 @@
         <div class="blogContent siteWrapper sitePadding">
             <!-- Blog Content -->
             <div class="blogContainer">
-                <div class="breadcrumbsCon">
-                    <nuxt-link to="/">Home</nuxt-link>
-                    <p class="crumbSpacer">»</p>
-                    <nuxt-link to="/insights">Insights</nuxt-link>
-                    <p class="crumbSpacer lastCrumbSpacer">»</p>
-                    <p class="crumbSlug">{{insights.slug}}</p>
-                </div>
+                <ul class="breadcrumbsCon">
+                    <li><nuxt-link to="/">Home</nuxt-link></li>
+                    <li><p class="crumbSpacer">»</p></li>
+                    <li><nuxt-link to="/insights">Insights</nuxt-link></li>
+                    <li><p class="crumbSpacer lastCrumbSpacer">»</p></li>
+                    <li><p class="crumbSlug">{{insights.slug}}</p></li>
+                </ul>
                 <nuxt-content :document="insights"/>
                 <PlaylistEmbed v-if="insights.playlist"
                 :playlist="insights.playlist"/>
                 <p class="signatureP">Melody Melon - Fruity playlist to fuel your day</p>
             </div>
+            <SlugSidebar/>
         </div>
 
         <!-- Footer -->
@@ -83,6 +84,7 @@
 // components
 import PlaylistEmbed from '@/components/Insights/Slug/PlaylistEmbed'
 import footerComp from '@/components/GlobalComponents/Footer'
+import SlugSidebar from '@/components/Insights/Slug/SlugSidebar'
 
 export default {
     async asyncData({ $content, params }) {
@@ -154,6 +156,7 @@ export default {
     components: {
         PlaylistEmbed,
         footerComp,
+        SlugSidebar,
 
     },
     methods: {
@@ -182,6 +185,7 @@ export default {
     padding-bottom: 80px;
     z-index: 10;
     position: relative;
+    display: flex;
 }
 .footerCon {
     z-index: 10;
@@ -191,7 +195,7 @@ export default {
 .blogBannerContainer {
     padding: 10px 10px 0;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: -80px;
     z-index: 10;
     position: relative;
@@ -200,7 +204,7 @@ export default {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
 }
 .blogBanWrapper {
@@ -230,8 +234,8 @@ export default {
 .tagCon {
     margin: 20px 0;
     background-color: #E32539;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 5px 15px;
+    border-radius: 20px;
     cursor: default;
 }
 .tagCon p {
@@ -256,7 +260,7 @@ export default {
     width: 100%;
     display: flex;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
 }
 .socialCol {
@@ -291,21 +295,24 @@ export default {
     background-color: #FFFFFF;
     border: 1px solid #EAEAEA;
     padding: 20px;
-    border-radius: 10px;
-
+    border-radius: 20px;
 }
 /* Content */
 .breadcrumbsCon {
     width: 100%;
     display: flex;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #E4E4E4;
+    border-radius: 20px;
+    background-color: #F3F3F3;
+    padding: 10px 20px;
+    list-style-type: none;
 }
 .breadcrumbsCon a {
-    color: #E32539;
+    color: #000000;
     text-decoration: none;
 } 
+.breadcrumbsCon a:hover {
+    color: #FF2F45;
+}
 .crumbSlug {
     color: #2D2D2D;
 }
@@ -317,11 +324,19 @@ export default {
     width: 100%;
     padding-top: 20px;
     border-top: 1px solid #E4E4E4;
+    font-size: 18px;
 }
 
+
+
 /* Media Queries */
+@media only screen and (max-width: 1500px) {
+    .pageSliderOpen .blogContent {flex-wrap: wrap;}
+}
+
 @media only screen and (max-width: 1070px) {
-    .blogBanWrapper {padding: 180px 10px 120px;}
+    .blogBannerContainer {padding: 5px 5px 0;}
+    .blogBanWrapper {padding: 175px 15px 120px;}
 }
 @media only screen and (max-width: 768px) {
     .crumbSlug {display: none;}
@@ -364,6 +379,7 @@ export default {
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 20px;
+    font-size: 18px;
 }
 .nuxt-content .blogImg {
     width: 100%;
