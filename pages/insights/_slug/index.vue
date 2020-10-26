@@ -64,6 +64,8 @@
                     <p class="crumbSlug">{{insights.slug}}</p>
                 </div>
                 <nuxt-content :document="insights"/>
+                <PlaylistEmbed v-if="insights.playlist"
+                :playlist="insights.playlist"/>
                 <p class="signatureP">Melody Melon - Fruity playlist to fuel your day</p>
             </div>
         </div>
@@ -79,6 +81,7 @@
 
 <script>
 // components
+import PlaylistEmbed from '@/components/Insights/Slug/PlaylistEmbed'
 import footerComp from '@/components/GlobalComponents/Footer'
 
 export default {
@@ -149,6 +152,7 @@ export default {
         }
     },
     components: {
+        PlaylistEmbed,
         footerComp,
 
     },
@@ -349,7 +353,7 @@ export default {
 .nuxt-content h3 {
     font-weight: bold;
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: #111A2C;
 }
 .nuxt-content p {
@@ -357,7 +361,7 @@ export default {
     font-size: 18px;
 }
 .nuxt-content ul {
-    margin-top: -10px;
+    margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 20px;
 }
