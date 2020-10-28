@@ -108,17 +108,19 @@ select:-moz-focusring {
 }
 
 .searchBtn {
-    width: 100%;
-    border-radius: 20px;
-    padding: 10px 40px;
-    color: #FFF;
-    background-color: #FF2F45;
-    border: none;
-    font-size: 16px;
-    margin-top: 10px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px 40px;
+  color: #FFF;
+  background-color: #FF2F45;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-
-
-
+.searchBtn:hover {
+  transform: scale(1.1);
+}
 
 </style>

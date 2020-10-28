@@ -15,7 +15,10 @@
       <div class="listCol">
         <InsightList
         :insights="insights"
-        :pinned="pinned"/>
+        :pinned="pinned"
+        :limit="limit"
+        :startAfter="startAfter"
+        @load-more="loadMore"/>
       </div>
       <div class="sidebarCol">
         <InsightSidebar
@@ -91,7 +94,16 @@ export default {
             heading: 'Fruity Insights',
             subHeading: 'Creator tips, news, event coverage and industry insights, all with the Melody Melon fruity insights.',
             button: ['/contact', 'contact us']
-          }
+          },
+
+          // Content
+          limit: 10,
+          startAfter: 10,
+
+          //Filter
+          search: '',
+          category: 'all'
+
       }
   },
   components: {
@@ -109,30 +121,44 @@ export default {
   },
   methods: {
     insightFilter(search, category) {
+      this.search = search
+      this.category = category
       this.pinned = []
-      if(category === 'all') {
-        if(search.length === 0) {
-          this.$content('insights').sortBy('date', 'desc').limit(10).fetch()
+
+      if(this.category === 'all') {
+        if(this.search.length === 0) {
+          this.$content('insights').sortBy('date', 'desc').limit(this.limit).fetch()
           .then((response) => {
             this.insights = response
+            this.startAfter = 10
           })
           this.$content('insights').where({ pinned: true }).limit(1).fetch()
           .then((response) => {
             this.pinned = response
           })
         } else {
-          this.$content('insights').search(search).sortBy('date', 'desc').limit(10).fetch()
+          this.$content('insights').search(this.search).sortBy('date', 'desc').limit(this.limit).fetch()
           .then((response) => {
             this.insights = response
           })
         }
       } else {
-        this.$content('insights').where({ tags: { $in: category } }).search(search).sortBy('date', 'desc').limit(10).fetch()
+        this.$content('insights').where({ tags: { $in: this.category } }).search(this.search).sortBy('date', 'desc').limit(this.limit).fetch()
         .then((response) => {
           this.insights = response
         })
       }
-
+    },
+    loadMore() {
+      this.$content('insights').sortBy('date', 'desc').limit(this.limit).skip(this.startAfter).fetch()
+      .then((response) => {  
+        for(var i = 0; i < response.length; i++) {
+          if(!response[i].pinned) {
+            this.insights.push(response[i])
+          }
+        }
+        this.startAfter = this.startAfter + response.length
+      })  
     }
   }
 }

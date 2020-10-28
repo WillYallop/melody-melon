@@ -68,6 +68,8 @@
             </nuxt-link>
         </div>
 
+        <button class="loadMoreBtn" v-if="pinned.length > 0 && insights.length >= startAfter" v-on:click="loadMore">Load More</button>
+
     </div>
 </template>
 
@@ -80,7 +82,9 @@ export default {
     },
     props: {
         insights: Array,
-        pinned: Array
+        pinned: Array,
+        limit: Number,
+        startAfter: Number
 
     },
     methods: {
@@ -89,6 +93,9 @@ export default {
             const options = { year: 'numeric', month: 'long', day: 'numeric' }
             return new Date(date).toLocaleDateString('en', options)
         },
+        loadMore() {
+            this.$emit('load-more')
+        }
     }
 }
 </script>
@@ -195,6 +202,22 @@ export default {
 .insightsBodyP {
     color: #000000;
     margin: 0 0 10px;
+}
+
+/* Load More Btn */
+.loadMoreBtn {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 40px;
+    background-color: #FF2F45;
+    color: #FFF;
+    font-size: 16px;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.loadMoreBtn:hover {
+    transform: scale(1.05);
 }
 
 /* Media Queries */
