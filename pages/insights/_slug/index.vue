@@ -18,7 +18,7 @@
                                 <p><fa class="fas" :icon="['fas', 'user-circle']" />{{insights.author}}</p>
                             </div>
                             <div class="postInfoCol">
-                                <p><fa class="fas" :icon="['fas', 'calendar-alt']" />{{formatDate(insights.createdAt)}}</p>
+                                <p><fa class="fas" :icon="['fas', 'calendar-alt']" />{{formatDate(insights.date)}}</p>
                             </div>
                         </div>
                         <!-- Socials Share -->

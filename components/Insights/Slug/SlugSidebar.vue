@@ -3,7 +3,7 @@
         <h2>Insights you may like:</h2>
         <div class="sidebarWrapper">
             <nuxt-link :to="'/insights/' + insight.slug" class="insightCon" :key="insight.title" v-for="insight in insights">
-                <img class="insightImg" loading="lazy" :src="insight.image" alt="Insight Image"/>
+                <img class="insightImg" loading="lazy" :src="insight.image" alt="Insight Image" :style="{ 'background-color' : insight.accentColor}"/>
                 <div class="bodyCon">
                     <p class="insightTitleP">{{insight.title}}</p>
                     <p class="insightBodyP">{{insight.description}}</p>
@@ -74,6 +74,7 @@ export default {
 .insightImg {
     width: 100%;
     height: 150px;
+    min-height: 150px;
     border-radius: 20px 20px 0 0;
     object-fit: cover;
     z-index: 5;

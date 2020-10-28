@@ -57,8 +57,10 @@ export default {
 .bannerCon {
     display: flex;
     justify-content: space-between;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 160px;
+    padding-bottom: 100px;
+    z-index: 10;
+    position: relative;
 }
 .textarea {
     width: 60%;
@@ -126,7 +128,7 @@ export default {
     .bannerImg {display: none;}
 }
 @media only screen and (max-width: 590px) {
-    .bannerCon {padding-top: 60px;}
+    .bannerCon {padding-top: 140px;}
 }
 
 </style>
