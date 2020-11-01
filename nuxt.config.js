@@ -100,9 +100,10 @@ export default {
     hostname: 'https://melodymelon.com',
     gzip: true,
     routes: [
-      '/contact',
-      '/privacy',
-      'terms-conditions',
+      '/insights/find-your-perfect-spotify-playlist-in-just-4-setps',
+      '/insights/perfect-playlist-for-a-house-party',
+      '/insights/in-my-feels-playlist',
+      '/insights/best-chill-rap',
       '/playlist/house-party-hits',
       '/playlist/in-my-feels',
       '/playlist/chill-rap',
