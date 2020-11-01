@@ -387,6 +387,8 @@ export default {
 }
 .nuxt-content-highlight {
     margin-bottom: 20px;
+    max-width: 100%;
+    overflow-x: scroll;
 }
 .nuxt-content blockquote {
     margin-top: 10px;

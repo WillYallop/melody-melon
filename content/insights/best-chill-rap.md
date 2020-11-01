@@ -6,7 +6,7 @@ tags:
   - playlist
 playlist: chill-rap
 author: Jake Groves
-pinned: true
+pinned: false
 date: 10/25/20
 accentColor: '#F93032'
 ---

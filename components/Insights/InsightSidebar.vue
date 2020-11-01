@@ -7,6 +7,7 @@
             <select id="category" class="inputStyle" v-model="category">
                 <option value="all">All</option>
                 <option value="playlist">Playlist</option>
+                <option value="news">News</option>
             </select>
             <button class="searchBtn" v-on:click="filterGo">Go</button>
         </div>

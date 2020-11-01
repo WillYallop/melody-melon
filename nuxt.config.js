@@ -100,6 +100,9 @@ export default {
     hostname: 'https://melodymelon.com',
     gzip: true,
     routes: [
+      '/contact',
+      '/privacy',
+      'terms-conditions',
       '/playlist/house-party-hits',
       '/playlist/in-my-feels',
       '/playlist/chill-rap',
