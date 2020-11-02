@@ -102,7 +102,7 @@ export default {
             return 'Melody Melon | Insights'
         },
         insightsDescription() {
-            if (this.insights) return this.formatDate(this.insights.createdAt) + ' - ' + this.insights.description
+            if (this.insights) return this.formatDate(this.insights.date) + ' - ' + this.insights.description
             return 'Check our awesome industry and insider insights at Melody Melon.'
         },
         insightsUrl() {
