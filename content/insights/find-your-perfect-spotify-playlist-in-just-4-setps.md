@@ -17,7 +17,7 @@ Don't have the time to read this post, but still want to find your perfect Spoti
 ## Finding fresh Spotify playlists has never been easier!
 The hassle is over; no longer do you have to deal with shoddy playlists that you made years ago, constantly updating them, only to end up with a 10-hour playlist that fails to have a consistent sound or theme.
 
-With the introduction of <a href="https://melodymelon.com">Melody Melon</a> <a href="https://finder.melodymelon.com">Spotify playlist finder tool</a>, you can find your perfect playlist, to fuel your day. After just 4 simple multiple-choice questions, we can recommend the perfect playlist for your current mood.
+With <a href="https://melodymelon.com">Melody Melons</a> introduction of our new <a href="https://finder.melodymelon.com">Spotify playlist finder tool</a>, you can find your perfect playlist, to fuel your day. After just 4 simple multiple-choice questions, we can recommend the perfect playlist for your current mood.
 
 ## Playlists you may get recommended.
 At <a href="https://melodymelon.com">Melody Melon</a> we offer a wide range of fresh <a href="https://open.spotify.com/user/9b0arwvohrpgzewx9e4bjkr1y?si=Zg_ISThwTXuw9GxLwf9HGA">Spotify playlists</a> that are updated regularly, so matter your favourite genre, we have you covered. Here are some playlists you may get recommended:
