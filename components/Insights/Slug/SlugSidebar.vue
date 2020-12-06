@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted() {
-        this.$content('insights').sortBy('date', 'desc').limit(2).fetch()
+        this.$content('insights').where({ slug: { $ne: this.$router.currentRoute.params.slug } }).sortBy('date', 'desc').limit(2).fetch()
         .then((response) => {
             this.insights = response 
         })
