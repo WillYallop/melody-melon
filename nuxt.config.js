@@ -100,6 +100,8 @@ export default {
     hostname: 'https://melodymelon.com',
     gzip: true,
     routes: [
+      '/insights/spotify-wrapped-2020',
+      '/insights/musicians-with-disabilities-disability-history-month',
       '/insights/find-your-perfect-spotify-playlist-in-just-4-setps',
       '/insights/perfect-playlist-for-a-house-party',
       '/insights/in-my-feels-playlist',
