@@ -25,3 +25,5 @@ Disability History Month runs from the 22nd of November to the 22nd of December 
 <b>Fetty Wap</b> - Fetty Wap, Willie Junior Naxwell, was the rapper that shocked 2015 with the hit song Trap Queen. Fetty Wap was born with glaucoma in both eyes, revealed in a 2015 interview that doctors were unable to save his left eye.
 
 <b>Monika Kuszyńska</b> - In 2006 Monika was partially paralyzed from the waist down after a car accident, leading to her using a wheelchair. The polish singer represented Poland in the Eurovision Song Contest 2015 with the song "In the Name of Love" and was previously the lead singer of the Polish pop-rock band Varius Manx. 
+
+These Musicians with Disabilities are truly inspirational! Here at Melody Melon, we encourage you to look into Disabled History Month and pay respects to the achievements and struggles of disabled people over history.
